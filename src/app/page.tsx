@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchorIds, anchors, publishingTargets as t } from "@/lib/anchors";
@@ -13,9 +12,7 @@ export default function Home() {
         title="Dashboard"
         description="Daily output and research coverage across both anchors. Every story starts from the shared wire, primary-document and data layer; each anchor then reads their own analysis library."
       />
-      <Suspense fallback={<p className="text-sm text-zinc-500">Loading…</p>}>
-        <Overview />
-      </Suspense>
+      <Overview />
     </>
   );
 }

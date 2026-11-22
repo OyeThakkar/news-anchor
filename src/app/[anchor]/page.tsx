@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
@@ -43,9 +42,7 @@ export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">
           hint={`${shortsFromEpisode} can be cut from the episode`}
         />
         <Stat label="Weekly long-form" value="1" hint={`${t.weekly.minMinutes}-${t.weekly.maxMinutes} min`} />
-        <Suspense fallback={<Stat label="Active sources" value="…" />}>
-          <SourcesStat anchor={id} />
-        </Suspense>
+        <SourcesStat anchor={id} />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -89,9 +86,7 @@ export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">
               <Link href={`/${id}/library`} className="block hover:text-zinc-100">
                 <span className="text-zinc-200">Pick today&apos;s story</span>
                 <span className="block text-xs text-zinc-500">
-                  <Suspense fallback="…">
-                    <LiveFeedCount anchor={id} />
-                  </Suspense>{" "}
+                  <LiveFeedCount anchor={id} />{" "}
                   live or hourly
                   feeds
                 </span>

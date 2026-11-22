@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { PageHeader } from "@/components/ui";
 import { ReviewTable } from "@/components/review-table";
 import { anchors, resolveAnchor, type AnchorId } from "@/lib/anchors";
@@ -15,9 +14,7 @@ export default async function ScriptsPage({ params }: PageProps<"/[anchor]/scrip
         title="Scripts"
         description={`Review each script before it goes to video. Scripts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved for video production.`}
       />
-      <Suspense fallback={<p className="text-sm text-zinc-500">Loading scripts…</p>}>
-        <ScriptsTable anchor={id} />
-      </Suspense>
+      <ScriptsTable anchor={id} />
     </>
   );
 }

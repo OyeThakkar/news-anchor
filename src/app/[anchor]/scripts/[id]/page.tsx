@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge, Card } from "@/components/ui";
@@ -12,11 +11,7 @@ import { get, serialLabel } from "@/lib/store";
 type Params = Promise<{ anchor: string; id: string }>;
 
 export default function ScriptPage({ params }: { params: Params }) {
-  return (
-    <Suspense fallback={<p className="text-sm text-zinc-500">Loading script…</p>}>
-      <ScriptView params={params} />
-    </Suspense>
-  );
+  return <ScriptView params={params} />;
 }
 
 async function ScriptView({ params }: { params: Params }) {

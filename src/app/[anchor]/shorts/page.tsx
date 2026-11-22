@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { AddMediaForm } from "@/components/add-media-form";
 import { ReviewTable } from "@/components/review-table";
 import { PageHeader } from "@/components/ui";
@@ -22,9 +21,7 @@ export default async function ShortsPage({ params }: PageProps<"/[anchor]/shorts
         description={`Vertical shorts for Instagram Reels and YouTube Shorts: ${t.shorts.minPerDay} a day minimum, up to ${t.shorts.maxPerDay}. Shorts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved for publication.`}
       />
       <AddMediaForm kind="shorts" anchor={id} />
-      <Suspense fallback={<p className="text-sm text-zinc-500">Loading shorts…</p>}>
-        <ShortsTable anchor={id} />
-      </Suspense>
+      <ShortsTable anchor={id} />
     </>
   );
 }

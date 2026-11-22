@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Pages render fully on the server instead of streaming in behind loading placeholders,
+  // which some embedded browsers never reveal.
+  cacheComponents: false,
   turbopack: {
     rules: {
       "*.css": {

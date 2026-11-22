@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { PageHeader, Stat } from "@/components/ui";
 import { anchors, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { getSources } from "@/lib/store";
@@ -14,9 +13,7 @@ export default async function LibraryPage({ params }: PageProps<"/[anchor]/libra
         title="Library & Data Sources"
         description="Feed-monitoring sheet. A tool pulls feeds and alerts; a researcher verifies and picks stories. Each story needs one primary source, one wire report and one analysis source."
       />
-      <Suspense fallback={<p className="text-sm text-zinc-500">Loading sources…</p>}>
-        <Library anchor={id} />
-      </Suspense>
+      <Library anchor={id} />
     </>
   );
 }

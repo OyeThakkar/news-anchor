@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { AddMediaForm } from "@/components/add-media-form";
 import { ReviewTable } from "@/components/review-table";
 import { PageHeader } from "@/components/ui";
@@ -17,9 +16,7 @@ export default async function VideosPage({ params }: PageProps<"/[anchor]/videos
         description={`Long-form YouTube videos: ${t.episode.perDay} daily episode (${t.episode.minMinutes}-${t.episode.maxMinutes} min) and ${t.weekly.perWeek} weekly episode (${t.weekly.minMinutes}-${t.weekly.maxMinutes} min). Videos not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved for publication.`}
       />
       <AddMediaForm kind="videos" anchor={id} />
-      <Suspense fallback={<p className="text-sm text-zinc-500">Loading videos…</p>}>
-        <VideosTable anchor={id} />
-      </Suspense>
+      <VideosTable anchor={id} />
     </>
   );
 }
