@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchorIds, anchors, publishingTargets as t } from "@/lib/anchors";
 import { AUTO_APPROVE_MINUTES } from "@/lib/review";
+import { AnchorPortrait } from "@/components/anchor-portrait";
 import { monitorChip } from "@/lib/colors";
 import { getSources } from "@/lib/store";
 
@@ -60,11 +61,9 @@ async function Overview() {
             <Card key={id} className={`border-l-4 ${accent[id].border} ${accent[id].soft}`}>
               <div className="mb-4 flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <span
-                    className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${accent[id].avatar} text-lg font-semibold text-white shadow-lg`}
-                  >
-                    {a.name[0]}
-                  </span>
+                  <Link href={`/${id}/profile`} aria-label={`${a.name} profile`}>
+                    <AnchorPortrait id={id} size="sm" className="shadow-lg ring-2 ring-white/10" />
+                  </Link>
                   <div>
                     <h2 className={`text-lg font-semibold ${accent[id].text}`}>{a.name}</h2>
                     <p className="text-sm text-slate-300">{a.role}</p>

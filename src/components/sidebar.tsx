@@ -6,6 +6,7 @@ import { accent, anchorIds, anchors } from "@/lib/anchors";
 
 const anchorLinks = [
   { label: "Dashboard", path: "" },
+  { label: "Profile", path: "/profile" },
   { label: "Videos", path: "/videos" },
   { label: "Shorts", path: "/shorts" },
   { label: "Scripts", path: "/scripts" },

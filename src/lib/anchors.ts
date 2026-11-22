@@ -11,6 +11,12 @@ export type Anchor = {
   look: string;
   comedy: string;
   focus: string[];
+  tagline: string;
+  bio: string;
+  set: string;
+  signOff: string;
+  catchphrases: string[];
+  neverDoes: string[];
 };
 
 export const anchors: Record<AnchorId, Anchor> = {
@@ -24,6 +30,12 @@ export const anchors: Record<AnchorId, Anchor> = {
     look: "Structured blazer, clean newsroom set with data screens.",
     comedy: "Deadpan, chart-driven punchlines, on-the-spot fact-checks.",
     focus: ["Markets to household impact", "Budget & welfare outcomes", "Legislative tracking", "Who was accountable"],
+    tagline: "Pehle facts. Opinions baad mein.",
+    bio: "Reema is a former markets-desk anchor who got tired of reading out index numbers without asking who they were good for. Early 30s, Mumbai-based, she reads every budget annexure so you don't have to, and treats a press release as the start of a story, not the end of one. She will praise a policy that works, and she will put the chart on screen when it doesn't.",
+    set: "Clean newsroom set with live data screens and cool blue light.",
+    signOff: "Good night, aur apni EMI check kar lijiye.",
+    catchphrases: ["Pehle facts. Opinions baad mein.", "Ek chart dikhati hoon.", "Who pays, who benefits, who is accountable?"],
+    neverDoes: ["Mock a community, caste or religion", "Use a number without a source on screen", "Joke about victims"],
   },
   siddharth: {
     id: "siddharth",
@@ -35,6 +47,12 @@ export const anchors: Record<AnchorId, Anchor> = {
     look: "Bandhgala or kurta-jacket; set with books, brass lamps, warm lighting.",
     comedy: "Gentle irony, history analogies, proverbs, self-aware \"in my day\" nostalgia.",
     focus: ["Enterprise & reform", "Fiscal & industrial policy", "History analogies", "Did the institution hold?"],
+    tagline: "Pehle tathya, phir tark.",
+    bio: "Siddharth is a veteran broadcaster in his late 50s who has seen enough budgets, governments and \"historic reforms\" to be optimistic and patient at the same time. He believes in institutions, enterprise and self-reliance, and has a proverb for every policy. His daadi's folk wisdom is a recurring guest. He will defend what is working, and he is the first to admit when his own side has missed a target.",
+    set: "Classic study-style set with bookshelves, brass lamps and warm amber light.",
+    signOff: "Shubh ratri.",
+    catchphrases: ["Pehle tathya, phir tark.", "Meri daadi kehti thi...", "Itihaas ke panne palatte hain."],
+    neverDoes: ["Mock a community, caste or religion", "Cheerlead without the data", "Joke about victims"],
   },
 };
 
