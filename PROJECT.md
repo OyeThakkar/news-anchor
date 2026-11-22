@@ -82,7 +82,8 @@ Hook (5s) · Fact box (10s) · The take (40s) · The jab (10s) · Closer and vot
   - **Shorts**: Date, Serial, Topic, Duration, View video, IG status, YT status, Review
   - **Scripts**: Date, Serial, Topic, Duration, View script, Video status, Review
   - **Library & Data Sources**: feed-monitoring sheet
-  - **Profile**: portrait, bio, worldview, voice, comedy, catchphrases, and lines they won't cross
+  - **Profile**: portrait, bio, publishing channels (YouTube channel and Instagram account links, with API status),
+    worldview, voice, comedy, catchphrases, and lines they won't cross
 
 ### Pipeline
 
@@ -141,7 +142,7 @@ Earlier days load as fully published; the latest day loads pending, so the revie
 | Portal, review flow, 60-minute auto-approval, source management | Working |
 | Researched scripts and fact boxes | Working (static demo data in `src/data/demo-scripts/`) |
 | Video generation | Simulated: a 2-minute delay, then a preview render of the script |
-| Publishing to YouTube / Instagram | Simulated: status changes to Published / Posted on approval |
+| Publishing to YouTube / Instagram | Simulated: status changes to Published / Posted on approval. Each anchor's channel links are set on their Profile (YouTube Data API for episodes and Shorts, Instagram Graph API for Reels); the API connection (OAuth) is not built yet |
 | Automated source monitoring and script drafting | Not built yet; the library is a managed list |
 | Anchor portraits | Added in `public/anchors/`: Reema (still + looping "live" video, Hailuo) and Siddharth (still, Leonardo Lucid Origin). Prompts in `public/anchors/PROMPTS.md` |
 | Storage | Local JSON files in `data/` (fine for a single instance; move to a database for production) |

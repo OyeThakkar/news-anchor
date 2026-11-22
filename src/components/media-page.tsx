@@ -5,12 +5,12 @@ import { ScriptActions } from "@/components/script-actions";
 import { Badge, Card } from "@/components/ui";
 import { VideoPreview } from "@/components/video-preview";
 import { accent, anchors, isAnchorId } from "@/lib/anchors";
-import { formatDate, formatTimeOfDay, statusClass } from "@/lib/format";
+import { channelHandle, formatDate, formatTimeOfDay, statusClass } from "@/lib/format";
 import { mediaStatus } from "@/lib/pipeline";
 import { approvalOf, deadlineOf, isApproved, isRendering } from "@/lib/review";
 import { scriptFilename, scriptToText } from "@/lib/script-text";
 import { formatTime } from "@/lib/scripts";
-import { get, serialLabel } from "@/lib/store";
+import { get, getChannels, serialLabel } from "@/lib/store";
 
 export async function MediaPage({
   kind,
@@ -32,7 +32,13 @@ export async function MediaPage({
   const status = mediaStatus(media, isShort ? "Posted" : "Published");
   const meta = { anchor: anchors[anchor].name, serial: serialLabel("scripts", script) };
   const scriptText = scriptToText(script, meta);
-  const platforms = isShort ? ["Instagram Reels", "YouTube Shorts"] : ["YouTube"];
+  const channels = await getChannels(anchor);
+  const platforms = isShort
+    ? [
+        { name: "Instagram Reels", url: channels.instagramUrl },
+        { name: "YouTube Shorts", url: channels.youtubeUrl },
+      ]
+    : [{ name: "YouTube", url: channels.youtubeUrl }];
 
   return (
     <>
@@ -104,8 +110,19 @@ export async function MediaPage({
             <p className="mb-2 text-xs text-slate-500">Publishing</p>
             <ul className="space-y-1.5 text-sm">
               {platforms.map((p) => (
-                <li key={p} className="flex items-center justify-between gap-4">
-                  <span className="text-slate-300">{p}</span>
+                <li key={p.name} className="flex items-center justify-between gap-4">
+                  <span className="text-slate-300">
+                    {p.name}
+                    {p.url ? (
+                      <a href={p.url} target="_blank" rel="noreferrer" className="ml-2 text-xs text-sky-400 hover:underline">
+                        {channelHandle(p.url)} ↗
+                      </a>
+                    ) : (
+                      <Link href={`/${anchor}/profile`} className="ml-2 text-xs text-slate-500 hover:text-slate-300">
+                        add channel link
+                      </Link>
+                    )}
+                  </span>
                   <span className="text-xs text-slate-400">
                     {isApproved(approval.state) && approval.at
                       ? `${isShort ? "Posted" : "Published"} · ${formatTimeOfDay(approval.at)}`

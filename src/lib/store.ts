@@ -44,8 +44,22 @@ export type ShortRecord = BaseRecord & {
 
 export type SourceRecord = Source & { id: string; active: boolean; addedAt?: string };
 
-type Collection = Kind | "sources";
-type RecordOf = { scripts: ScriptRecord; videos: VideoRecord; shorts: ShortRecord; sources: SourceRecord };
+// Where each anchor publishes. API connection (OAuth) is not built yet, so publishing is simulated.
+export type ChannelRecord = {
+  anchor: AnchorId;
+  youtubeUrl: string | null;
+  instagramUrl: string | null;
+  updatedAt?: string;
+};
+
+type Collection = Kind | "sources" | "channels";
+type RecordOf = {
+  scripts: ScriptRecord;
+  videos: VideoRecord;
+  shorts: ShortRecord;
+  sources: SourceRecord;
+  channels: ChannelRecord;
+};
 
 export function sourceId(source: Pick<Source, "owner" | "name">) {
   return `${source.owner}-${source.name}`
@@ -78,6 +92,7 @@ const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
   },
   videos: () => [],
   shorts: () => [],
+  channels: () => anchorIds.map((anchor) => ({ anchor, youtubeUrl: null, instagramUrl: null })),
 };
 
 const fileFor = (kind: Collection) => path.join(process.cwd(), "data", `${kind}.json`);
@@ -162,6 +177,12 @@ export async function list<K extends Kind>(kind: K, anchor: AnchorId): Promise<R
 }
 
 // All sources, or the ones an anchor monitors (their own plus the shared layer).
+export async function getChannels(anchor: AnchorId): Promise<ChannelRecord> {
+  await connection();
+  const records = await load("channels");
+  return records.find((c) => c.anchor === anchor) ?? { anchor, youtubeUrl: null, instagramUrl: null };
+}
+
 export async function getSources(anchor?: AnchorId) {
   await connection();
   const records = await load("sources");

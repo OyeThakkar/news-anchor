@@ -36,3 +36,10 @@ export function statusClass(status: string) {
       return "";
   }
 }
+
+// "https://www.youtube.com/@reema" -> "@reema"; "https://www.instagram.com/reema/" -> "@reema"
+export function channelHandle(url: string) {
+  const path = new URL(url).pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  const last = path.at(-1) ?? new URL(url).hostname;
+  return last.startsWith("@") ? last : `@${last}`;
+}

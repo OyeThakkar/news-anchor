@@ -128,3 +128,32 @@ export async function setSourceActive(anchor: string, id: string, active: boolea
   refresh();
   return result;
 }
+
+// Accepts an empty value (clears the link) or an https link on one of the allowed domains.
+function channelUrl(value: FormDataEntryValue | null, domains: string[]): string | null | false {
+  const raw = String(value ?? "").trim();
+  if (!raw) return null;
+  const url = parseUrl(raw.startsWith("http") ? raw : `https://${raw}`);
+  if (!url) return false;
+  const host = new URL(url).hostname.replace(/^www\.|^m\./, "");
+  return domains.includes(host) ? url : false;
+}
+
+export async function saveChannels(anchor: string, _prev: AddState, form: FormData): Promise<AddState> {
+  if (!isAnchorId(anchor)) return { error: "Invalid request." };
+
+  const youtubeUrl = channelUrl(form.get("youtubeUrl"), ["youtube.com"]);
+  const instagramUrl = channelUrl(form.get("instagramUrl"), ["instagram.com"]);
+  if (youtubeUrl === false) return { error: "YouTube link must be a youtube.com channel URL, e.g. https://www.youtube.com/@handle" };
+  if (instagramUrl === false) return { error: "Instagram link must be an instagram.com profile URL, e.g. https://www.instagram.com/handle" };
+
+  await update("channels", (records) => {
+    const record = records.find((r) => r.anchor === anchor);
+    const next = { anchor, youtubeUrl, instagramUrl, updatedAt: new Date().toISOString() };
+    if (record) Object.assign(record, next);
+    else records.push(next);
+  });
+
+  refresh();
+  return { ok: true };
+}

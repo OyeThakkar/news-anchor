@@ -1,12 +1,15 @@
 import { AnchorPortrait } from "@/components/anchor-portrait";
+import { ChannelsCard } from "@/components/channels-card";
 import { Badge, Card, PageHeader, tones } from "@/components/ui";
 import { connection } from "next/server";
 import { accent, anchors, resolveAnchor } from "@/lib/anchors";
+import { getChannels } from "@/lib/store";
 
 export default async function ProfilePage({ params }: PageProps<"/[anchor]/profile">) {
   const id = await resolveAnchor(params);
   // Rendered per request so a portrait dropped into public/anchors shows up without a rebuild.
   await connection();
+  const channels = await getChannels(id);
   const a = anchors[id];
   const other = anchors[id === "reema" ? "siddharth" : "reema"];
   const tone = tones[accent[id].tone];
@@ -30,6 +33,8 @@ export default async function ProfilePage({ params }: PageProps<"/[anchor]/profi
             <p className="mt-4 text-xl italic text-white">&ldquo;{a.tagline}&rdquo;</p>
             <p className="mt-4 text-sm leading-relaxed text-slate-200">{a.bio}</p>
           </Card>
+
+          <ChannelsCard anchor={id} youtubeUrl={channels.youtubeUrl} instagramUrl={channels.instagramUrl} />
 
           <div className="grid gap-4 md:grid-cols-2">
             <Card title="Worldview">
