@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ReviewControls } from "@/components/review-controls";
+import { ScriptActions } from "@/components/script-actions";
 import { Badge, Card } from "@/components/ui";
 import { VideoPreview } from "@/components/video-preview";
 import { accent, anchors, isAnchorId } from "@/lib/anchors";
 import { formatDate, formatTimeOfDay, statusClass } from "@/lib/format";
 import { mediaStatus } from "@/lib/pipeline";
 import { approvalOf, deadlineOf, isApproved, isRendering } from "@/lib/review";
+import { scriptFilename, scriptToText } from "@/lib/script-text";
 import { formatTime } from "@/lib/scripts";
 import { get, serialLabel } from "@/lib/store";
 
@@ -28,6 +30,8 @@ export async function MediaPage({
   const approval = approvalOf(media);
   const rendering = isRendering(media);
   const status = mediaStatus(media, isShort ? "Posted" : "Published");
+  const meta = { anchor: anchors[anchor].name, serial: serialLabel("scripts", script) };
+  const scriptText = scriptToText(script, meta);
   const platforms = isShort ? ["Instagram Reels", "YouTube Shorts"] : ["YouTube"];
 
   return (
@@ -46,7 +50,7 @@ export async function MediaPage({
         <h1 className="text-2xl font-semibold text-slate-100">{media.topic}</h1>
       </header>
 
-      <div className={`grid gap-6 ${isShort ? "lg:grid-cols-[380px_1fr]" : ""}`}>
+      <div className="grid gap-6">
         {rendering ? (
           <Card>
             <p className="text-sm text-violet-300">
@@ -58,10 +62,12 @@ export async function MediaPage({
             anchorName={anchors[anchor].name}
             accentText={accent[anchor].text}
             accentBg={accent[anchor].bg}
+            accentBorder={accent[anchor].border}
             orientation={isShort ? "portrait" : "landscape"}
             topic={media.topic}
             segments={script.segments}
             factBox={script.factBox}
+            scriptActions={<ScriptActions text={scriptText} filename={scriptFilename(meta, script)} />}
           />
         )}
 

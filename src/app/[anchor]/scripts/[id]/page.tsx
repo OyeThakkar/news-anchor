@@ -2,10 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge, Card } from "@/components/ui";
 import { ReviewControls } from "@/components/review-controls";
+import { ScriptActions } from "@/components/script-actions";
 import { accent, anchors, isAnchorId } from "@/lib/anchors";
 import { formatDate, formatTimeOfDay, statusClass } from "@/lib/format";
 import { scriptVideoStatus } from "@/lib/pipeline";
 import { approvalOf, deadlineOf, isRendering } from "@/lib/review";
+import { scriptFilename, scriptToText } from "@/lib/script-text";
 import { formatTime, withStartTimes } from "@/lib/scripts";
 import { get, list, serialLabel } from "@/lib/store";
 
@@ -25,6 +27,7 @@ async function ScriptView({ params }: { params: Params }) {
   const approval = approvalOf(script);
   const status = scriptVideoStatus(script, media);
   const other = anchors[anchor === "reema" ? "siddharth" : "reema"];
+  const meta = { anchor: anchors[anchor].name, serial: serialLabel("scripts", script) };
 
   return (
     <>
@@ -36,7 +39,10 @@ async function ScriptView({ params }: { params: Params }) {
         <p className="mb-1 font-mono text-xs text-slate-500">
           {serialLabel("scripts", script)} · {formatDate(script.date)}
         </p>
-        <h1 className="text-2xl font-semibold text-slate-100">{script.topic}</h1>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <h1 className="text-2xl font-semibold text-slate-100">{script.topic}</h1>
+          <ScriptActions text={scriptToText(script, meta)} filename={scriptFilename(meta, script)} />
+        </div>
       </header>
 
       <Card className="mb-6">
