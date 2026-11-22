@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/ui";
 import { accent, anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { mediaStatus } from "@/lib/pipeline";
 import { AUTO_APPROVE_MINUTES, isRendering } from "@/lib/review";
+import { publishDue } from "@/lib/integrations/publish";
 import { list } from "@/lib/store";
 
 export default async function VideosPage({ params }: PageProps<"/[anchor]/videos">) {
@@ -22,6 +23,7 @@ export default async function VideosPage({ params }: PageProps<"/[anchor]/videos
 }
 
 async function VideosTable({ anchor }: { anchor: AnchorId }) {
+  await publishDue("videos", anchor);
   const videos = await list("videos", anchor);
 
   return (

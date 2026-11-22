@@ -2,6 +2,7 @@
 
 import { refresh } from "next/cache";
 import { isAnchorId } from "./anchors";
+import { publishDue } from "./integrations/publish";
 import { approvalOf, isRendering, RENDER_MS, type Decision } from "./review";
 import { frequencies, monitors, outputFormats, tiers, type OutputFormat } from "./sources";
 import { kinds, sourceId, update, type Kind } from "./store";
@@ -30,6 +31,9 @@ export async function reviewItem(kind: string, anchor: string, id: string, decis
     record.review = { decision, at: new Date().toISOString(), note: note?.trim() || undefined };
     return { ok: true };
   });
+
+  // Approved videos and shorts publish to connected channels after the response is sent.
+  if (result.ok && decision === "approved" && kind !== "scripts") await publishDue(kind, anchor);
 
   refresh();
   return result;
@@ -153,6 +157,27 @@ export async function saveChannels(anchor: string, _prev: AddState, form: FormDa
     if (record) Object.assign(record, next);
     else records.push(next);
   });
+
+  refresh();
+  return { ok: true };
+}
+
+export async function disconnectChannel(anchor: string, platform: string): Promise<ActionResult> {
+  if (!isAnchorId(anchor) || (platform !== "youtube" && platform !== "instagram")) {
+    return { ok: false, error: "Invalid request." };
+  }
+
+  const removed = await update("connections", (records) => {
+    const index = records.findIndex((r) => r.anchor === anchor && r.platform === platform);
+    return index >= 0 ? records.splice(index, 1)[0] : null;
+  });
+
+  // Revoke the Google grant too; Instagram tokens simply stop being used and expire.
+  if (removed?.platform === "youtube") {
+    await fetch(`https://oauth2.googleapis.com/revoke?token=${encodeURIComponent(removed.refreshToken ?? removed.accessToken)}`, {
+      method: "POST",
+    }).catch(() => undefined);
+  }
 
   refresh();
   return { ok: true };

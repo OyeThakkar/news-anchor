@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local script review data
 /data/
+!.env.example

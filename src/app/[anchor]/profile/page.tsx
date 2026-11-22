@@ -3,13 +3,25 @@ import { ChannelsCard } from "@/components/channels-card";
 import { Badge, Card, PageHeader, tones } from "@/components/ui";
 import { connection } from "next/server";
 import { accent, anchors, resolveAnchor } from "@/lib/anchors";
-import { getChannels } from "@/lib/store";
+import { isConfigured, platformConfig } from "@/lib/integrations/config";
+import { getChannels, getConnections, type Platform } from "@/lib/store";
 
-export default async function ProfilePage({ params }: PageProps<"/[anchor]/profile">) {
+export default async function ProfilePage({ params, searchParams }: PageProps<"/[anchor]/profile">) {
   const id = await resolveAnchor(params);
   // Rendered per request so a portrait dropped into public/anchors shows up without a rebuild.
   await connection();
   const channels = await getChannels(id);
+  const connections = await getConnections(id);
+  const { oauth_connected: connected, oauth_error: oauthError } = await searchParams;
+  const apiStatus = (platform: Platform) => {
+    const connection = connections.find((c) => c.platform === platform);
+    const { clientIdVar, clientSecretVar } = platformConfig[platform];
+    return {
+      configured: isConfigured(platform),
+      missing: `${clientIdVar} and ${clientSecretVar}`,
+      connection: connection ? { accountName: connection.accountName, connectedAt: connection.connectedAt } : null,
+    };
+  };
   const a = anchors[id];
   const other = anchors[id === "reema" ? "siddharth" : "reema"];
   const tone = tones[accent[id].tone];
@@ -34,7 +46,20 @@ export default async function ProfilePage({ params }: PageProps<"/[anchor]/profi
             <p className="mt-4 text-sm leading-relaxed text-slate-200">{a.bio}</p>
           </Card>
 
-          <ChannelsCard anchor={id} youtubeUrl={channels.youtubeUrl} instagramUrl={channels.instagramUrl} />
+          {typeof connected === "string" && (
+            <p className="rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200">
+              {connected}
+            </p>
+          )}
+          {typeof oauthError === "string" && (
+            <p className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm text-red-200">{oauthError}</p>
+          )}
+          <ChannelsCard
+            anchor={id}
+            youtubeUrl={channels.youtubeUrl}
+            instagramUrl={channels.instagramUrl}
+            api={{ youtube: apiStatus("youtube"), instagram: apiStatus("instagram") }}
+          />
 
           <div className="grid gap-4 md:grid-cols-2">
             <Card title="Worldview">

@@ -10,7 +10,8 @@ import { mediaStatus } from "@/lib/pipeline";
 import { approvalOf, deadlineOf, isApproved, isRendering } from "@/lib/review";
 import { scriptFilename, scriptToText } from "@/lib/script-text";
 import { formatTime } from "@/lib/scripts";
-import { get, getChannels, serialLabel } from "@/lib/store";
+import { publishDue } from "@/lib/integrations/publish";
+import { get, getChannels, getConnections, serialLabel } from "@/lib/store";
 
 export async function MediaPage({
   kind,
@@ -21,6 +22,7 @@ export async function MediaPage({
 }) {
   const { anchor, id } = await params;
   if (!isAnchorId(anchor)) notFound();
+  await publishDue(kind, anchor);
   const media = await get(kind, anchor, id);
   if (!media) notFound();
   const script = await get("scripts", anchor, media.scriptId);
@@ -33,12 +35,24 @@ export async function MediaPage({
   const meta = { anchor: anchors[anchor].name, serial: serialLabel("scripts", script) };
   const scriptText = scriptToText(script, meta);
   const channels = await getChannels(anchor);
+  const connected = new Set((await getConnections(anchor)).map((c) => c.platform));
   const platforms = isShort
     ? [
-        { name: "Instagram Reels", url: channels.instagramUrl },
-        { name: "YouTube Shorts", url: channels.youtubeUrl },
+        { platform: "instagram" as const, name: "Instagram Reels", url: channels.instagramUrl },
+        { platform: "youtube" as const, name: "YouTube Shorts", url: channels.youtubeUrl },
       ]
-    : [{ name: "YouTube", url: channels.youtubeUrl }];
+    : [{ platform: "youtube" as const, name: "YouTube", url: channels.youtubeUrl }];
+
+  // What to show for each channel: a real API result, a simulated publish, or the pending state.
+  const publishState = (platform: "youtube" | "instagram") => {
+    const result = media.publications?.[platform];
+    if (result?.status === "published") return { text: `Published · ${formatTimeOfDay(new Date(result.at))}`, href: result.url };
+    if (result?.status === "publishing") return { text: "Publishing…" };
+    if (result) return { text: `${result.status === "waiting" ? "Waiting" : "Failed"}: ${result.error}`, error: true };
+    if (!isApproved(approval.state) || !approval.at) return { text: "Publishes automatically on approval" };
+    if (connected.has(platform)) return { text: "Queued for publishing" };
+    return { text: `${isShort ? "Posted" : "Published"} (simulated) · ${formatTimeOfDay(approval.at)}` };
+  };
 
   return (
     <>
@@ -109,27 +123,32 @@ export async function MediaPage({
           <div className="mt-5 border-t border-slate-800 pt-4">
             <p className="mb-2 text-xs text-slate-500">Publishing</p>
             <ul className="space-y-1.5 text-sm">
-              {platforms.map((p) => (
-                <li key={p.name} className="flex items-center justify-between gap-4">
-                  <span className="text-slate-300">
-                    {p.name}
-                    {p.url ? (
-                      <a href={p.url} target="_blank" rel="noreferrer" className="ml-2 text-xs text-sky-400 hover:underline">
-                        {channelHandle(p.url)} ↗
+              {platforms.map((p) => {
+                const state = publishState(p.platform);
+                return (
+                  <li key={p.name} className="flex items-center justify-between gap-4">
+                    <span className="text-slate-300">
+                      {p.name}
+                      {p.url ? (
+                        <a href={p.url} target="_blank" rel="noreferrer" className="ml-2 text-xs text-sky-400 hover:underline">
+                          {channelHandle(p.url)} ↗
+                        </a>
+                      ) : (
+                        <Link href={`/${anchor}/profile`} className="ml-2 text-xs text-slate-500 hover:text-slate-300">
+                          add channel link
+                        </Link>
+                      )}
+                    </span>
+                    {state.href ? (
+                      <a href={state.href} target="_blank" rel="noreferrer" className="text-xs text-sky-400 hover:underline">
+                        {state.text} ↗
                       </a>
                     ) : (
-                      <Link href={`/${anchor}/profile`} className="ml-2 text-xs text-slate-500 hover:text-slate-300">
-                        add channel link
-                      </Link>
+                      <span className={`text-right text-xs ${state.error ? "text-red-300" : "text-slate-400"}`}>{state.text}</span>
                     )}
-                  </span>
-                  <span className="text-xs text-slate-400">
-                    {isApproved(approval.state) && approval.at
-                      ? `${isShort ? "Posted" : "Published"} · ${formatTimeOfDay(approval.at)}`
-                      : "Publishes automatically on approval"}
-                  </span>
-                </li>
-              ))}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

@@ -29,7 +29,8 @@ Open http://localhost:3000.
 4. **Approved video** is auto-published to YouTube; an approved short is posted to Instagram Reels and YouTube Shorts.
 
 Rework requires a note; resubmitting restarts the window (videos are regenerated first). Rejected items are cancelled.
-In this prototype, video generation (2 minutes) and publishing are simulated. "View video" opens a preview render
+In this prototype, video generation (2 minutes) is simulated. Publishing is real once an anchor's YouTube / Instagram
+API is connected on their Profile (see `.env.example`); otherwise it is simulated. "View video" opens a preview render
 that plays the approved script with captions and fact-box graphics.
 
 ## Demo

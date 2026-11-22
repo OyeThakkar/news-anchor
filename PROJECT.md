@@ -142,13 +142,14 @@ Earlier days load as fully published; the latest day loads pending, so the revie
 | Portal, review flow, 60-minute auto-approval, source management | Working |
 | Researched scripts and fact boxes | Working (static demo data in `src/data/demo-scripts/`) |
 | Video generation | Simulated: a 2-minute delay, then a preview render of the script |
-| Publishing to YouTube / Instagram | Simulated: status changes to Published / Posted on approval. Each anchor's channel links are set on their Profile (YouTube Data API for episodes and Shorts, Instagram Graph API for Reels); the API connection (OAuth) is not built yet |
+| Publishing to YouTube / Instagram | **Built.** Connect each anchor's channels on their Profile (Google OAuth + YouTube Data API for episodes and Shorts; Instagram Business Login + Instagram Graph API for Reels). Approved videos then upload automatically, with AI-content disclosure set. Channels that are not connected stay simulated. Real uploads also need a rendered video file (`fileUrl`), which arrives with real video generation; until then connected channels show "Awaiting video file" |
 | Automated source monitoring and script drafting | Not built yet; the library is a managed list |
 | Anchor portraits | Added in `public/anchors/`: Reema (still + looping "live" video, Hailuo) and Siddharth (still, Leonardo Lucid Origin). Prompts in `public/anchors/PROMPTS.md` |
 | Storage | Local JSON files in `data/` (fine for a single instance; move to a database for production) |
-| Authentication | None yet |
+| Authentication | None yet for editors. OAuth tokens for YouTube / Instagram are stored server-side in `data/connections.json` (gitignored) |
 
-The portal shows a small notice that video generation and publishing are simulated.
+The portal shows a small notice that video generation is simulated and that publishing goes live once a channel's API
+is connected.
 
 ## 7. Tech stack and code map
 
@@ -171,6 +172,8 @@ The portal shows a small notice that video generation and publishing are simulat
 | `src/lib/demo-scripts.ts` | Loads the demo scripts and sets their review state |
 | `src/data/demo-scripts/*.json` | The researched scripts, one file per day |
 | `src/lib/script-text.ts` | Plain-text export for Copy / Download |
+| `src/lib/integrations/` | YouTube and Instagram OAuth, uploads, and the publisher that runs on approval |
+| `src/app/api/oauth/[platform]/` | OAuth start and callback endpoints |
 
 Note: `next.config.ts` turns Cache Components off on purpose. Pages render fully on the server instead of streaming,
 because some embedded browsers never reveal streamed content.
@@ -188,7 +191,15 @@ because some embedded browsers never reveal streamed content.
    npx next start -H 0.0.0.0 -p ${PORT:-3000}
    ```
    For development use `npx next dev -H 0.0.0.0 -p ${PORT:-3000}`.
-4. Before a demo, reset the data so the 60-minute review windows start fresh, then restart:
+4. Optional, to publish for real: add these as Replit **Secrets** (see `.env.example`), then use **Connect API** on each
+   anchor's Profile page:
+   - `APP_URL`: the public https URL of the Repl
+   - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`: Google Cloud OAuth client (Web app) with YouTube Data API v3 enabled
+   - `INSTAGRAM_APP_ID`, `INSTAGRAM_APP_SECRET`: Meta app with Instagram API with Instagram Login
+   - Register these redirect URIs: `<APP_URL>/api/oauth/youtube/callback` and `<APP_URL>/api/oauth/instagram/callback`
+   - Instagram needs a professional (Business or Creator) account, and downloads the video from a public https URL.
+     Unverified Google apps upload as private until the app passes Google's audit.
+5. Before a demo, reset the data so the 60-minute review windows start fresh, then restart:
    ```bash
    npm run reset-demo
    ```
@@ -200,7 +211,7 @@ filesystem may reset between deploys, which resets the demo state; that is expec
 
 1. Animate Siddharth's portrait (like Reema's live clip) and give both anchors a consistent voice.
 2. Connect a real video-generation provider (AI avatar and voice) behind the existing "generate on approval" step.
-3. Connect the YouTube Data API and Instagram Graph API for real publishing.
+3. Add real Google / Meta app credentials and connect each anchor's channels (the integration is built).
 4. Automate source monitoring (RSS and alerts) and first-draft script generation from the library.
 5. Move storage to a database and add editor login and an audit log.
 6. Add the weekly 20-24 minute long-form format and the viewer "who won?" vote.

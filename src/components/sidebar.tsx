@@ -85,7 +85,8 @@ export function Sidebar({ portraits }: { portraits: Record<AnchorId, string | nu
       </nav>
 
       <p className="mt-auto px-3 pt-4 text-[11px] leading-snug text-slate-500">
-        Prototype: video generation and YouTube / Instagram publishing are simulated.
+        Prototype: video generation is simulated. YouTube / Instagram publishing goes live once a channel&apos;s API is
+        connected on the Profile page.
       </p>
     </aside>
   );

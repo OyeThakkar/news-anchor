@@ -33,14 +33,26 @@ export type ScriptRecord = BaseRecord & {
 
 // Videos and shorts are generated from approved scripts. `submittedAt` is when generation
 // finishes and the 60-minute review window opens; approval publishes them.
-export type VideoRecord = BaseRecord & {
-  scriptId: string;
-  format: "Episode" | "Weekly";
+export type Platform = "youtube" | "instagram";
+
+// Result of a real API publish attempt. Absent = not attempted (publishing is simulated when not connected).
+export type Publication = {
+  status: "publishing" | "published" | "failed" | "waiting";
+  at: string;
+  url?: string;
+  error?: string;
 };
 
-export type ShortRecord = BaseRecord & {
+type MediaFields = {
   scriptId: string;
+  // Public URL of the rendered video file, set by the video-generation provider once connected.
+  fileUrl?: string;
+  publications?: Partial<Record<Platform, Publication>>;
 };
+
+export type VideoRecord = BaseRecord & MediaFields & { format: "Episode" | "Weekly" };
+
+export type ShortRecord = BaseRecord & MediaFields;
 
 export type SourceRecord = Source & { id: string; active: boolean; addedAt?: string };
 
@@ -52,13 +64,31 @@ export type ChannelRecord = {
   updatedAt?: string;
 };
 
-type Collection = Kind | "sources" | "channels";
+// OAuth connection for an anchor's channel. Tokens are stored server-side in data/ (gitignored).
+export type ConnectionRecord = {
+  anchor: AnchorId;
+  platform: Platform;
+  accountId: string;
+  accountName: string;
+  accessToken: string;
+  refreshToken?: string;
+  expiresAt?: string;
+  connectedAt: string;
+};
+
+export const defaultChannels: Record<AnchorId, { youtubeUrl: string; instagramUrl: string }> = {
+  reema: { youtubeUrl: "https://youtube.com/reema-news", instagramUrl: "https://instagram.com/reema-news" },
+  siddharth: { youtubeUrl: "https://youtube.com/siddharth-news", instagramUrl: "https://instagram.com/siddharth-news" },
+};
+
+type Collection = Kind | "sources" | "channels" | "connections";
 type RecordOf = {
   scripts: ScriptRecord;
   videos: VideoRecord;
   shorts: ShortRecord;
   sources: SourceRecord;
   channels: ChannelRecord;
+  connections: ConnectionRecord;
 };
 
 export function sourceId(source: Pick<Source, "owner" | "name">) {
@@ -92,7 +122,8 @@ const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
   },
   videos: () => [],
   shorts: () => [],
-  channels: () => anchorIds.map((anchor) => ({ anchor, youtubeUrl: null, instagramUrl: null })),
+  channels: () => anchorIds.map((anchor) => ({ anchor, ...defaultChannels[anchor] })),
+  connections: () => [],
 };
 
 const fileFor = (kind: Collection) => path.join(process.cwd(), "data", `${kind}.json`);
@@ -180,13 +211,23 @@ export async function list<K extends Kind>(kind: K, anchor: AnchorId): Promise<R
 export async function getChannels(anchor: AnchorId): Promise<ChannelRecord> {
   await connection();
   const records = await load("channels");
-  return records.find((c) => c.anchor === anchor) ?? { anchor, youtubeUrl: null, instagramUrl: null };
+  return records.find((c) => c.anchor === anchor) ?? { anchor, ...defaultChannels[anchor] };
+}
+
+export async function getConnections(anchor: AnchorId) {
+  const records = await load("connections");
+  return records.filter((c) => c.anchor === anchor);
 }
 
 export async function getSources(anchor?: AnchorId) {
   await connection();
   const records = await load("sources");
   return anchor ? records.filter((s) => s.owner === anchor || s.owner === "shared") : records;
+}
+
+// Direct lookup without request-scoped APIs, for background work such as publishing.
+export async function findById<K extends Kind>(kind: K, id: string): Promise<RecordOf[K] | undefined> {
+  return (await load(kind)).find((r) => r.id === id);
 }
 
 export async function get<K extends Kind>(kind: K, anchor: AnchorId, id: string) {

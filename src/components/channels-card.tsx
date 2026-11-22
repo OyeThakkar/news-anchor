@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState, useState } from "react";
-import { saveChannels, type AddState } from "@/lib/actions";
+import { useActionState, useState, useTransition } from "react";
+import { disconnectChannel, saveChannels, type AddState } from "@/lib/actions";
 import { channelHandle } from "@/lib/format";
 
 const input =
@@ -10,6 +10,7 @@ const input =
 const platforms = [
   {
     key: "youtubeUrl" as const,
+    platform: "youtube" as const,
     name: "YouTube",
     mark: "bg-red-600",
     icon: "▶",
@@ -19,6 +20,7 @@ const platforms = [
   },
   {
     key: "instagramUrl" as const,
+    platform: "instagram" as const,
     name: "Instagram",
     mark: "bg-gradient-to-br from-amber-400 via-pink-500 to-purple-600",
     icon: "◎",
@@ -28,14 +30,66 @@ const platforms = [
   },
 ];
 
+export type ApiStatus = {
+  configured: boolean;
+  missing: string;
+  connection: { accountName: string; connectedAt: string } | null;
+};
+
+function ApiControls({ anchor, platform, status }: { anchor: string; platform: "youtube" | "instagram"; status: ApiStatus }) {
+  const [pending, startTransition] = useTransition();
+  const chip = "shrink-0 rounded-md border px-2 py-0.5 text-[11px]";
+
+  if (status.connection) {
+    return (
+      <div className="flex shrink-0 flex-col items-end gap-1">
+        <span className={`${chip} border-emerald-500/40 bg-emerald-500/10 text-emerald-200`}>
+          API connected · {status.connection.accountName}
+        </span>
+        <button
+          type="button"
+          disabled={pending}
+          onClick={() => startTransition(async () => void (await disconnectChannel(anchor, platform)))}
+          className="text-[11px] text-slate-400 hover:text-red-300 disabled:opacity-50"
+        >
+          Disconnect
+        </button>
+      </div>
+    );
+  }
+
+  if (!status.configured) {
+    return (
+      <div className="flex shrink-0 flex-col items-end gap-1 text-right">
+        <span className={`${chip} border-slate-500/40 bg-slate-500/10 text-slate-300`}>API keys not set</span>
+        <span className="max-w-48 text-[11px] text-slate-500">Set {status.missing} on the server</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex shrink-0 flex-col items-end gap-1">
+      <a
+        href={`/api/oauth/${platform}/start?anchor=${anchor}`}
+        className="rounded-md bg-gradient-to-r from-fuchsia-500 to-orange-400 px-3 py-1 text-xs font-medium text-white hover:brightness-110"
+      >
+        Connect API
+      </a>
+      <span className="text-[11px] text-amber-200/80">Not connected</span>
+    </div>
+  );
+}
+
 export function ChannelsCard({
   anchor,
   youtubeUrl,
   instagramUrl,
+  api,
 }: {
   anchor: string;
   youtubeUrl: string | null;
   instagramUrl: string | null;
+  api: Record<"youtube" | "instagram", ApiStatus>;
 }) {
   const [editing, setEditing] = useState(false);
   const [state, formAction, pending] = useActionState<AddState, FormData>(async (prev, form) => {
@@ -112,9 +166,7 @@ export function ChannelsCard({
                     Publishes: {p.publishes} · via {p.api}
                   </p>
                 </div>
-                <span className="shrink-0 rounded-md border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-[11px] text-amber-200">
-                  API not connected
-                </span>
+                <ApiControls anchor={anchor} platform={p.platform} status={api[p.platform]} />
               </li>
             );
           })}
@@ -122,8 +174,8 @@ export function ChannelsCard({
       )}
 
       <p className="mt-3 text-xs text-slate-500">
-        Approved videos publish to these channels automatically. Until the API connection (OAuth) is set up, publishing
-        is simulated.
+        Approved videos publish automatically to every connected channel. Channels without a connected API are
+        simulated. Instagram needs a professional (Business or Creator) account.
       </p>
     </section>
   );

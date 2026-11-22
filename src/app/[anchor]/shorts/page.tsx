@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/ui";
 import { accent, anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { mediaStatus } from "@/lib/pipeline";
 import { AUTO_APPROVE_MINUTES, isRendering } from "@/lib/review";
+import { publishDue } from "@/lib/integrations/publish";
 import { list } from "@/lib/store";
 
 export default async function ShortsPage({ params }: PageProps<"/[anchor]/shorts">) {
@@ -22,6 +23,7 @@ export default async function ShortsPage({ params }: PageProps<"/[anchor]/shorts
 }
 
 async function ShortsTable({ anchor }: { anchor: AnchorId }) {
+  await publishDue("shorts", anchor);
   const shorts = await list("shorts", anchor);
 
   return (
@@ -32,11 +34,10 @@ async function ShortsTable({ anchor }: { anchor: AnchorId }) {
       empty="No shorts yet. A short is generated as soon as a short script is approved."
       rows={shorts.map((s) => {
         const rendering = isRendering(s);
-        const status = mediaStatus(s, "Posted");
         return {
           ...s,
           view: rendering ? null : { label: "View video", href: `/${anchor}/shorts/${s.id}` },
-          statuses: [status, status],
+          statuses: [mediaStatus(s, "Posted", undefined, "instagram"), mediaStatus(s, "Posted", undefined, "youtube")],
           generatingUntil: rendering ? s.submittedAt : undefined,
         };
       })}
