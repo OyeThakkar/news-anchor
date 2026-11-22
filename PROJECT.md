@@ -78,11 +78,11 @@ Hook (5s) · Fact box (10s) · The take (40s) · The jab (10s) · Closer and vot
 - **Dashboard**: output targets and coverage across both anchors
 - **Reema / Siddharth**
   - **Dashboard**: persona, daily targets, next steps
-  - **Profile**: portrait, bio, worldview, voice, comedy, catchphrases, and lines they won't cross
   - **Videos**: long-form videos with Date, Serial, Topic, Duration, View video, Video status, Review
   - **Shorts**: Date, Serial, Topic, Duration, View video, IG status, YT status, Review
   - **Scripts**: Date, Serial, Topic, Duration, View script, Video status, Review
   - **Library & Data Sources**: feed-monitoring sheet
+  - **Profile**: portrait, bio, worldview, voice, comedy, catchphrases, and lines they won't cross
 
 ### Pipeline
 

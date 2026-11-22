@@ -7,11 +7,11 @@ import { accent, anchorIds, anchors, type AnchorId } from "@/lib/anchors";
 
 const anchorLinks = [
   { label: "Dashboard", path: "" },
-  { label: "Profile", path: "/profile" },
   { label: "Videos", path: "/videos" },
   { label: "Shorts", path: "/shorts" },
   { label: "Scripts", path: "/scripts" },
   { label: "Library & Data Sources", path: "/library" },
+  { label: "Profile", path: "/profile" },
 ];
 
 function NavLink({ href, label, active, activeClass }: { href: string; label: string; active: boolean; activeClass: string }) {
