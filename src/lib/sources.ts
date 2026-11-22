@@ -1,9 +1,14 @@
 import type { AnchorId } from "./anchors";
 
-export type SourceTier = "Primary" | "Wire" | "Data" | "Analysis" | "Fact-check";
-export type OutputFormat = "Shorts" | "Episode" | "Weekly";
-export type CheckFrequency = "Live" | "Hourly" | "Twice daily" | "Daily" | "On release" | "Weekly";
-export type Monitor = "Tool" | "Researcher" | "Both";
+export const tiers = ["Primary", "Wire", "Data", "Analysis", "Fact-check"] as const;
+export const outputFormats = ["Shorts", "Episode", "Weekly"] as const;
+export const frequencies = ["Live", "Hourly", "Twice daily", "Daily", "On release", "Weekly"] as const;
+export const monitors = ["Tool", "Researcher", "Both"] as const;
+
+export type SourceTier = (typeof tiers)[number];
+export type OutputFormat = (typeof outputFormats)[number];
+export type CheckFrequency = (typeof frequencies)[number];
+export type Monitor = (typeof monitors)[number];
 
 export type Source = {
   name: string;
@@ -28,7 +33,7 @@ function group(defaults: Defaults, rows: Row[]): Source[] {
 const ALL: OutputFormat[] = ["Shorts", "Episode", "Weekly"];
 const DEEP: OutputFormat[] = ["Episode", "Weekly"];
 
-export const sources: Source[] = [
+export const defaultSources: Source[] = [
   // Shared layer: both anchors start from the same facts.
   ...group(
     { owner: "shared", group: "Wires", tier: "Wire", formats: ALL, frequency: "Live", monitor: "Tool" },
@@ -157,7 +162,3 @@ export const sources: Source[] = [
     ],
   ),
 ];
-
-export function sourcesFor(anchor: AnchorId) {
-  return sources.filter((s) => s.owner === anchor || s.owner === "shared");
-}

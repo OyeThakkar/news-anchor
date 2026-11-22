@@ -1,12 +1,11 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchorIds, anchors, publishingTargets as t } from "@/lib/anchors";
 import { AUTO_APPROVE_MINUTES } from "@/lib/review";
-import { sources, sourcesFor } from "@/lib/sources";
+import { getSources } from "@/lib/store";
 
 export default function Home() {
-  const n = anchorIds.length;
-
   return (
     <>
       <PageHeader
@@ -14,6 +13,19 @@ export default function Home() {
         title="Dashboard"
         description="Daily output and research coverage across both anchors. Every story starts from the shared wire, primary-document and data layer; each anchor then reads their own analysis library."
       />
+      <Suspense fallback={<p className="text-sm text-zinc-500">Loading…</p>}>
+        <Overview />
+      </Suspense>
+    </>
+  );
+}
+
+async function Overview() {
+  const n = anchorIds.length;
+  const sources = (await getSources()).filter((s) => s.active);
+
+  return (
+    <>
 
       <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <Stat
@@ -32,7 +44,7 @@ export default function Home() {
           hint={`${t.weekly.minMinutes}-${t.weekly.maxMinutes} min each`}
         />
         <Stat
-          label="Sources monitored"
+          label="Active sources"
           value={sources.length}
           hint={`${sources.filter((s) => s.owner === "shared").length} shared`}
         />
@@ -41,7 +53,7 @@ export default function Home() {
       <div className="grid gap-4 lg:grid-cols-2">
         {anchorIds.map((id) => {
           const a = anchors[id];
-          const own = sourcesFor(id).filter((s) => s.owner === id).length;
+          const own = sources.filter((s) => s.owner === id).length;
           return (
             <Card key={id} className={`border-l-4 ${accent[id].border}`}>
               <div className="mb-4 flex items-start justify-between">

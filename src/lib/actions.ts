@@ -4,7 +4,8 @@ import { randomUUID } from "node:crypto";
 import { refresh } from "next/cache";
 import { isAnchorId } from "./anchors";
 import { approvalOf, type Decision } from "./review";
-import { istDate, kinds, update, type Kind, type ShortRecord, type VideoRecord } from "./store";
+import { frequencies, monitors, outputFormats, tiers, type OutputFormat } from "./sources";
+import { istDate, kinds, sourceId, update, type Kind, type ShortRecord, type VideoRecord } from "./store";
 
 export type ActionResult = { ok: true } | { ok: false; error: string };
 
@@ -104,4 +105,68 @@ export async function addMedia(kind: "videos" | "shorts", anchor: string, _prev:
 
   refresh();
   return { ok: true };
+}
+
+function oneOf<T extends string>(options: readonly T[], value: FormDataEntryValue | null): T | null {
+  return options.includes(value as T) ? (value as T) : null;
+}
+
+export async function addSource(anchor: string, _prev: AddState, form: FormData): Promise<AddState> {
+  if (!isAnchorId(anchor)) return { error: "Invalid request." };
+
+  const name = String(form.get("name") ?? "").trim();
+  const url = parseUrl(String(form.get("url") ?? ""));
+  const owner = form.get("owner") === "shared" ? "shared" : anchor;
+  const group = String(form.get("group") ?? "").trim();
+  const beat = String(form.get("beat") ?? "").trim();
+  const note = String(form.get("note") ?? "").trim() || undefined;
+  const tier = oneOf(tiers, form.get("tier"));
+  const frequency = oneOf(frequencies, form.get("frequency"));
+  const monitor = oneOf(monitors, form.get("monitor"));
+  const formats = form.getAll("formats").filter((f): f is OutputFormat => outputFormats.includes(f as OutputFormat));
+
+  if (!name) return { error: "Add a source name." };
+  if (!url) return { error: "Add a valid link (http or https)." };
+  if (!group) return { error: "Add a category." };
+  if (!beat) return { error: "Add a beat." };
+  if (!tier || !frequency || !monitor) return { error: "Pick a tier, check frequency and monitor." };
+  if (formats.length === 0) return { error: "Pick at least one format." };
+
+  const id = sourceId({ owner, name });
+  const result = await update("sources", (records): AddState => {
+    if (records.some((r) => r.id === id)) return { error: `${name} is already in this library.` };
+    records.push({
+      id,
+      name,
+      url,
+      owner,
+      group,
+      tier,
+      beat,
+      formats,
+      frequency,
+      monitor,
+      note,
+      active: true,
+      addedAt: new Date().toISOString(),
+    });
+    return { ok: true };
+  });
+
+  refresh();
+  return result;
+}
+
+export async function setSourceActive(anchor: string, id: string, active: boolean): Promise<ActionResult> {
+  if (!isAnchorId(anchor)) return { ok: false, error: "Invalid request." };
+
+  const result = await update("sources", (records): ActionResult => {
+    const source = records.find((r) => r.id === id && (r.owner === anchor || r.owner === "shared"));
+    if (!source) return { ok: false, error: "Source not found." };
+    source.active = active;
+    return { ok: true };
+  });
+
+  refresh();
+  return result;
 }

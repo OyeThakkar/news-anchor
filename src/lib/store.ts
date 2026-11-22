@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { anchorIds, type AnchorId } from "./anchors";
 import type { Review } from "./review";
 import { episodeSegments, totalSeconds, type Segment } from "./scripts";
+import { defaultSources, type Source } from "./sources";
 
 export type Kind = "scripts" | "videos" | "shorts";
 export const kinds: Kind[] = ["scripts", "videos", "shorts"];
@@ -41,13 +42,24 @@ export type ShortRecord = BaseRecord & {
   youtube: PlatformStatus;
 };
 
-type RecordOf = { scripts: ScriptRecord; videos: VideoRecord; shorts: ShortRecord };
+export type SourceRecord = Source & { id: string; active: boolean; addedAt?: string };
+
+type Collection = Kind | "sources";
+type RecordOf = { scripts: ScriptRecord; videos: VideoRecord; shorts: ShortRecord; sources: SourceRecord };
+
+export function sourceId(source: Pick<Source, "owner" | "name">) {
+  return `${source.owner}-${source.name}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 export function istDate(date: Date) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(date);
 }
 
-const seeds: { [K in Kind]: (now: Date) => RecordOf[K][] } = {
+const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
+  sources: () => defaultSources.map((s) => ({ ...s, id: sourceId(s), active: true })),
   scripts: (now) =>
     anchorIds.map((anchor) => ({
       id: `${anchor}-1`,
@@ -65,9 +77,9 @@ const seeds: { [K in Kind]: (now: Date) => RecordOf[K][] } = {
   shorts: () => [],
 };
 
-const fileFor = (kind: Kind) => path.join(process.cwd(), "data", `${kind}.json`);
+const fileFor = (kind: Collection) => path.join(process.cwd(), "data", `${kind}.json`);
 
-async function load<K extends Kind>(kind: K): Promise<RecordOf[K][]> {
+async function load<K extends Collection>(kind: K): Promise<RecordOf[K][]> {
   try {
     return JSON.parse(await readFile(fileFor(kind), "utf8"));
   } catch (error) {
@@ -78,7 +90,7 @@ async function load<K extends Kind>(kind: K): Promise<RecordOf[K][]> {
   }
 }
 
-async function save<K extends Kind>(kind: K, records: RecordOf[K][]) {
+async function save<K extends Collection>(kind: K, records: RecordOf[K][]) {
   await mkdir(path.dirname(fileFor(kind)), { recursive: true });
   await writeFile(fileFor(kind), JSON.stringify(records, null, 2));
 }
@@ -86,7 +98,7 @@ async function save<K extends Kind>(kind: K, records: RecordOf[K][]) {
 let queue: Promise<unknown> = Promise.resolve();
 
 // Serialise read-modify-write cycles so concurrent actions don't overwrite each other.
-export function update<K extends Kind, T>(kind: K, fn: (records: RecordOf[K][]) => T): Promise<T> {
+export function update<K extends Collection, T>(kind: K, fn: (records: RecordOf[K][]) => T): Promise<T> {
   const run = queue.then(async () => {
     const records = await load(kind);
     const result = fn(records);
@@ -103,6 +115,13 @@ export async function list<K extends Kind>(kind: K, anchor: AnchorId): Promise<R
   return records
     .filter((r) => r.anchor === anchor)
     .sort((a, b) => b.date.localeCompare(a.date) || b.serial - a.serial);
+}
+
+// All sources, or the ones an anchor monitors (their own plus the shared layer).
+export async function getSources(anchor?: AnchorId) {
+  await connection();
+  const records = await load("sources");
+  return anchor ? records.filter((s) => s.owner === anchor || s.owner === "shared") : records;
 }
 
 export async function get<K extends Kind>(kind: K, anchor: AnchorId, id: string) {

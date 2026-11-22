@@ -19,7 +19,7 @@ Open http://localhost:3000.
   - **Videos**: long-form YouTube videos (daily 7-10 min episode, weekly 20-24 min)
   - **Shorts**: vertical shorts (3-15/day) with separate Instagram and YouTube status
   - **Scripts**: scripts for review, each with a John Oliver-style segment breakdown
-  - **Library & Data Sources**: feed-monitoring sheet (source, anchor, beat, format, check frequency, monitored by)
+  - **Library & Data Sources**: feed-monitoring sheet (source, anchor, beat, format, check frequency, monitored by); add, deactivate and reactivate sources
 
 ## Review flow
 
@@ -30,7 +30,7 @@ the 60-minute window. Rejected items are cancelled.
 ## Where the content lives
 
 - `src/lib/anchors.ts`: personas and publishing targets
-- `src/lib/sources.ts`: the source library and monitoring settings
+- `src/lib/sources.ts`: the starting source library (copied into `data/sources.json` on first run; add and deactivate sources in the portal)
 - `src/lib/scripts.ts`: episode segments and draft lines
 - `src/lib/review.ts`: approval rules, including the 60-minute auto-approval
-- `data/*.json`: saved scripts, videos and shorts (created on first run, not committed)
+- `data/*.json`: saved sources, scripts, videos and shorts (created on first run, not committed)

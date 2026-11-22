@@ -1,14 +1,34 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
-import { accent, anchors, publishingTargets as t, resolveAnchor } from "@/lib/anchors";
+import { accent, anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { AUTO_APPROVE_MINUTES } from "@/lib/review";
 import { episodeSegments, formatTime, totalSeconds } from "@/lib/scripts";
-import { sourcesFor } from "@/lib/sources";
+import { getSources } from "@/lib/store";
+
+async function activeSources(anchor: AnchorId) {
+  return (await getSources(anchor)).filter((s) => s.active);
+}
+
+async function SourcesStat({ anchor }: { anchor: AnchorId }) {
+  const library = await activeSources(anchor);
+  return (
+    <Stat
+      label="Active sources"
+      value={library.length}
+      hint={`${library.filter((s) => s.owner === anchor).length} own, ${library.filter((s) => s.owner === "shared").length} shared`}
+    />
+  );
+}
+
+async function LiveFeedCount({ anchor }: { anchor: AnchorId }) {
+  const library = await activeSources(anchor);
+  return library.filter((s) => s.frequency === "Live" || s.frequency === "Hourly").length;
+}
 
 export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">) {
   const id = await resolveAnchor(params);
   const a = anchors[id];
-  const library = sourcesFor(id);
   const shortsFromEpisode = episodeSegments.filter((s) => s.shortsCut).length;
 
   return (
@@ -23,11 +43,9 @@ export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">
           hint={`${shortsFromEpisode} can be cut from the episode`}
         />
         <Stat label="Weekly long-form" value="1" hint={`${t.weekly.minMinutes}-${t.weekly.maxMinutes} min`} />
-        <Stat
-          label="Sources"
-          value={library.length}
-          hint={`${library.filter((s) => s.owner === id).length} own, ${library.filter((s) => s.owner === "shared").length} shared`}
-        />
+        <Suspense fallback={<Stat label="Active sources" value="…" />}>
+          <SourcesStat anchor={id} />
+        </Suspense>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -71,7 +89,10 @@ export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">
               <Link href={`/${id}/library`} className="block hover:text-zinc-100">
                 <span className="text-zinc-200">Pick today&apos;s story</span>
                 <span className="block text-xs text-zinc-500">
-                  {library.filter((s) => s.frequency === "Live" || s.frequency === "Hourly").length} live or hourly
+                  <Suspense fallback="…">
+                    <LiveFeedCount anchor={id} />
+                  </Suspense>{" "}
+                  live or hourly
                   feeds
                 </span>
               </Link>
