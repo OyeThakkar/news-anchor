@@ -3,12 +3,16 @@ import path from "node:path";
 import Image from "next/image";
 import { accent, anchors, type AnchorId } from "@/lib/anchors";
 
-const extensions = ["png", "jpg", "jpeg", "webp"];
+const imageExtensions = ["png", "jpg", "jpeg", "webp"];
 
-// Portraits live in public/anchors/<id>.<ext>; until one exists, show a styled placeholder.
-export function portraitSrc(id: AnchorId) {
+function findAsset(id: AnchorId, extensions: string[]) {
   const ext = extensions.find((e) => existsSync(path.join(process.cwd(), "public", "anchors", `${id}.${e}`)));
   return ext ? `/anchors/${id}.${ext}` : null;
+}
+
+// Portraits live in public/anchors/<id>.<ext>; an optional <id>.mp4 plays as a "live" portrait on large views.
+export function portraitSrc(id: AnchorId) {
+  return findAsset(id, imageExtensions);
 }
 
 export function AnchorPortrait({
@@ -21,17 +25,37 @@ export function AnchorPortrait({
   className?: string;
 }) {
   const src = portraitSrc(id);
+  const video = size === "lg" ? findAsset(id, ["mp4", "webm"]) : null;
   const shape = size === "sm" ? "h-11 w-11 rounded-full" : "aspect-[4/5] w-full rounded-2xl";
+  const alt = `${anchors[id].name}, AI anchor`;
+
+  if (video) {
+    return (
+      <div className={`relative overflow-hidden ${shape} ${className}`}>
+        <video
+          src={video}
+          poster={src ?? undefined}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label={alt}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
 
   if (src) {
     return (
       <div className={`relative overflow-hidden ${shape} ${className}`}>
         <Image
           src={src}
-          alt={`${anchors[id].name}, AI anchor`}
+          alt={alt}
           fill
-          sizes={size === "sm" ? "44px" : "(min-width: 1024px) 360px, 100vw"}
-          className="object-cover"
+          sizes={size === "sm" ? "88px" : "(min-width: 1024px) 360px, 100vw"}
+          // Small avatars zoom in on the face, which sits in the upper middle of both portraits.
+          className={size === "sm" ? "origin-[50%_38%] scale-[1.7] object-cover" : "object-cover object-top"}
           priority={size === "lg"}
         />
       </div>

@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { accent, anchorIds, anchors } from "@/lib/anchors";
+import { accent, anchorIds, anchors, type AnchorId } from "@/lib/anchors";
 
 const anchorLinks = [
   { label: "Dashboard", path: "" },
@@ -27,7 +28,7 @@ function NavLink({ href, label, active, activeClass }: { href: string; label: st
   );
 }
 
-export function Sidebar() {
+export function Sidebar({ portraits }: { portraits: Record<AnchorId, string | null> }) {
   const pathname = usePathname();
 
   return (
@@ -55,9 +56,21 @@ export function Sidebar() {
         {anchorIds.map((id) => (
           <div key={id}>
             <p className={`mb-1.5 flex items-center gap-2 px-3 text-xs font-semibold uppercase tracking-wider ${accent[id].text}`}>
-              <span className={`h-5 w-5 rounded-full bg-gradient-to-br ${accent[id].avatar} text-center text-[10px] leading-5 text-white`}>
-                {anchors[id].name[0]}
-              </span>
+              {portraits[id] ? (
+                <span className="relative h-6 w-6 overflow-hidden rounded-full ring-1 ring-white/20">
+                  <Image
+                    src={portraits[id]}
+                    alt=""
+                    fill
+                    sizes="48px"
+                    className="origin-[50%_38%] scale-[1.7] object-cover"
+                  />
+                </span>
+              ) : (
+                <span className={`h-5 w-5 rounded-full bg-gradient-to-br ${accent[id].avatar} text-center text-[10px] leading-5 text-white`}>
+                  {anchors[id].name[0]}
+                </span>
+              )}
               {anchors[id].name}
             </p>
             <div className="flex flex-col gap-0.5">

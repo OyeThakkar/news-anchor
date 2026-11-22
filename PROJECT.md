@@ -143,7 +143,7 @@ Earlier days load as fully published; the latest day loads pending, so the revie
 | Video generation | Simulated: a 2-minute delay, then a preview render of the script |
 | Publishing to YouTube / Instagram | Simulated: status changes to Published / Posted on approval |
 | Automated source monitoring and script drafting | Not built yet; the library is a managed list |
-| Anchor portraits | Slot ready; drop `reema.png` / `siddharth.png` into `public/anchors/` (prompts in `public/anchors/PROMPTS.md`) |
+| Anchor portraits | Added in `public/anchors/`: Reema (still + looping "live" video, Hailuo) and Siddharth (still, Leonardo Lucid Origin). Prompts in `public/anchors/PROMPTS.md` |
 | Storage | Local JSON files in `data/` (fine for a single instance; move to a database for production) |
 | Authentication | None yet |
 
@@ -197,7 +197,7 @@ filesystem may reset between deploys, which resets the demo state; that is expec
 
 ## 9. Suggested next steps
 
-1. Generate and add the two anchor portraits.
+1. Animate Siddharth's portrait (like Reema's live clip) and give both anchors a consistent voice.
 2. Connect a real video-generation provider (AI avatar and voice) behind the existing "generate on approval" step.
 3. Connect the YouTube Data API and Instagram Graph API for real publishing.
 4. Automate source monitoring (RSS and alerts) and first-draft script generation from the library.

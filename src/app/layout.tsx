@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { portraitSrc } from "@/components/anchor-portrait";
 import { Sidebar } from "@/components/sidebar";
 import "./globals.css";
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full bg-slate-950 text-slate-200">
-        <Sidebar />
+        <Sidebar portraits={{ reema: portraitSrc("reema"), siddharth: portraitSrc("siddharth") }} />
         <main className="min-w-0 flex-1 px-8 py-8">{children}</main>
       </body>
     </html>

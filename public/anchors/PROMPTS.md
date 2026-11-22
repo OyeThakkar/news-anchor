@@ -1,7 +1,8 @@
 # Anchor portraits
 
-Save portraits here as `reema.png` and `siddharth.png` (`.jpg` / `.webp` also work). The Profile pages and
-dashboard pick them up automatically; until then they show a placeholder.
+Save portraits here as `<anchor>.png` (`.jpg` / `.webp` also work). The Profile pages, dashboard and sidebar pick
+them up automatically; until then they show a placeholder. An optional `<anchor>.mp4` plays as a looping "live"
+portrait on the Profile page, with the still used as its poster frame. Keep the still and the video the same face.
 
 Both are original, fictional faces. Do not prompt for, or accept, a likeness of any real person.
 
