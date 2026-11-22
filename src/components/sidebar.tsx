@@ -54,6 +54,10 @@ export function Sidebar() {
           </div>
         ))}
       </nav>
+
+      <p className="mt-auto px-3 pt-4 text-[11px] leading-snug text-zinc-600">
+        Prototype: video generation and YouTube / Instagram publishing are simulated.
+      </p>
     </aside>
   );
 }

@@ -45,6 +45,28 @@ function Countdown({ deadline }: { deadline: string }) {
   );
 }
 
+function Generating({ until }: { until: string }) {
+  const router = useRouter();
+  const [now, setNow] = useState(() => Date.now());
+  const remaining = new Date(until).getTime() - now;
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 5_000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (remaining <= 0) router.refresh();
+  }, [remaining, router]);
+
+  const minutes = Math.max(1, Math.ceil(remaining / 60_000));
+  return (
+    <span className="text-xs text-violet-300" suppressHydrationWarning>
+      Generating video… ready in ~{minutes} min
+    </span>
+  );
+}
+
 export function ReviewControls({
   kind,
   anchor,
@@ -53,6 +75,7 @@ export function ReviewControls({
   deadline,
   decidedAt,
   note,
+  generatingUntil,
 }: {
   kind: Kind;
   anchor: string;
@@ -61,6 +84,7 @@ export function ReviewControls({
   deadline: string;
   decidedAt?: string;
   note?: string;
+  generatingUntil?: string;
 }) {
   const [pending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState<Exclude<Decision, "approved"> | null>(null);
@@ -79,6 +103,8 @@ export function ReviewControls({
     });
   }
 
+  if (generatingUntil) return <Generating until={generatingUntil} />;
+
   if (state !== "pending") {
     const { label, className } = stateLabels[state];
     return (
@@ -95,7 +121,7 @@ export function ReviewControls({
             disabled={pending}
             onClick={() => run(() => resubmitItem(kind, anchor, id))}
           >
-            Resubmit for review
+            {kind === "scripts" ? "Resubmit for review" : "Regenerate video"}
           </button>
         )}
         {error && <span className="text-xs text-red-400">{error}</span>}

@@ -1,6 +1,10 @@
 export const AUTO_APPROVE_MINUTES = 60;
 const AUTO_APPROVE_MS = AUTO_APPROVE_MINUTES * 60 * 1000;
 
+// How long video generation takes after a script is approved (simulated in this prototype).
+export const RENDER_MINUTES = 2;
+export const RENDER_MS = RENDER_MINUTES * 60 * 1000;
+
 export type Decision = "approved" | "rejected" | "rework";
 export type ApprovalState = "pending" | "approved" | "auto-approved" | "rejected" | "rework";
 export type Review = { decision: Decision; at: string; note?: string } | null;
@@ -17,6 +21,11 @@ export function approvalOf(item: Reviewable, now = new Date()): { state: Approva
   const deadline = deadlineOf(item);
   if (now >= deadline) return { state: "auto-approved", at: deadline };
   return { state: "pending" };
+}
+
+// Media records become reviewable once generation finishes, which is stored as `submittedAt`.
+export function isRendering(item: Reviewable, now = new Date()) {
+  return !item.review && now < new Date(item.submittedAt);
 }
 
 export function isApproved(state: ApprovalState) {

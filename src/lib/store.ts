@@ -2,8 +2,9 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { connection } from "next/server";
 import { anchorIds, type AnchorId } from "./anchors";
-import type { Review } from "./review";
-import { episodeSegments, totalSeconds, type Segment } from "./scripts";
+import { approvalOf, isApproved, RENDER_MS, type Review } from "./review";
+import { demoScripts } from "./demo-scripts";
+import { episodeSegments, totalSeconds, type SegmentTemplate } from "./scripts";
 import { defaultSources, type Source } from "./sources";
 
 export type Kind = "scripts" | "videos" | "shorts";
@@ -20,26 +21,25 @@ type BaseRecord = {
   review: Review;
 };
 
-export type ScriptSegment = Omit<Segment, "lines"> & { line: string };
+export type ScriptSegment = SegmentTemplate & { line: string };
 
 export type ScriptRecord = BaseRecord & {
   format: "Episode" | "Weekly" | "Short";
   segments: ScriptSegment[];
+  storyTitle?: string;
+  factBox?: string[];
+  sources?: { label: string; url: string }[];
 };
 
-export type PublishStatus = "Not published" | "Published";
-export type PlatformStatus = "Not posted" | "Posted" | "Failed";
-
+// Videos and shorts are generated from approved scripts. `submittedAt` is when generation
+// finishes and the 60-minute review window opens; approval publishes them.
 export type VideoRecord = BaseRecord & {
+  scriptId: string;
   format: "Episode" | "Weekly";
-  videoUrl: string;
-  youtube: PublishStatus;
 };
 
 export type ShortRecord = BaseRecord & {
-  videoUrl: string;
-  instagram: PlatformStatus;
-  youtube: PlatformStatus;
+  scriptId: string;
 };
 
 export type SourceRecord = Source & { id: string; active: boolean; addedAt?: string };
@@ -60,8 +60,10 @@ export function istDate(date: Date) {
 
 const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
   sources: () => defaultSources.map((s) => ({ ...s, id: sourceId(s), active: true })),
-  scripts: (now) =>
-    anchorIds.map((anchor) => ({
+  scripts: (now) => {
+    const demo = demoScripts(now, istDate(now));
+    if (demo.length > 0) return demo;
+    return anchorIds.map((anchor) => ({
       id: `${anchor}-1`,
       anchor,
       serial: 1,
@@ -72,7 +74,8 @@ const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
       segments: episodeSegments.map(({ lines, ...s }) => ({ ...s, line: lines[anchor] })),
       submittedAt: now.toISOString(),
       review: null,
-    })),
+    }));
+  },
   videos: () => [],
   shorts: () => [],
 };
@@ -109,8 +112,49 @@ export function update<K extends Collection, T>(kind: K, fn: (records: RecordOf[
   return run;
 }
 
+// Create the video or short for every approved script that doesn't have one yet. Runs on read,
+// so auto-approved scripts get their media without a background job.
+async function syncMedia(now = new Date()) {
+  const scripts = await load("scripts");
+  const approved = scripts
+    .map((script) => ({ script, approval: approvalOf(script, now) }))
+    .filter(({ approval }) => isApproved(approval.state))
+    .sort((a, b) => a.approval.at!.getTime() - b.approval.at!.getTime() || a.script.serial - b.script.serial);
+
+  for (const kind of ["videos", "shorts"] as const) {
+    const wanted = approved.filter(({ script }) => (script.format === "Short") === (kind === "shorts"));
+    const existing = new Set((await load(kind)).map((r) => r.scriptId));
+    if (wanted.every(({ script }) => existing.has(script.id))) continue;
+
+    await update(kind, (records) => {
+      const have = new Set(records.map((r) => r.scriptId));
+      for (const { script, approval } of wanted) {
+        if (have.has(script.id)) continue;
+        const serial = Math.max(0, ...records.filter((r) => r.anchor === script.anchor).map((r) => r.serial)) + 1;
+        const base = {
+          id: `${kind === "videos" ? "v" : "sh"}-${script.id}`,
+          anchor: script.anchor,
+          serial,
+          date: script.date,
+          topic: script.topic,
+          durationSec: script.durationSec,
+          scriptId: script.id,
+          submittedAt: new Date(approval.at!.getTime() + RENDER_MS).toISOString(),
+          review: null,
+        };
+        if (kind === "videos") {
+          (records as VideoRecord[]).push({ ...base, format: script.format === "Weekly" ? "Weekly" : "Episode" });
+        } else {
+          (records as ShortRecord[]).push(base);
+        }
+      }
+    });
+  }
+}
+
 export async function list<K extends Kind>(kind: K, anchor: AnchorId): Promise<RecordOf[K][]> {
   await connection();
+  if (kind !== "scripts") await syncMedia();
   const records = await load(kind);
   return records
     .filter((r) => r.anchor === anchor)

@@ -17,8 +17,9 @@ export type ReviewRow = {
   durationSec: number;
   submittedAt: string;
   review: Review;
-  view: { label: string; href: string; external?: boolean };
+  view: { label: string; href: string } | null;
   statuses: string[];
+  generatingUntil?: string;
 };
 
 export function ReviewTable({
@@ -61,14 +62,12 @@ export function ReviewTable({
                 </td>
                 <td className="whitespace-nowrap px-4 py-3 font-mono text-zinc-300">{formatTime(row.durationSec)}</td>
                 <td className="whitespace-nowrap px-4 py-3">
-                  {row.view.external ? (
-                    <a href={row.view.href} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
-                      {row.view.label} ↗
-                    </a>
-                  ) : (
+                  {row.view ? (
                     <Link href={row.view.href} className="text-sky-400 hover:underline">
                       {row.view.label}
                     </Link>
+                  ) : (
+                    <span className="text-zinc-500">Not ready</span>
                   )}
                 </td>
                 {row.statuses.map((status, i) => (
@@ -85,6 +84,7 @@ export function ReviewTable({
                     deadline={deadlineOf(row).toISOString()}
                     decidedAt={approval.at && formatTimeOfDay(approval.at)}
                     note={row.review?.note}
+                    generatingUntil={row.generatingUntil}
                   />
                 </td>
               </tr>

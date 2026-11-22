@@ -138,3 +138,54 @@ export function formatTime(seconds: number) {
   const s = seconds % 60;
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
+
+export type SegmentTemplate = Omit<Segment, "lines">;
+
+// Vertical short, about 75 seconds.
+export const shortSegments: SegmentTemplate[] = [
+  {
+    id: "hook",
+    title: "Hook",
+    durationSec: 5,
+    purpose: "Stop the scroll in the first five seconds.",
+    beats: ["One line, on screen as text too"],
+    sourceTiers: [],
+    shortsCut: false,
+  },
+  {
+    id: "facts",
+    title: "Fact box",
+    durationSec: 10,
+    purpose: "The three shared facts, compressed. Identical for both anchors.",
+    beats: ["3 facts on screen", "Source named"],
+    sourceTiers: ["Wire", "Primary"],
+    shortsCut: false,
+  },
+  {
+    id: "take",
+    title: "The take",
+    durationSec: 40,
+    purpose: "The anchor's reading of the story, ending in a punchline.",
+    beats: ["Angle", "One supporting fact", "Punchline"],
+    sourceTiers: ["Analysis", "Data"],
+    shortsCut: false,
+  },
+  {
+    id: "jab",
+    title: "The jab",
+    durationSec: 10,
+    purpose: "Quick exchange with the other anchor.",
+    beats: ["One line each way"],
+    sourceTiers: [],
+    shortsCut: false,
+  },
+  {
+    id: "closer",
+    title: "Closer",
+    durationSec: 10,
+    purpose: "Sign-off and the \"who won?\" vote.",
+    beats: ["Sign-off", "Vote prompt"],
+    sourceTiers: [],
+    shortsCut: false,
+  },
+];

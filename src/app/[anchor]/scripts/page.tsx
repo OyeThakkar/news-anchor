@@ -1,7 +1,8 @@
 import { PageHeader } from "@/components/ui";
 import { ReviewTable } from "@/components/review-table";
 import { anchors, resolveAnchor, type AnchorId } from "@/lib/anchors";
-import { AUTO_APPROVE_MINUTES, approvalOf, blockedStatus } from "@/lib/review";
+import { scriptVideoStatus } from "@/lib/pipeline";
+import { AUTO_APPROVE_MINUTES } from "@/lib/review";
 import { list } from "@/lib/store";
 
 export default async function ScriptsPage({ params }: PageProps<"/[anchor]/scripts">) {
@@ -12,7 +13,7 @@ export default async function ScriptsPage({ params }: PageProps<"/[anchor]/scrip
       <PageHeader
         eyebrow={anchors[id].name}
         title="Scripts"
-        description={`Review each script before it goes to video. Scripts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved for video production.`}
+        description={`Review each script before it goes to video. Approved scripts are turned into videos and shorts automatically. Scripts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved.`}
       />
       <ScriptsTable anchor={id} />
     </>
@@ -20,7 +21,10 @@ export default async function ScriptsPage({ params }: PageProps<"/[anchor]/scrip
 }
 
 async function ScriptsTable({ anchor }: { anchor: AnchorId }) {
+  // Loading videos and shorts first also generates media for any newly approved scripts.
+  const [videos, shorts] = await Promise.all([list("videos", anchor), list("shorts", anchor)]);
   const scripts = await list("scripts", anchor);
+  const media = new Map([...videos, ...shorts].map((m) => [m.scriptId, m]));
 
   return (
     <ReviewTable
@@ -30,9 +34,9 @@ async function ScriptsTable({ anchor }: { anchor: AnchorId }) {
       empty="No scripts yet."
       rows={scripts.map((s) => ({
         ...s,
-        subtitle: s.format,
+        subtitle: s.storyTitle ? `${s.format} · ${s.storyTitle}` : s.format,
         view: { label: "View script", href: `/${anchor}/scripts/${s.id}` },
-        statuses: [blockedStatus(approvalOf(s).state) ?? "Cleared for video"],
+        statuses: [scriptVideoStatus(s, media.get(s.id))],
       }))}
     />
   );

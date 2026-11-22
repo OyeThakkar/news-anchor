@@ -1,0 +1,225 @@
+{
+  "date": "2026-11-20",
+  "stories": [
+    {
+      "id": "shenzhen-g3-india",
+      "title": "Trump, Xi, Putin meet in Shenzhen; India 'takes note', politics flares",
+      "factBox": [
+        "On 19 Nov 2026, Trump, Xi and Putin held their first-ever trilateral meeting, about 90 minutes long, on the sidelines of the APEC summit in Shenzhen, China.",
+        "Their joint statement listed four areas: UN reform, higher oil production, curbing international courts that 'abuse their jurisdiction', and dialogue on nuclear risks, with no time frame.",
+        "On 20 Nov, India's MEA said it had 'taken note' and awaits 'concrete outcomes'; India is not among APEC's 21 members, and PM Modi had met Trump at the Quad summit in Manila on 17 Nov."
+      ],
+      "sources": [
+        { "label": "The Hindu: India 'takes note' of Trump-Xi-Putin summit, awaits more details", "url": "https://www.thehindu.com/news/national/india-takes-note-of-trump-xi-putin-summit-awaits-more-details/article71724998.ece" },
+        { "label": "The Hindu: BJP hits back at Rahul Gandhi over 'compromised PM' jibe, calls him 'clueless on geopolitics'", "url": "https://www.thehindu.com/news/national/bjp-hits-back-at-rahul-gandhi-over-compromised-pm-jibe-calls-him-clueless-on-geopolitics/article71724446.ece" },
+        { "label": "The Hindu: Compromised PM can never sit at this table, says Rahul Gandhi", "url": "https://www.thehindu.com/news/national/congress-leader-rahul-gandhi-on-xi-trump-putin-trilateral-meeting/article71723024.ece" },
+        { "label": "NPR: Trump, Xi and Putin meet as global alliances hang in the balance", "url": "https://npr.org/2026/11/18/nx-s1-6040432/trump-xi-and-putin-shenzhen-china-russia-usa" },
+        { "label": "CNA: Xi, Trump and Putin hold unprecedented trilateral talks", "url": "https://channelnewsasia.com/east-asia/trump-xi-putin-trilateral-talks-apec-shenzhen-6563591" },
+        { "label": "White House: U.S.-Russia-China Heads of State Declaration toward Peace", "url": "https://whitehouse.gov/briefings-statements/2026/11/u-s-russia-china-heads-of-state-declaration-toward-peace" },
+        { "label": "The Hindu: PM Modi says cultural connect can guarantee global peace (SCO forum)", "url": "https://www.thehindu.com/news/national/pm-modi-address-at-sco-civilisational-dialogue-forum/article71725120.ece" },
+        { "label": "The Hindu: Morning Digest, November 21, 2026", "url": "https://www.thehindu.com/news/morning-digest-november-21-2026/article71726209.ece" },
+        { "label": "BBC: US and India reach trade deal, Trump says after Modi call (2 Feb 2026)", "url": "https://bbc.com/news/articles/c5yve1x9zv0o" },
+        { "label": "PBS NewsHour: Trump's 50% tariffs on India over Russian oil purchases take effect", "url": "https://pbs.org/newshour/economy/trumps-50-tariffs-on-india-over-russian-oil-purchases-take-effect" }
+      ]
+    },
+    {
+      "id": "cert-in-payment-fraud",
+      "title": "CERT-In flags unauthorised payments via tampered business workflows",
+      "factBox": [
+        "On 20 Nov 2026, CERT-In said unauthorised transactions had occurred at service providers to banks and financial firms, and at tech providers supporting government-linked payments.",
+        "According to CERT-In, attackers altered business records or approval settings and then used legitimate payment processes; it did not say how much money was paid out or by whom.",
+        "The advisory, CIAD-2026-0062, also flagged AI-driven 'agentic' attack tools; unauthorised transactions can be reported on the National Cyber Crime Reporting Portal or helpline 1930."
+      ],
+      "sources": [
+        { "label": "Reuters: India cyber agency reports unauthorised transactions at payment firms", "url": "https://www.reuters.com/world/india-cyber-agency-reports-unauthorised-transactions-payment-firms-2026-11-20/" },
+        { "label": "BusinessLine (Reuters copy): CERT-In flags unauthorised transactions, AI-driven cyberattacks in India", "url": "https://thehindubusinessline.com/money-and-banking/cert-in-flags-unauthorised-transactions-across-banking-financial-and-government-payment-platforms/article71727168.ece/amp" },
+        { "label": "Elets CIO: CERT-In advisory flags payment fraud and agentic AI attacks", "url": "https://cio.eletsonline.com/artificial-intelligence/cert-in-advisory-payment-fraud/77047" },
+        { "label": "Mezha: India's CERT-In reports unauthorized payments amid AI cyberattacks", "url": "https://mezha.net/eng/news/8e5446e6_india-s_cert-in_reports_unauthorized/" }
+      ]
+    },
+    {
+      "id": "cyclone-akvan-odisha",
+      "title": "Cyclone Akvan makes landfall near Gopalpur; 47 trains cancelled",
+      "factBox": [
+        "Cyclone Akvan crossed the Odisha coast near Gopalpur on the morning of 20 Nov 2026, with winds of 70–80 kmph gusting to 90 kmph, according to the IMD.",
+        "Over 3 lakh people were evacuated and 9,341 cyclone shelters were readied; officials reported no major damage or loss of life.",
+        "Chief Minister Mohan Charan Majhi said 47 trains were cancelled and 28 rescheduled."
+      ],
+      "sources": [
+        { "label": "Hindustan Times: Cyclone Akvan crosses Odisha coast near Gopalpur, brings heavy rain", "url": "https://hindustantimes.com/india-news/cyclone-akvan-completes-landfall-on-odisha-coast-lashes-state-with-heavy-rain-101795162109520.html" },
+        { "label": "Business Standard: Cyclone Akvan: Odisha evacuates over 300K people, 47 trains cancelled", "url": "https://www.business-standard.com/india-news/cyclone-akvan-odisha-evacuates-over-300k-people-47-trains-cancelled-126112000078_1.html" },
+        { "label": "Indian Express: Coastal, southern Odisha receive heavy rainfall as Cyclone Akvan makes landfall", "url": "https://indianexpress.com/article/india/cyclone-akvan-odisha-gopalpur-landfall-casualties-evacuation-10971128/" },
+        { "label": "Indian Express: School assembly headlines, November 20, 2026", "url": "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-november-20-2026-ministry-cancels-10-train-services-as-cyclone-akvan-approaches-the-coast-10969461/" }
+      ]
+    },
+    {
+      "id": "nepal-pm-shah-india-visit",
+      "title": "Nepal PM Balendra Shah to make first bilateral visit to India",
+      "factBox": [
+        "On 20 Nov 2026, India and Nepal announced that Nepal PM Balendra Shah will make a state visit to India on 22–23 Nov at PM Modi's invitation.",
+        "It is Shah's first bilateral foreign visit since taking office on 27 March, after his Rastriya Swatantra Party won the March election.",
+        "He leads a 34-member delegation; talks are expected to cover trade, energy, connectivity and air routes, with MoUs on education, health, agriculture, space and disaster management."
+      ],
+      "sources": [
+        { "label": "Reuters via US News: Nepal PM Balendra Shah to visit India, meet Modi", "url": "https://www.usnews.com/news/world/articles/2026-11-20/nepal-pm-balendra-shah-to-visit-india-meet-modi" },
+        { "label": "New Indian Express: Nepal PM Balendra Shah to make first bilateral foreign visit to India on November 22", "url": "https://newindianexpress.com/world/2026/Nov/20/nepal-pm-balendra-shah-to-make-first-bilateral-foreign-visit-to-india-on-november-22" },
+        { "label": "India Today (PTI): Nepal's Balendra Shah heads to India on Nov 22, to meet PM Modi", "url": "https://indiatoday.in/world/story/nepal-pm-india-visit-balendra-shah-to-arrive-on-november-22-meet-narendra-modi-for-bilateral-talks-ptag-3042989-2026-11-20" },
+        { "label": "Kathmandu Post: Air routes, economic package top agenda for Shah's India visit", "url": "https://kathmandupost.com/national/2026/11/16/shah-to-make-two-day-state-visit-to-india-from-november-22" },
+        { "label": "BBC: A new Nepal, an old neighbour - Balendra Shah's India test on first visit", "url": "https://bbc.com/news/articles/c6jre8xd83qgo" }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "anchor": "reema",
+      "format": "Episode",
+      "storyId": "shenzhen-g3-india",
+      "topic": "Teen Kursiyan, Ek Tweet aur 'Taken Note': India ki Table Kahan Hai?",
+      "segments": [
+        {
+          "id": "cold-open",
+          "line": "[COLD OPEN: Reema at her desk. Next to her, one empty plastic chair with a paper sign: 'INDIA']\n\nPehle facts. Opinions baad mein. Thursday ko Shenzhen mein ek round table laga: Trump, Xi, Putin. Teen kursiyan, nabbe minute. Friday ko Delhi mein doosra round table laga, jahan Congress aur BJP ne poora din ek doosre par kursiyan uchhaali. [SFX: chair scraping] Ek side se 'compromised PM', doosri side se 'clueless on geopolitics'. Aur Ministry of External Affairs ne poori kahani ek line mein nipta di: 'We have taken note.' Note kiya gaya. Hum bhi kar rahe hain."
+        },
+        {
+          "id": "fact-box",
+          "line": "[GRAPHIC: FACT BOX | Sources: The Hindu, NPR, CNA, White House]\n\nTeen facts, bina masale ke.\n\nEk: 19 November ko Trump, Xi aur Putin ne Shenzhen mein, APEC summit ke sidelines par, apni pehli-ever trilateral meeting ki. Lagbhag 90 minute.\n\nDo: joint statement mein chaar areas: UN reform, zyada oil production, international courts ko 'abuse of jurisdiction' se rokna, aur nuclear risks par dialogue. Timeline? Koi nahi.\n\nTeen: 20 November ko MEA spokesperson Randhir Jaiswal ne kaha ki India ne meeting ko 'taken note' kiya hai aur 'concrete outcomes' ka intezaar hai. India APEC ke 21 members mein hai hi nahi. Aur PM Modi 17 November ko Manila ke Quad summit mein Trump se mil chuke the."
+        },
+        {
+          "id": "chronology",
+          "line": "Toh ye kursi wala drama shuru kahan se hua? [GRAPHIC: 'KURSI TRACKER', an empty chair icon on a world map] Har turning point par main ye kursi ek table se doosri table par shift karungi.\n\nApril 1955, Bandung. Asia-Africa conference, Nehru wahan maujood. Phir September 1961, Belgrade: Non-Aligned Movement ki pehli summit. India ka stand: hum kisi bloc ki table par nahi baithenge. [Reema drags the chair to the centre] Kursi number one: khud chhodi gayi kursi. Ek naye azaad desh ka statement tha ki hum kisi ke junior partner nahi banenge. Lekin October-November 1962 ki China jung ne dikhaya ki akele baithne ki bhi keemat hoti hai.\n\n9 August 1971. India aur Soviet Union ne Treaty of Peace, Friendship and Cooperation sign kiya. Non-aligned, lekin Moscow ke saath treaty. Relationship status: 'it's complicated.' [drags chair towards a red flag]\n\nJuly 2005 se September 2008. Manmohan Singh aur George W. Bush ka civil nuclear deal, aur September 2008 mein NSG waiver. Isi deal par Left ne UPA se support wapas liya, aur July 2008 mein sarkar ko trust vote face karna pada. Matlab jo party aaj 'compromised' ka certificate baant rahi hai, uski apni sarkar ek American deal par confidence motion tak pahunch gayi thi. [drags chair towards a blue flag]\n\n2017: ek hi saal, do clubs. June mein India SCO ka full member bana, jismein China aur Russia hain. November mein Manila mein Quad ki officials-level baithak revive hui: US, Japan, Australia ke saath. [GRAPHIC: chair split in two halves] Supporters isse 'multi-alignment' kehte hain, critics 'do naavon mein pair'. Chart dono ke liye same hai. Kursi tracker confused hai. Main bhi.\n\nAur sabse taaza chapter. 27 August 2025 ko US ne Indian goods par 50% tariff lagaya, jismein 25% penalty Russian oil kharidne ki thi. 2 February 2026 ko Trump ne trade deal announce ki: tariff 18%, aur Trump ke mutabik India Russian oil khareedna band karega. [GRAPHIC: price tag on the chair: '18%'] Strategic autonomy free nahi aati. Uska bhi tariff schedule hota hai.\n\nToh 70 saal ka summary: India ne kabhi kisi ek table par permanent kursi nahi maangi. Ye policy thi, Nehru se Modi tak. Isliye jab 2026 mein koi poochta hai 'hum us table par kyun nahi', toh pehle ye poochiye: kaun si table, kiski table, aur us table ka bill kaun bharega?"
+        },
+        {
+          "id": "now",
+          "line": "Ab aate hain aaj par. Official claim versus data.\n\nClaim number one, Leader of Opposition Rahul Gandhi, X par: 'If Congress were in power, India's Prime Minister would be sitting at this table.' Fact-check: ye APEC ke sidelines ki meeting thi, aur India APEC ka member hi nahi hai. Toh Congress PM wahan kis capacity mein hote? [beat] Waise BJP ne iska jawab bhi foreign policy se nahi, AI se diya: national spokesperson Gaurav Bhatia ne ek AI-generated image share ki, jismein Rahul Gandhi Trump ko drinks serve kar rahe hain. Geopolitics, ab meme format mein.\n\nClaim number two, BJP media convenor Ashish Usha Agarwal: India BRICS, Quad, SCO, G20 aur G7 jaise platforms par competing powers se engage karta hai. [GRAPHIC: CHART 'India kahan baithta hai': BRICS ✔ | Quad ✔ | SCO ✔ | G20 ✔ | G7 (guest) ✔ | APEC ✘] Chart sahi hai. Lekin chart ye nahi batata ki jab teen nuclear powers UN reform, oil supply aur nuclear risk par agenda likhte hain, toh India ki raay kya hai. MEA ka jawab: abhi assessment nahi.\n\nAb data. NPR ke mutabik trilateral session dedh ghanta chala, kuch time interpreters mein gaya, aur summit ka key deliverable 'arguably the image itself' tha. China ne nuclear arms control talks mein shaamil hone par baar-baar objection kiya hai, CNA ke mutabik. Aur CNA ne ye bhi report kiya ki is meeting ne chhoti economies ke leaders ko unnerve kiya hai, jinhe dar hai ki badi powers unke interests ignore karengi.\n\nToh affected kaun hai? Har woh desh jo table par nahi tha. Jo, conveniently, duniya ke zyada-tar desh hain. Aur is list mein, is baar, hum bhi hain."
+        },
+        {
+          "id": "cross-talk",
+          "line": "[SPLIT SCREEN: Siddharth joins]\n\nSIDDHARTH: Reema ji, aadab. Seedhi baat: India ka us table par na hona failure nahi hai. Hum APEC mein nahi, lekin Quad, SCO, BRICS, sab mein hain. Teen badi powers ki photo-op mein chauthi kursi maangna apni strategic autonomy giravi rakhna hota.\n\nREEMA: Fair point. Aur maanti hoon, 'this table' wala post APEC ki membership list padhe bina likha gaya lagta hai. Lekin 'taken note' koi policy nahi hai, Siddharth. Woh meri housing society ka circular hai.\n\nSIDDHARTH: Aur aapka kursi tracker? Aap kursi ko itna ghuma rahi hain ki kursi ko chakkar aa gaye.\n\nREEMA: Woh Indian foreign policy ka accurate simulation hai.\n\nSIDDHARTH: Ek baat par sehmat?\n\nREEMA: Foreign policy AI memes aur 'Pak Fan Boy' tweets se nahi chalni chahiye. Kisi bhi taraf se.\n\nSIDDHARTH: Bilkul. Pehle tathya, phir tark."
+        },
+        {
+          "id": "forward",
+          "line": "Toh aage kya?\n\nPehla, kya badalna chahiye. MEA ne khud kaha hai ki 'fuller account of the concrete outcomes' aane ke baad assessment denge. Hum us promise ko note kar rahe hain. Hamara bhi 'taken note'. Joint statement mein oil production, nuclear risk dialogue aur UN reform ki baat hai. India ke liye in sab ka matlab kya hai, ye Parliament mein, sabke saamne bataya jaana chahiye. Aur Opposition ko bhi ye sawaal Parliament mein poochne chahiye, X par photo ke caption mein nahi.\n\nDoosra, aap kya kar sakte hain. Primary documents padhiye. White House ne declaration publish kiya hai, MEA ki briefings online hain. Aur koi bhi image share karne se pehle check kijiye ki woh asli hai ya AI. Is hafte ek national party ke official spokesperson ne AI image share ki. Aapke family WhatsApp group ka standard usse ooncha ho sakta hai.\n\nTeesra, kya dekhna hai. Ek: SCO Civilisational Dialogue Forum, Delhi ke Purana Qila mein 20 se 22 November, jise PM Modi ne inaugurate kiya. Pakistan May 2025 ke conflict ke baad pehli baar SCO forum attend kar raha hai. Do: Nepal ke PM Balendra Shah 22–23 November ko Delhi mein. Padosi ke saath rishta, jahan table hamari hai. Teen: Quad Business Leaders Forum, jo MEA ke mutabik agle saal hoga. Aur chautha: kya US-Russia-China ka nuclear dialogue sach mein shuru hota hai, ya sirf statement rehta hai? NPR ke mutabik usmein koi time frame nahi diya gaya."
+        },
+        {
+          "id": "big-finish",
+          "line": "[Reema picks up the empty 'INDIA' chair, puts it behind her own desk and sits on it]\n\nKursi tracker ki final reading: 1961 mein kursi khud chhodi, 1971 mein Moscow ki taraf khiskayi, 2008 mein Washington ki taraf, 2017 mein dono taraf, aur 2026 mein 18% tariff ke saath wapas mili. Aur aaj woh kursi Shenzhen mein nahi, Delhi ke Purana Qila mein hai, jahan India host hai. [beat] Table chahiye toh table banaiye. Lekin jab doosre table banayein, toh 'taken note' se aage bhi kuch boliye. Aur Opposition se bhi: table ki photo tweet karne se pehle, table ka address check kar lijiye.\n\nGood night, aur apni EMI check kar lijiye. Aaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "cert-in-payment-fraud",
+      "topic": "Taala Nahi Toda, Address Badal Diya: Naya Payment Fraud",
+      "segments": [
+        { "id": "hook", "line": "Chor ne aapka account hack nahi kiya. Bas payment ka approval badal diya. Suniye." },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | CERT-In via Reuters] 20 November: CERT-In ne bataya, banks ke service providers aur government-linked payment tech firms par unauthorised transactions hue. Records aur approvals badle gaye. Kitna paisa gaya? Bataya nahi." },
+        { "id": "take", "line": "Pehle facts. Opinions baad mein. CERT-In ke mutabik attackers ne payment system ka darwaza nahi toda. Unhone woh records badle jo decide karte hain ki paisa kisko jaayega, aur phir system ne poori imaandaari se paisa bhej diya. Matlab chor ne taala nahi toda, bas ghar ka address badal diya. Sawaal: kitna paisa gaya, kis company se, kiske customers ka? Koi number nahi. Who pays, who is accountable? Unauthorised transaction dikhe, toh turant 1930 par call kijiye ya cybercrime.gov.in par report kijiye. Kyunki jab tak official number aayega, tab tak aapka number lag chuka hoga." },
+        { "id": "jab", "line": "Siddharth kahenge, 'System par bharosa rakhiye.' Siddharth, isi bharose ka toh fayda uthaya gaya. System ne fraud ko bhi bharose se approve kar diya." },
+        { "id": "closer", "line": "Good night, aur apni EMI, aur bank statement, check kar lijiye. Aaj kaun jeeta? App mein vote kariye." }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "cyclone-akvan-odisha",
+      "topic": "Akvan vs Odisha: Jab State Time Par Pahunchta Hai",
+      "segments": [
+        { "id": "hook", "line": "Cyclone aaya, aur Odisha ka chart dekhiye: jaan ka nuksaan, zero reported. Ye kaise hua?" },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | HT, Business Standard, Indian Express] 20 November subah Cyclone Akvan Gopalpur ke paas Odisha coast se takraya. 3 lakh se zyada log evacuate hue. 47 trains cancel, 28 reschedule." },
+        { "id": "take", "line": "Pehle facts. Opinions baad mein. 9,341 cyclone shelters, 418 rescue teams. CM Mohan Charan Majhi ka target tha 'Zero Casualty', aur officials ke mutabik koi jaan ka nuksaan report nahi hua. Aur ye number: hazaaron pregnant women pehle hi shift ki gayi, aur 1,300 se zyada ne shelters aur hospitals mein bachchon ko janm diya. [GRAPHIC: chart with a tiny baby icon] Ye welfare state ka sabse achha chart hai. Ab Railways se ek ummeed: cancelled tickets ka refund bhi utni hi speed se aaye, jitni speed se evacuation hua. Cyclone ke liye 'Zero Casualty', refund ke liye 'Zero Delay'." },
+        { "id": "jab", "line": "Siddharth kahenge, 'Ye Odisha ki parampara hai.' Bilkul. Aur parampara ka bhi budget hota hai, Siddharth. Use cut mat hone dijiye." },
+        { "id": "closer", "line": "Good night, aur apni EMI check kar lijiye. Aaj kaun jeeta? App mein vote kariye." }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "nepal-pm-shah-india-visit",
+      "topic": "Rapper PM Delhi Mein: Nepal Ko Photo Milegi Ya Air Route?",
+      "segments": [
+        { "id": "hook", "line": "36 saal ka rapper, ab Nepal ka Prime Minister. Aur pehla bilateral daura? Delhi." },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | Reuters, PTI, New Indian Express] 20 November ko announce hua: Nepal PM Balendra Shah 22–23 November ko India aayenge. March mein office ke baad pehla bilateral visit. Agenda: trade, energy, connectivity, air routes." },
+        { "id": "take", "line": "Pehle facts. Opinions baad mein. BBC ke mutabik India-Nepal trade 9 billion dollar se zyada hai, aur heavily India ke favour mein. [GRAPHIC: lopsided trade bar] Kathmandu Post ke mutabik Nepal saalon se Bhairahawa, Mahendranagar jaise extra air entry routes maang raha hai, aur India security ka hawala deta raha hai. May mein Shah ne border dispute mein China aur UK ka involvement chaha, Delhi ne third parties reject kiye. Toh sawaal: Nepal ko kya milega, MoUs ki photo ya asli air route? 'Neighbourhood First' tab hai jab neighbour ko bhi first feel ho." },
+        { "id": "jab", "line": "Siddharth kahenge, 'Roti-beti ka rishta hai.' Sahi hai. Lekin us roti ke trade mein deficit bhi toh hai, Siddharth." },
+        { "id": "closer", "line": "Good night, aur apni EMI check kar lijiye. Aaj kaun jeeta? App mein vote kariye." }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Episode",
+      "storyId": "shenzhen-g3-india",
+      "topic": "Gol Mez, Group Photo aur Hamari Purani Aadat: Apni Raah",
+      "segments": [
+        {
+          "id": "cold-open",
+          "line": "[COLD OPEN: Siddharth turns the pages of an old family photo album]\n\nPehle tathya, phir tark. Thursday ko Shenzhen mein ek group photo khichi: Trump, Xi aur Putin, ek gol mez ke gird. Aur Friday ko Delhi mein us photo par utni hi bahas hui jitni hamare khaandaan mein shaadi ki group photo par hoti thi: 'Mujhe photo mein kyun nahi bulaya?' [SFX: old camera shutter] Meri daadi kehti thi, 'Beta, har photo mein dikhna zaroori nahi. Kuch log photo khichwate hain, kuch log ghar chalate hain.'"
+        },
+        {
+          "id": "fact-box",
+          "line": "[GRAPHIC: FACT BOX | Sources: The Hindu, NPR, CNA, White House]\n\nTeen tathya, tasalli se.\n\nPehla: 19 November ko Trump, Xi aur Putin ne Shenzhen mein, APEC summit ke sidelines par, apni pehli trilateral meeting ki. Lagbhag 90 minute ki.\n\nDoosra: joint statement mein chaar maamle the: UN reform, oil production badhana, international courts ko 'abuse of jurisdiction' se rokna, aur nuclear risks par dialogue. Koi samay-seema nahi.\n\nTeesra: 20 November ko Videsh Mantralaya ke pravakta Randhir Jaiswal ne kaha ki India ne is meeting ko 'taken note' kiya hai aur 'concrete outcomes' ka intezaar hai. India APEC ke 21 sadasyon mein nahi hai, aur Pradhan Mantri 17 November ko Manila mein Quad summit par Trump se mil chuke the."
+        },
+        {
+          "id": "chronology",
+          "line": "Ab zara purana album kholte hain. [GRAPHIC: sepia album page, 'DAADI KA ALBUM'] Har panne par ek tasveer, aur har tasveer mein India thoda alag kone mein khada hai. Ye hamari aadat hai, kamzori nahi.\n\nPanna ek: September 1961, Belgrade. Non-Aligned Movement ki pehli summit, Pandit Nehru wahan. Do mahashaktiyan, do khemey, aur India ne kaha: hum apni raah chalenge. Daadi kehti thi, 'Jitni chaadar, utne pair pasaaro.' Naye azaad desh ki chaadar chhoti thi, isliye usne kisi khemey ka kambal nahi odha. Phir October-November 1962 ki China jung ne sikhaya ki apni raah par chalne ke liye apne joote bhi majboot hone chahiye.\n\nPanna do: 9 August 1971. Indira Gandhi ki sarkar ne Soviet Union ke saath Treaty of Peace, Friendship and Cooperation sign ki. Non-aligned desh, lekin zaroorat ke waqt dost chun liya. Daadi isse kehti thi, 'Saanp bhi mar jaaye, aur laathi bhi na toote.'\n\nPanna teen: May 1998, Pokhran. Vajpayee sarkar ne nuclear tests kiye, America ne sanctions lagaye. Tab kaha gaya ki India akela pad jaayega. Aur dekhiye, September 2008 tak, Manmohan Singh sarkar ke daur mein, wahi America NSG waiver ke liye India ke saath khada tha. Sarkarein badli, raah wahi rahi. Isse kehte hain institutional continuity.\n\nPanna chaar: 2017. June mein India SCO ka full member bana, China aur Russia ke saath. November mein Manila mein Quad ki baithak phir shuru hui, America, Japan aur Australia ke saath. Ek hi saal mein do albums mein tasveer. [GRAPHIC: same India photo pasted in two albums] In my day, ek ghar mein ek hi album hota tha. Ab India ke paas albums ki poori almari hai.\n\nPanna paanch, sabse taaza: 27 August 2025 ko America ne Indian saamaan par 50% tariff lagaya, jismein 25% Russian tel kharidne ki saza thi. 2 February 2026 ko Trump ne deal ka elaan kiya, tariff 18%. Aur Trump ke mutabik India Russian tel band karega. Apni raah ki bhi keemat hoti hai, aur us keemat par bhi mol-bhaav hota hai.\n\nToh 65 saal ka saar ye hai: India ne kabhi kisi ek album mein permanent jagah nahi maangi. Nehru se Modi tak, ye ek hi kitaab ke panne hain."
+        },
+        {
+          "id": "now",
+          "line": "Ab aaj ki baat. Pehle Opposition ka daava. Leader of Opposition Rahul Gandhi ne X par likha: 'A compromised PM can never sit at this table.' Do din pehle, 18 November ko, University of Chicago mein unhone India ko global maamlon mein 'side player' kaha tha. Tathya ye hai ki ye APEC ke kinare ki meeting thi, aur India APEC ka sadasya hi nahi.\n\nAb sarkar ki taraf ka daava. BJP media convenor Ashish Usha Agarwal ne yaad dilaya: India 2016 mein MTCR, 2017 mein Wassenaar Arrangement, 2018 mein Australia Group ka sadasya bana, aur 2017 mein SCO ka full member. [GRAPHIC: CHART 'Kitne Clubs, Kitni Kursiyan': MTCR 2016 | Wassenaar 2017 | Australia Group 2018 | SCO 2017 | Quad | BRICS | G20] Ye sansthaon mein dheere-dheere jagah banane ka record hai, ek photo ka nahi.\n\nLekin imaandaari se, hamari taraf bhi kuch log hadd paar kar gaye. Party ne Rahul Gandhi ko waiter dikhane wali AI image share ki, aur ek neta ne unhe 'Pak Fan Boy' keh diya. In my day, siyasi virodhi ko jawab bhashan se diya jaata tha, Photoshop se nahi.\n\nAb data. NPR ke mutabik baatcheet chhoti thi, aur summit ka asli haasil shayad 'the image itself' tha. China ne nuclear arms control mein shaamil hone ki American koshishon ko baar-baar thukraaya hai. CNA ke mutabik is meeting ki tulna 1945 ke Yalta se ho rahi hai, jahan teen netaon ne duniya ke hisse tay kiye the, aur isse chhoti economies ke leaders pareshaan hain.\n\nAur usi din Pradhan Mantri Delhi ke Purana Qila mein SCO ke pehle Civilisational Dialogue Forum ka udghatan kar rahe the. Ek mez Shenzhen mein, ek Delhi mein."
+        },
+        {
+          "id": "cross-talk",
+          "line": "[SPLIT SCREEN: Reema joins]\n\nREEMA: Siddharth, steelman karti hoon: table par na hona theek hai. Lekin us table par UN reform, oil supply aur nuclear risk ki baat hui. Ye sab India ko affect karta hai. Aur MEA ka jawab sirf 'taken note'?\n\nSIDDHARTH: Maanta hoon, Reema ji. Ek desh ki raay ek line se zyada honi chahiye. Wahan aap sahi hain.\n\nREEMA: Aur aapka album? 1961 se 2026 tak sirf photos. Koi receipt nahi?\n\nSIDDHARTH: Receipts aapke charts mein hain, Reema ji. Aapke charts itne hain ki hamare ghar ki deewar par calendar ki jagah nahi bachi.\n\nREEMA: Ek baat par sehmat?\n\nSIDDHARTH: Videsh neeti par bahas Sansad mein ho, memes mein nahi.\n\nREEMA: Aur dono taraf se. Pehle facts, opinions baad mein."
+        },
+        {
+          "id": "forward",
+          "line": "Toh aage ka raasta kya ho?\n\nPehla, kya badalna chahiye. Hamari ek achhi parampara rahi hai. 1994 mein Narasimha Rao sarkar ne Geneva mein UN Human Rights Commission mein India ka delegation lead karne ke liye Opposition ke neta Atal Bihari Vajpayee ko bheja tha. Videsh neeti par ek awaaz. Aaj wahi bharosa chahiye. Sarkar Opposition ko brief kare, aur Opposition sawaal Sansad mein poochhe, foreign campus par nahi. Aur MEA ne kaha hai ki 'fuller account' aane ke baad assessment denge. Woh assessment aana chahiye, aur saaf bhasha mein.\n\nDoosra, aap kya kar sakte hain. Asli dastavez padhiye: White House ne declaration chhapa hai, MEA ki briefings online hain. Aur koi bhi tasveer aage bhejne se pehle dekh lijiye ki woh khichi gayi hai ya AI se banayi gayi hai. Is hafte dono taraf ke bade-bade log is imtihaan mein fail hue hain. Aap pass ho sakte hain.\n\nTeesra, kya dekhna hai. Purana Qila mein SCO forum 22 November tak chalega, aur Pakistan May 2025 ke sangharsh ke baad pehli baar shaamil hai. 22–23 November ko Nepal ke Pradhan Mantri Balendra Shah Delhi mein honge, apne pehle bilateral daure par. MEA ke mutabik Quad Business Leaders Forum agle saal hoga. Aur dekhiye ki Shenzhen ke nuclear dialogue ka koi time-table aata hai ya nahi, kyunki NPR ke mutabik abhi koi samay-seema nahi di gayi hai."
+        },
+        {
+          "id": "big-finish",
+          "line": "[Siddharth closes the album, then opens the last empty page and pastes a new photo: the SCO forum at Purana Qila]\n\nDaadi ke album mein India hamesha thoda alag kone mein khada rehta tha. 1961 mein Belgrade, 1971 mein Moscow ke saath, 2008 mein Washington ke saath, 2017 mein dono ke saath. Aur aaj ka panna? Shenzhen ki tasveer kisi aur ke album mein hai. Hamare album mein Purana Qila hai, jahan mez hamari hai aur mehmaan hamare. [beat] Daadi kehti thi, 'Doosron ki shaadi mein naachne se pehle, apne ghar ka aangan saaf rakho.' Aur aangan saaf rakhne ka matlab apne logon ko seedha jawab dena bhi hai. Toh MEA, woh assessment zaroor dijiyega.\n\nShubh ratri. Aaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "cert-in-payment-fraud",
+      "topic": "Munshi ka Bahi-Khaata: CERT-In ki Chetavani",
+      "segments": [
+        { "id": "hook", "line": "Aaj ke chor taala nahi todte. Seedha munshi ka bahi-khaata badal dete hain." },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | CERT-In via Reuters] 20 November: CERT-In ne kaha, banks ke service providers aur government-linked payment tech firms par unauthorised transactions hue. Records aur approvals badle gaye. Raqam nahi batayi." },
+        { "id": "take", "line": "Pehle tathya, phir tark. Purane zamane mein seth ji ka munshi hota tha: bahi-khaata munshi ke paas, tijori ki chaabi seth ji ke paas. Chor ko dono chahiye the. CERT-In ke mutabik aaj ke chor sirf bahi-khaata badal dete hain, yaani records aur approvals, aur tijori apne aap khul jaati hai. Achhi baat: sansthayein jaag rahi hain. CERT-In ne advisory jaari ki, aur RBI ne banks se cyber taiyaari ka saboot maanga. Lekin daadi kehti thi, 'Chaabi kisi ko bhi do, hisaab khud dekho.' Kuch galat dikhe toh 1930 par call kijiye, ya cybercrime.gov.in par report kijiye." },
+        { "id": "jab", "line": "Reema ji poochengi, 'Kitna paisa gaya?' Sawaal jaayaz hai, CERT-In ne bataya nahi. Par Reema ji, chart baad mein banaiye, password pehle badaliye." },
+        { "id": "closer", "line": "Shubh ratri, aur apna bahi-khaata khud dekhiye. Aaj ki bahas kaun jeeta, Reema ya main? App mein vote kariye." }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "cyclone-akvan-odisha",
+      "topic": "Baarish Se Pehle Chhat: Odisha ka Cyclone Sabak",
+      "segments": [
+        { "id": "hook", "line": "Cyclone ka naam Akvan. Odisha ka jawab: 'Hum pehle se taiyaar the.'" },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | HT, Business Standard, Indian Express] 20 November subah Akvan Gopalpur ke paas Odisha coast se takraya. 3 lakh se zyada log surakshit jagah pahunchaye gaye. 47 trains radd, 28 ka samay badla." },
+        { "id": "take", "line": "Pehle tathya, phir tark. IMD ke mutabik landfall ke waqt hawa 70 se 80 kmph thi, aur toofan vertical wind shear ki wajah se kamzor bhi pada. Lekin taiyaari poori thi: 9,341 shelters, 418 teams, ODRAF, NDRF aur Fire Services. CM ne Puri ke Collector ko Kartik ke niyam nibhaane wali buzurg Habishyali mahilaon ka khaas khayal rakhne ko kaha. Daadi kehti thi, 'Chhat baarish se pehle theek karo, baarish mein nahi.' Odisha ne chhat bhi theek ki, aur 1,300 se zyada nanhe mehmaan shelters aur hospitals mein surakshit aaye. Railways ne trains radd ki. Asuvidha hui, par suraksha pehle." },
+        { "id": "jab", "line": "Reema ji refund ka chart lekar aayengi. Zaroor laiye. Par ek chart un logon ka bhi banaiye jo aaj surakshit ghar laut rahe hain." },
+        { "id": "closer", "line": "Shubh ratri, Odisha. Aur baaki sab, aaj ki bahas kaun jeeta, Reema ya main? App mein vote kariye." }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "nepal-pm-shah-india-visit",
+      "topic": "Gen Z PM, Purana Padosi: Balen Shah ka Delhi Daura",
+      "segments": [
+        { "id": "hook", "line": "Rapper-PM, Gen Z andolan ke baad satta. Aur pehli videsh yatra? Wahi purani parampara: Delhi." },
+        { "id": "facts", "line": "[GRAPHIC: FACT BOX | Reuters, PTI, New Indian Express] 20 November ko elaan hua: Nepal ke PM Balendra Shah 22–23 November ko India aayenge. March mein pad sambhalne ke baad pehla bilateral daura. Trade, urja, connectivity par baat." },
+        { "id": "take", "line": "Pehle tathya, phir tark. New Indian Express ke mutabik naye Nepali PM ka pehla bilateral daura India hona purani parampara hai, haalaanki 2024 mein KP Sharma Oli ne pehla daura China ka kiya tha. Shah 34 logon ka delegation la rahe hain, aur education, health, agriculture, space aur disaster management par MoUs exchange honge. Lekin Delhi ko bhi ek baat samajhni hogi: BBC ke mutabik Nepal mein bahut log India ke 'Big Brother' andaaz se naraaz rehte hain. Gen Z ko bhaashan nahi, barabari chahiye. Daadi kehti thi, 'Padosi se rishta chai se banta hai, hukm se nahi.'" },
+        { "id": "jab", "line": "Reema ji trade deficit ka chart dikhayengi. Par Kathmandu Post ke mutabik Shah ne Bengaluru-Ahmedabad ghoomne ka offer nahi liya. Unhe sightseeing nahi, kaam chahiye." },
+        { "id": "closer", "line": "Shubh ratri, aur padosi ko chai par bulaiye. Aaj kaun jeeta, Reema ya main? App mein vote kariye." }
+      ]
+    }
+  ],
+  "notes": "EPISODE: The 'SCO summit' in the brief was actually the first SCO Civilisational Dialogue Forum at Purana Qila, Delhi (20–22 Nov), which PM Modi inaugurated on 20 Nov (The Hindu). The scripts call it a forum, not a summit. Rahul Gandhi's quote, the BJP replies (Bhatia's AI image, Agarwal's membership list and MTCR 2016 / Wassenaar 2017 / Australia Group 2018, Bhandari's 'Pak Fan Boy') and the MEA line are all from The Hindu (PTI). Summit details come from NPR, CNA and the White House declaration page, which only shows its opening paragraph. NPR and The Hindu give the four joint-statement areas. The NYT and Politico pieces were paywalled or blocked, so we did not use them. Chronology dates are well-established history: Bandung Apr 1955; first NAM summit in Belgrade Sep 1961; Sino-Indian war Oct–Nov 1962; Indo-Soviet treaty 9 Aug 1971; Pokhran-II May 1998 and US sanctions; Indo-US nuclear deal Jul 2005 to NSG waiver Sep 2008; Left withdrew support and UPA trust vote Jul 2008; SCO full membership Jun 2017; Quad officials' meeting revived in Manila Nov 2017; Rao sent Vajpayee to lead India's UNHRC delegation in Geneva in 1994. The 50% US tariff from 27 Aug 2025 comes from PBS and BBC. The 2 Feb 2026 deal (18%, and Trump's claim that India would stop buying Russian oil) comes from BBC and is attributed to Trump in the script. CERT-IN: we could not open the Reuters page (401). We used Reuters copy via BusinessLine, plus Elets CIO and Mezha. The viewer tip (1930 / National Cyber Crime Reporting Portal, cybercrime.gov.in) is backed by Elets CIO's summary of the advisory. The advisory itself is aimed at organisations. The 'RBI sought proof of cyber preparedness' line is from the BusinessLine/Reuters copy. CYCLONE: Sources disagree on several numbers. Evacuations: over 3 lakh (HT, Business Standard) vs 3.72 lakh (Indian Express); the scripts say '3 lakh se zyada'. Pregnant women shifted: 4,170 / 4,470 / 4,000+. Births: 1,317 (Business Standard, earlier) / 1,400+ (IE) / 1,450 (HT); the scripts say '1,300 se zyada' and 'shelters aur hospitals'. Trains: 47 cancelled and 28 rescheduled (CM via Business Standard and HT); IE says 'more than 41'. Reema's refund line is a hope, not a claim that refunds are late. The Habishyali detail is from Business Standard. NEPAL: We could not open US News/Reuters (timeout); the search snippet confirms the 20 Nov Reuters story. The 27 March start date, the 34-member delegation and Oli's 2024 China-first visit are from New Indian Express. The May border-dispute episode is from India Today/PTI. Trade above $9bn and the 'Big Brother' resentment are from BBC. Air routes and Shah declining the Bengaluru/Ahmedabad offer are from Kathmandu Post. Daadi's sayings are lines for the fictional character, not real quotes."
+}

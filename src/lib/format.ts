@@ -16,17 +16,19 @@ export function formatTimeOfDay(date: Date) {
 
 export function statusClass(status: string) {
   switch (status) {
-    case "Cleared for video":
-    case "Ready to publish":
-    case "Ready to post":
-      return "border-emerald-600/50 text-emerald-300";
     case "Published":
     case "Posted":
       return "border-sky-600/50 text-sky-300";
+    case "Generating":
+    case "Generating video":
+      return "border-violet-600/50 text-violet-300";
+    case "Video awaiting approval":
+      return "border-zinc-500 text-zinc-200";
     case "On hold for rework":
+    case "Video on hold for rework":
       return "border-amber-600/50 text-amber-300";
     case "Cancelled":
-    case "Failed":
+    case "Video cancelled":
       return "border-red-600/50 text-red-300";
     default:
       return "";

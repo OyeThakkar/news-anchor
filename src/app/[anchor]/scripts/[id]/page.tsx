@@ -4,9 +4,10 @@ import { Badge, Card } from "@/components/ui";
 import { ReviewControls } from "@/components/review-controls";
 import { accent, anchors, isAnchorId } from "@/lib/anchors";
 import { formatDate, formatTimeOfDay, statusClass } from "@/lib/format";
-import { approvalOf, blockedStatus, deadlineOf } from "@/lib/review";
+import { scriptVideoStatus } from "@/lib/pipeline";
+import { approvalOf, deadlineOf, isRendering } from "@/lib/review";
 import { formatTime, withStartTimes } from "@/lib/scripts";
-import { get, serialLabel } from "@/lib/store";
+import { get, list, serialLabel } from "@/lib/store";
 
 type Params = Promise<{ anchor: string; id: string }>;
 
@@ -20,8 +21,9 @@ async function ScriptView({ params }: { params: Params }) {
   const script = await get("scripts", anchor, id);
   if (!script) notFound();
 
+  const media = (await list(script.format === "Short" ? "shorts" : "videos", anchor)).find((m) => m.scriptId === script.id);
   const approval = approvalOf(script);
-  const status = blockedStatus(approval.state) ?? "Cleared for video";
+  const status = scriptVideoStatus(script, media);
   const other = anchors[anchor === "reema" ? "siddharth" : "reema"];
 
   return (
@@ -54,6 +56,14 @@ async function ScriptView({ params }: { params: Params }) {
           <div>
             <p className="mb-0.5 text-xs text-zinc-500">Video status</p>
             <Badge className={statusClass(status)}>{status}</Badge>
+            {media && !isRendering(media) && (
+              <Link
+                href={`/${anchor}/${script.format === "Short" ? "shorts" : "videos"}/${media.id}`}
+                className="ml-2 text-xs text-sky-400 hover:underline"
+              >
+                View video
+              </Link>
+            )}
           </div>
           <div className="ml-auto">
             <p className="mb-1 text-xs text-zinc-500">Review</p>
@@ -69,10 +79,36 @@ async function ScriptView({ params }: { params: Params }) {
           </div>
         </div>
         <p className="mt-4 text-xs text-zinc-500">
-          Placeholders in {"{BRACES}"} are filled from the monitoring sheet. The fact box matches the other
-          anchor&apos;s episode; {other.name} appears as a cameo in &quot;The other side&quot;.
+          {script.factBox
+            ? `The fact box is shared with ${other.name}'s ${script.format === "Short" ? "short" : "episode"} on the same story.`
+            : `Placeholders in {BRACES} are filled from the monitoring sheet. The fact box matches ${other.name}'s episode.`}
+          {script.format !== "Short" && ` ${other.name} appears as a cameo in "The other side".`}
         </p>
       </Card>
+
+      {script.factBox && (
+        <div className="mb-6 grid gap-4 lg:grid-cols-2">
+          <Card title="Fact box">
+            {script.storyTitle && <p className="mb-3 text-sm text-zinc-400">{script.storyTitle}</p>}
+            <ol className="list-decimal space-y-2 pl-5 text-sm text-zinc-200">
+              {script.factBox.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ol>
+          </Card>
+          <Card title="Sources">
+            <ul className="space-y-2 text-sm">
+              {script.sources?.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">
+                    {source.label} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+      )}
 
       <ol className="space-y-4">
         {withStartTimes(script.segments).map((s, i) => (
@@ -89,24 +125,17 @@ async function ScriptView({ params }: { params: Params }) {
               </div>
               <p className="mb-3 text-sm text-zinc-400">{s.purpose}</p>
 
-              <div className="grid gap-4 lg:grid-cols-2">
-                <div>
-                  <p className="mb-1.5 text-xs uppercase tracking-wider text-zinc-500">Beats</p>
-                  <ul className="list-disc space-y-1 pl-5 text-sm text-zinc-300">
-                    {s.beats.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-1.5 text-xs uppercase tracking-wider text-zinc-500">Script</p>
-                  <blockquote className={`border-l-2 ${accent[anchor].border} pl-3 text-sm italic text-zinc-200`}>
-                    {s.line}
-                  </blockquote>
-                </div>
-              </div>
+              <blockquote
+                className={`whitespace-pre-line border-l-2 ${accent[anchor].border} pl-4 text-[15px] leading-relaxed text-zinc-100`}
+              >
+                {s.line}
+              </blockquote>
 
-              <div className="mt-4 flex flex-wrap gap-1.5">
+              <p className="mt-4 text-xs text-zinc-500">
+                <span className="uppercase tracking-wider">Beats:</span> {s.beats.join(" · ")}
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {s.sourceTiers.map((tier) => (
                   <Badge key={tier}>{tier} source</Badge>
                 ))}

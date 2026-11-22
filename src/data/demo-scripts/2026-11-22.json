@@ -1,0 +1,332 @@
+{
+  "date": "2026-11-22",
+  "stories": [
+    {
+      "id": "siang-dam-shah-dialogue",
+      "title": "Amit Shah backs 11,200 MW Siang dam, promises dialogue to Siang Valley",
+      "factBox": [
+        "On 21 Nov 2026 at Banderdewa near Itanagar, Home Minister Amit Shah called the proposed 11,200 MW Siang Upper Multipurpose Project (SUMP) a national project, important for Arunachal's development, India's energy security and strategic interests, and said concerns would be resolved through 'positive dialogue'.",
+        "Shah promised what he called the country's best rehabilitation package; in a memorandum to him, the Adi Bane Kebang United and the Siang Indigenous Farmers' Forum sought withdrawal of the project and said they would talk only on equal terms, 'certainly not at the gunpoint'.",
+        "The Centre sees SUMP as a counter to China's lower Yarlung Tsangpo hydropower project (around 60,000 MW), whose construction began on 19 July 2025 at an estimated 1.2 trillion yuan; SUMP itself is still at the pre-feasibility stage."
+      ],
+      "sources": [
+        { "label": "The Hindu: Siang mega dam issue will be addressed through dialogue: Amit Shah (21 Nov 2026)", "url": "https://www.thehindu.com/news/national/arunachal-pradesh/concerns-of-people-of-siang-valley-over-dam-project-to-be-addressed-through-dialogue-shah/article71727685.ece" },
+        { "label": "The New Indian Express (PTI): Shah assures 'dialogue' to address concerns on Siang Dam project (21 Nov 2026)", "url": "https://www.newindianexpress.com/india/2026/Nov/21/shah-assures-dialogue-to-address-concerns-on-siang-dam-project-says-no-kashmiri-youth-involved-in-terrorism" },
+        { "label": "Deccan Chronicle: Amit Shah assures 'dialogue' to address concerns on Siang Dam project (21 Nov 2026)", "url": "https://www.deccanchronicle.com/news/current-affairs/arunachal-pradesh-amit-shah-assures-dialogue-to-address-concerns-on-siang-dam-project-2006600" },
+        { "label": "Akashvani News: HM Amit Shah calls Siang project crucial for Arunachal's development and energy security (21 Nov 2026)", "url": "https://newsonair.gov.in/hm-amit-shah-calls-siang-project-crucial-for-arunachals-development-and-energy-security/" },
+        { "label": "India Today NE: Amit Shah assures best rehabilitation package for Siang project-affected people (21 Nov 2026)", "url": "https://www.indiatodayne.in/arunachal-pradesh/video/amit-shah-assures-best-rehabilitation-package-for-siang-project-affected-people-calls-for-dialogue-1478056-2026-11-21" },
+        { "label": "The Arunachal Times: No mega dam over Siang river, no talks at gunpoint: ABKU, SIFF (21 Nov 2026)", "url": "https://www.arunachaltimes.in/article/no-mega-dam-over-siang-river-no-talks-at-gunpoint-abku-siff" },
+        { "label": "The New Indian Express: The controversy surrounding Arunachal's Siang Dam (explainer, 19 Nov 2026)", "url": "https://www.newindianexpress.com/explainers/2026/Nov/19/the-controversy-surrounding-arunachals-siang-dam" },
+        { "label": "The Hindu: Arunachal Congress urges Centre not to impose Siang dam project (20 Nov 2026)", "url": "https://www.thehindu.com/news/national/arunachal-pradesh/arunachal-congress-urges-centre-not-to-impose-siang-dam-project-on-indigenous-communities/article71724604.ece" },
+        { "label": "Arunachal Observer (PTI): Four Siang dam protesters released after nearly a month in detention (7 Nov 2026)", "url": "https://arunachalobserver.org/2026/11/08/four-siang-dam-protesters-released-in-arunachal-after-nearly-month-in-detention" },
+        { "label": "DY365: Siang dam row: Arunachal govt releases four detained protesters (7 Nov 2026)", "url": "https://dy365live.com/arunachal-pradesh/siang-dam-row-arunachal-govt-releases-four-detained-protesters-after-nearly-a-month-12791951" },
+        { "label": "The Arunachal Times (archive): Villagers protest deployment of armed personnel for SUMP (23 May 2025)", "url": "https://archive.arunachaltimes.in/index.php/2025/05/23/villagers-protest-deployment-of-armed-personnel-for-sump" },
+        { "label": "The Indian Express: With central forces and drilling equipment brought in, locals restart protest against Siang dam (23 May 2025)", "url": "https://indianexpress.com/article/india/siang-dam-locals-protest-arunachal-drilling-equipment-10024697" },
+        { "label": "Down To Earth: Fresh anti-dam protests rock Arunachal's Adi heartland (24 May 2025)", "url": "https://www.downtoearth.org.in/rivers/fresh-anti-dam-protests-rock-arunachals-adi-heartland-with-state-government-offering-five-crores-for-consent-to-survey-siang-river" },
+        { "label": "The Hindu: Arunachal villagers protest security build-up for proposed mega dam (23 May 2025)", "url": "https://www.thehindu.com/news/national/arunachal-villagers-protest-security-build-up-for-proposed-mega-dam/article69609916.ece" },
+        { "label": "Xinhua: Chinese premier announces construction of Yarlung Zangbo hydropower project (19 Jul 2025)", "url": "https://english.news.cn/20250719/a2e4342fa63a492c95f646c73bd3313c/c.html" },
+        { "label": "China Daily: Mega-hydro project launched in Xizang (21 Jul 2025; notes December 2024 approval)", "url": "https://global.chinadaily.com.cn/a/202507/21/WS687d7f5ca310ad07b5d90e68.html" },
+        { "label": "Made in China Journal: China's ambitions for the Lower Yarlung Tsangpo Project (7 Aug 2025)", "url": "https://madeinchinajournal.com/2025/08/07/infrastructure-and-state-building-chinas-ambitions-for-the-lower-yarlung-tsangpo-project/" },
+        { "label": "NEnow: Thousands rally in Tinsukia against Siang mega dam (20 Nov 2026)", "url": "https://nenow.in/north-east-news/assam/assam-thousands-rally-in-tinsukia-against-siang-mega-dam-in-arunachal.html" },
+        { "label": "Counterview: Siang Valley communities resist dam as 'arrests, militarisation' spark rights concerns (3 Nov 2026)", "url": "https://www.counterview.net/2026/11/siang-valley-communities-resist-11500.html" }
+      ]
+    },
+    {
+      "id": "brahmos-made-in-up",
+      "title": "PM Modi: BrahMos used in Operation Sindoor now made in Uttar Pradesh",
+      "factBox": [
+        "At the 5th Kaushal Deekshant Samaroh in Lucknow on 21 Nov 2026, PM Modi said the BrahMos missile 'that gave sleepless nights to the enemy during Operation Sindoor' is now also being manufactured in Uttar Pradesh.",
+        "The BrahMos Integration and Testing Facility in Lucknow was inaugurated virtually on 11 May 2025, and its first batch of missiles was flagged off on 18 Oct 2025; the 200-acre, Rs 380 crore unit is expected to produce about 100 missile systems a year.",
+        "In the same speech, Modi said daily PNG connections were stuck at 15,000–20,000 against a target of one lakh a day because of a shortage of plumbers."
+      ],
+      "sources": [
+        { "label": "ETManufacturing (ANI): 'BrahMos missile that gave sleepless nights to enemy now made in UP': PM Modi", "url": "https://manufacturing.economictimes.indiatimes.com/news/aerospace-defence/brahmos-missile-that-gave-sleepless-nights-to-enemy-now-made-in-up-pm-modi/136070720" },
+        { "label": "ABP Live (ANI): BrahMos missiles that gave sleepless nights to enemy now being made in UP, says PM Modi (21 Nov 2026)", "url": "https://news.abplive.com/news/brahmos-missiles-that-gave-sleepless-nights-to-enemy-during-operation-sindoor-now-being-made-in-up-says-pm-modi-1876962" },
+        { "label": "Republic World (ANI): 'BrahMos Missile that Gave Sleepless Nights To Enemy Now Made in UP' (21 Nov 2026)", "url": "https://www.republicworld.com/defence/brahmos-missile-that-gave-sleepless-nights-to-enemy-now-made-in-up-pm-modi-2026-11-21-141554" },
+        { "label": "The NewsHour (PIB release): PM participates in the 5th Kaushal Deekshant Samaroh in Lucknow (21 Nov 2026)", "url": "https://www.thenewshour.org/news-plus/pib-news-and-releases/prime-minister-shri-narendra-modi-participates-in-the-5th-kaushal-deekshant-samaroh-in-lucknow-uttar-pradesh/" },
+        { "label": "DD News: India flags off first BrahMos missile batch from Lucknow facility (18 Oct 2025)", "url": "https://ddnews.gov.in/en/india-flags-off-first-brahmos-missile-batch-from-lucknow-facility-every-inch-of-pakistan-now-within-reach-says-rajnath-singh" },
+        { "label": "BrahMos Aerospace: Flag off ceremony of BRAHMOS from Lucknow", "url": "https://brahmos.com/get-gallery-images/108" },
+        { "label": "FirstIndia (ANI): BrahMos project symbolises country's growing confidence, strength: Rajnath Singh in Lucknow (18 Oct 2025)", "url": "https://firstindia.co.in/news/india/brahmos-project-symbolises-countrys-growing-confidence-strength-rajnath-singh-in-lucknow" },
+        { "label": "The New Indian Express: 'BrahMos missiles manufactured in UP giving sleepless nights to Pakistan': HM Amit Shah (25 Sep 2026)", "url": "https://www.newindianexpress.com/states/uttar-pradesh/2026/Sep/25/brahmos-missiles-manufactured-in-up-giving-sleepless-nights-to-pakistan-hm-amit-shah" }
+      ]
+    },
+    {
+      "id": "india-nepal-airspace-denial",
+      "title": "India denies seeking Nepal airspace for military flights via Bagdogra",
+      "factBox": [
+        "On 22 Nov 2026, Indian government sources rejected reports that India had asked Nepal to let military aircraft use its airspace via the Bagdogra entry point: 'No such demand has been made.'",
+        "Earlier reports (Onlinekhabar, IANS, 16 Nov) said India had sought Nepali airspace for international flights to and from Bagdogra, a civil enclave inside an IAF station, as a reciprocal deal for Nepal's long-pending request for a Bhairahawa air route.",
+        "Nepal PM Balendra Shah is on a state visit to India on 22–23 Nov, his first bilateral trip abroad since taking office in March 2026, with talks with PM Modi on 23 Nov."
+      ],
+      "sources": [
+        { "label": "WION: 'No such demand has been made': India rejects reports of seeking Nepal airspace for military flights (22 Nov 2026)", "url": "https://wionews.com/india-news/no-such-demand-has-been-made-india-rejects-reports-of-seeking-nepal-airspace-for-military-flights-1795337952119" },
+        { "label": "News Nation (ANI sources): Does India want to fly military aircraft through Nepal airspace? (22 Nov 2026, Hindi)", "url": "https://www.newsnationtv.com/world/does-india-want-to-fly-military-aircraft-through-nepal-airspace-truth-revealed-in-report-12831044" },
+        { "label": "Onlinekhabar English: India seeks Nepali airspace access for Bagdogra and Raxaul flights (16 Nov 2026)", "url": "https://english.onlinekhabar.com/india-seeks-nepali-airspace-bagdogra-raxaul-flights.html" },
+        { "label": "Social News XYZ (IANS): Nepal considers allowing use of its airspace for flights to India's Bagdogra (16 Nov 2026)", "url": "https://www.socialnews.xyz/2026/11/16/nepal-considers-allowing-use-of-its-airspace-for-flights-to-indias-bagdogra" },
+        { "label": "The Kathmandu Post: Air routes, economic package top agenda for Shah's India visit (16 Nov 2026)", "url": "https://kathmandupost.com/national/2026/11/16/shah-to-make-two-day-state-visit-to-india-from-november-22" },
+        { "label": "The Hindu BusinessLine: Nepal PM Balendra Shah to visit India on November 22-23 (20 Nov 2026)", "url": "https://www.thehindubusinessline.com/economy/nepal-pm-balendra-shah-to-visit-india-on-november-22-23/article71725112.ece" }
+      ]
+    },
+    {
+      "id": "army-itbp-buy-from-border-farmers",
+      "title": "Shah: Army, ITBP told to buy produce from Arunachal border villages",
+      "factBox": [
+        "At a cooperative conference in Itanagar on 22 Nov 2026, Amit Shah said the Home Ministry has told the ITBP and the Army not to procure produce from Tezpur or Guwahati but from local villages and cooperatives.",
+        "Shah said population has risen and migration has stopped in 40 Arunachal villages on the China border, and launched 199 Vibrant Villages Programme projects worth Rs 110.95 crore across 11 border districts.",
+        "Similar tie-ups exist elsewhere: Uttarakhand says its farmers did about Rs 17.5 crore of business with ITBP in two years, and ITBP in Ladakh earmarked an initial Rs 21 lakh under a May 2026 MoU."
+      ],
+      "sources": [
+        { "label": "Mathrubhumi English: 'Migration has stopped': Amit Shah says... (22 Nov 2026)", "url": "https://english.mathrubhumi.com/news/india/amit-shah-china-border-villages-arunachal-pradesh-population-rly4i5lc" },
+        { "label": "The News Mill (ANI): Amit Shah says population rises in 40 Arunachal villages bordering China (22 Nov 2026)", "url": "https://thenewsmill.com/2026/11/amit-shah-announces-population-growth-in-40-arunachal-pradesh-villages-bordering-china/" },
+        { "label": "Social News XYZ (IANS): HM Shah: 40 villages along India-China border see reverse migration (22 Nov 2026)", "url": "https://www.socialnews.xyz/2026/11/22/hm-shah-40-villages-along-india-china-border-see-reverse-migration-after-development-under-vvp" },
+        { "label": "ANI: Uttarakhand farmers do Rs 17.5 crore business with ITBP under procurement model (8 Oct 2026)", "url": "https://www.aninews.in/news/national/politics/uttarakhand-farmers-do-rs-175-crore-business-with-itbp-under-procurement-model-minister-saurabh-bahuguna16020261008193340" },
+        { "label": "UT Ladakh Administration: MoU between ITBP Leh Frontier and Cooperatives Dept (27 May 2026)", "url": "https://ladakh.gov.in/historic-mou-signed-between-itbp-leh-frontier-cooperatives-dept-ut-ladakh-for-supply-of-essential-food-items-through-cooperative-societies-fpos-pacs" },
+        { "label": "The Statesman: Ladakh farmers get market lifeline as ITBP signs procurement pact (27 May 2026)", "url": "https://www.thestatesman.com/india/ladakh-farmers-get-market-lifeline-as-itbp-signs-procurement-pac-1503598858.html" },
+        { "label": "AgroSpectrum: 'Mission Arun Himveer' powers farm-to-fort strategy in Northeast", "url": "https://agrospectrumindia.com/index.php/news/5/32150/mission-arun-himveer-powers-farm-to-fort-strategy-in-northeast.html" }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "anchor": "reema",
+      "format": "Episode",
+      "storyId": "siang-dam-shah-dialogue",
+      "topic": "Siang Dam: Dialogue Ki Ghanti, Drill Pehle Se Andar",
+      "segments": [
+        {
+          "id": "cold-open",
+          "line": "[COLD OPEN: Reema ke desk par ek purani brass doorbell rakhi hai]\n\nNamaste, main Reema, aur yeh hai The Late Edit. Aaj ka prop: ek doorbell. Kyunki kal Home Minister Amit Shah ne Arunachal mein kaha ki Siang dam par 'positive dialogue' hoga. Bahut accha. Bas chhota sa sawaal: jab tak yeh ghanti bajayi gayi, ghar ke andar CAPF, drilling machine aur APUAPA ke cases pehle se baithe the. [SFX: ding-dong] Dekhte hain, darwaza kaun kholta hai."
+        },
+        {
+          "id": "fact-box",
+          "line": "Pehle facts. Opinions baad mein.\n\n[GRAPHIC: FACT BOX — Sources: The Hindu, PTI, The Arunachal Times, Xinhua]\n\nFact one: 21 November ko Banderdewa mein Amit Shah ne 11,200 MW ke Siang Upper Multipurpose Project ko 'national project' kaha, development, energy security aur strategy ke liye zaroori, aur bola ki concerns 'positive dialogue' se suljhenge.\n\nFact two: Unhone desh ka sabse accha rehabilitation package promise kiya. Lekin Adi Bane Kebang United aur Siang Indigenous Farmers' Forum ne unhe memorandum diya: project wapas lo, aur baat barabari par hogi, 'gunpoint' par nahi.\n\nFact three: Centre SUMP ko China ke lagbhag 60,000 MW ke Yarlung Tsangpo project ka jawaab maanta hai, jiska construction 19 July 2025 ko shuru hua. Aur SUMP? Abhi bhi pre-feasibility stage par."
+        },
+        {
+          "id": "chronology",
+          "line": "[GRAPHIC: Timeline — 'Siang: Kab Kya Hua']\n\nChaliye, rewind karte hain.\n\n1980s: The New Indian Express ke mutabik, Siang par pehla bada dam proposal Brahmaputra Board laaya tha, aur local communities ne tab bhi virodh kiya. Matlab yeh debate aapke home loan se bhi purana hai.\n\n2017: NITI Aayog ne SUMP propose kiya. [SFX: ding-dong] Kisi ne darwaza khola? Nahi. Ghanti ka button abhi PowerPoint mein tha.\n\n9 December 2024: The Arunachal Times ke paas state home department ka ek order hai, jismein Upper Siang, Siang aur East Siang mein CAPF companies ke liye accommodation aur logistics ka intezaam karne ko kaha gaya: Beging ke paas, Parong ke paas, Boleng ke NHPC office par. Note kariye: consultation ka order nahi, accommodation ka order. Aur yeh koi achanak virodh nahi tha; usi akhbaar ke mutabik Parong, Geku, Komkar aur Riew jaise gaon pehle se protest kar rahe the.\n\nAur do hafte baad, December 2024 mein hi, China ne lower Yarlung Tsangpo par apna hydropower project approve kar diya. Yahan main fair rahungi: yeh chinta asli hai. Yarlung Tsangpo hi Arunachal mein aakar Siang banti hai, aur TNIE ke mutabik Siang Brahmaputra ke total discharge ka lagbhag 32 percent deti hai.\n\nMay 2025: Indian Express ke mutabik 20 May ko drilling equipment Beging pahuncha, central forces ke deploy hone ke baad. 23 May ko villagers ne indefinite dharna shuru kiya aur ek hanging bridge ko aanshik roop se jala diya, taaki forces andar na aa sakein. Usi din, Down To Earth ke mutabik, state ne Pangkang village ke do residents ke saath MoU sign kiya, aur us village ke liye 5 crore ke development package ki baat aayi. Activists ne poocha: yeh consent hai ya incentive? [SFX: ding-dong. Silence.]\n\n19 July 2025: Chinese Premier Li Qiang ne Nyingchi mein groundbreaking ki. Paanch cascade stations, lagbhag 1.2 trillion yuan ka investment. Aur China Daily ke mutabik Li ne khud kaha ki relocation aur resettlement 'meticulous' hona chahiye. Haan. Resettlement par lecture... Beijing se. Yeh line padhte hue mera teleprompter bhi ruk gaya.\n\n[GRAPHIC: Do columns — 'China: construction shuru' vs 'India: pre-feasibility pending']\n\nToh pattern dekhiye: China ka dam concrete mein, hamara dam survey mein, aur dialogue... is ghanti mein. Aur yaad rakhiye, is kahani mein ghanti hamesha drill ke baad bajti hai."
+        },
+        {
+          "id": "now",
+          "line": "Ab aate hain aaj par.\n\n9 October 2026: Upper Siang ke Geku ke chaar residents Arunachal Pradesh Unlawful Activities (Prevention) Act, yaani APUAPA, ke tahat detain hue, PFR ka virodh karne ke liye. 23 October: Siang region mein 12 ghante ka bandh. Din shaant, raat ko Pasighat mein hinsa, NHPC office aur police station mein khadi gaadiyan jalayi gayi. Hinsa galat hai, period. DY365 ke mutabik police ne us hinsa ke silsile mein 69 arrests report kiye. Aur 7 November ko woh chaar activists 'goodwill gesture' ke naam par chhode gaye.\n\nPhir kal, Shah ji ka official claim: national project, energy security, revenue, strategy, aur 'best rehabilitation package'.\n\n[GRAPHIC: Bar chart — Proposed SUMP: 11,200 MW | Arunachal peak demand: ~180 MW (TNIE)]\n\nAb chart dekhiye. TNIE ke mutabik Arunachal ki peak demand lagbhag 180 MW hai. Proposed dam: 11,200 MW. Matlab bijli zyaadatar baaki desh ke liye. Theek hai, national grid bhi zaroori hai. Lekin teen sawaal: Who pays? Adi aur Galo parivaar, jinke gaon, kheti aur pushtaini zameen doob sakti hai, aur ek nadi jise woh Maa maante hain. Who benefits? Grid aur strategic planners. Who is accountable? Ek pre-feasibility report jo abhi bani hi nahi.\n\nAur seismic risk footnote nahi hai. Yeh wahi belt hai jahan 1950 ka Assam-Tibet bhukamp aaya tha, aur The Hindu ne 300 metre ke dam ka zikr kiya hai.\n\nMemorandum mein ABKU aur SIFF ne saaf kaha: hum development ke khilaaf nahi, tributaries par chhote dams chalenge, bas 11,200 MW ka mega dam nahi. Aur Assam ke Tinsukia mein bhi 20 November ko rally hui. Downstream bhi sawaal pooch raha hai."
+        },
+        {
+          "id": "cross-talk",
+          "line": "[CAMEO: Siddharth screen par, haath mein chai]\n\nSIDDHARTH: Reema ji, ijaazat ho toh. China upstream 60,000 MW bana raha hai, aur Khandu ji khud kehte hain ki China kisi international water treaty ka signatory nahi. Storage hi suraksha hai.\n\nREEMA: Siddharth, threat asli hai, main maanti hoon. Mera sawaal sequence ka hai: pehle forces, phir drill, phir arrests, phir dialogue. Yeh toh rishta pakka hone se pehle baraat bhejne jaisa hai.\n\nSIDDHARTH: Aur aapki sequence mein China ruk kar intezaar karega? Khair, maanta hoon, MP Tapir Gao ka 'dam will be built come what may' wala bayaan hamare khemey ke liye bhi sharmindagi tha.\n\nREEMA: Aur main maanti hoon ki kal Shah ji ka tone usse kaafi behtar tha.\n\nSIDDHARTH: Toh ek baat par sehmati: baat-cheet asli ho, aur likhit mein ho.\n\nREEMA: Agreed. Consent ka form ho, intimidation ka nahi."
+        },
+        {
+          "id": "forward",
+          "line": "Toh aage kya?\n\nEk: consent ko formal banaiye. May 2025 mein hi SIFF ne maanga tha ki PFR se judi koi bhi 'forceful activity' free, prior aur informed consent ke bina na ho. Gram sabhaon aur Adi customary institutions ke resolutions, public record par. Do residents ke saath MoU ko poore valley ki haan mat kahiye.\n\nDo: pehle paper, phir drill. Rehabilitation package ka draft, submergence ka naksha, aur seismic aur downstream study, jismein Assam bhi shamil ho, sab survey se pehle public kariye. Arunachal Congress ne likhit assurance maanga hai ki project thopa nahi jayega. Agar intention saaf hai, toh likhne mein dikkat kya hai?\n\nTeen: talks ka mahaul. Groups kehte hain barabari par baat hogi, forces aur pending cases ke saaye mein nahi. Government kehti hai forces law and order ke hisaab se rahengi. Beech ka raasta dhoondhna bhi 'dialogue' hai.\n\nAap kya kar sakte hain? Northeast ki khabar sirf tab mat padhiye jab kuch jale. The Arunachal Times, Down To Earth jaisi reporting follow kariye, aur apne MP se poochiye: national project ka matlab national consultation bhi hota hai kya?\n\nAur kya dekhna hai: kya SIFF aur ABKU talks ki table par aate hain; kya PFR dobara shuru hota hai, aur kis tarah; baaki detainees ka kya hota hai; aur China ka Medog project kitni tezi se aage badhta hai. Kyunki dono taraf ki ghadi chal rahi hai."
+        },
+        {
+          "id": "big-finish",
+          "line": "[Reema doorbell uthati hai]\n\nToh shuru se dekhein: 2017 mein ghanti nahi bajti. 2024 mein forces ka order. 2025 mein drill. 2026 mein arrests. Aur ab, aakhir mein, kal: [SFX: ding-dong] 'Positive dialogue.'\n\nGhanti bajana achhi shuruaat hai, Shah ji. Bas ek tip: agli baar darwaza khulne ka intezaar kariye, drill andar bhejne se pehle.\n\n[Reema doorbell ko Siang ke naksha wale graphic par rakhti hai. GRAPHIC: 'Dialogue Meter: 1 ghanti, 0 jawab']\n\nChina ka khatra asli hai. Siang ke logon ka darr bhi asli hai. Dono ko ek saath, aur ek hi table par, seriously lena hi asli national interest hai.\n\nGood night, aur apni EMI check kar lijiye.\n\nAaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "brahmos-made-in-up",
+      "topic": "BrahMos Ready, Plumber Not Found",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Missile supersonic speed se ban rahi hai. Plumber? Abhi tak 'out of stock'."
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: ANI, DD News] 21 Nov: Modi bole, Sindoor wali BrahMos ab UP mein banti hai. Lucknow unit: pehla batch October 2025, ~100 missiles saalana. Aur PNG connections: target 1 lakh roz, actual 15–20 hazaar. Plumber nahi."
+        },
+        {
+          "id": "take",
+          "line": "Pehle facts. Operation Sindoor May 2025 mein hua. Lucknow ka pehla batch October 2025 mein nikla. Toh jo BrahMos Sindoor mein 'sleepless nights' de rahi thi, woh Lucknow ki production line se pehle ki thi. PM ne kaha 'ab bhi yahan banti hai', woh technically sahi hai. Bas poster par font thoda bada hai.\n\nWaise khabar achhi hai: 380 crore ki unit, defence corridor mein naukriyan.\n\n[GRAPHIC: chart — 'PNG target: 1,00,000/din' vs 'Actual: 15–20,000/din']\n\nLekin isi speech ka asli headline yeh tha: desh supersonic missile bana leta hai, par gas connection ke liye plumber nahi milte. Mach 2.8 ki missile, aur 2.8 din se kitchen mein pipe ka intezaar."
+        },
+        {
+          "id": "jab",
+          "line": "SIDDHARTH: Reema ji, missile aur plumbing dono skill hain. Isiliye PM skill convocation mein the.\nREEMA: Toh skill ka budget bhi BrahMos speed se aaye."
+        },
+        {
+          "id": "closer",
+          "line": "Good night, aur apni EMI check kar lijiye. Aaj kaun jeeta, missile ya plumber? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "india-nepal-airspace-denial",
+      "topic": "Airspace Ka Khandan, Sources Ke Hawale Se",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Nepal ke aasmaan mein Indian fighter jets? Delhi ne kaha: 'Aisi koi demand hi nahi.'"
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: WION, ANI, Onlinekhabar, IANS] 22 Nov: sources bole, military flights ke liye Bagdogra entry maangi hi nahi. Pehle ki reports: civilian Bagdogra flights ke liye Nepali airspace, Bhairahawa route ke badle. Aaj Nepal PM Delhi mein."
+        },
+        {
+          "id": "take",
+          "line": "Pehle facts. Nepal ki reporting mein maang civilian flights ki thi: Bagdogra ki international flights ke liye eastern Nepal ka airspace, badle mein Nepal ko Bhairahawa route. Toh military wali kahani kahan se aayi?\n\nShayad isliye: IANS ke mutabik Bagdogra ek IAF station ke andar civil enclave hai. Toh confusion samajh mein aata hai.\n\nLekin sawaal accountability ka hai. Visit ke din itni sensitive baat ka khandan aaya 'government sources' se. Na naam, na podium. Agar baat sach hai, toh MEA spokesperson on record keh dein. Warna sources ka khandan bhi... sources ke hawale se hi rahega."
+        },
+        {
+          "id": "jab",
+          "line": "SIDDHARTH: Reema ji, diplomacy mein kuch baatein khamoshi se suljhti hain.\nREEMA: Bilkul. Bas khamoshi ka bhi koi official spokesperson hona chahiye."
+        },
+        {
+          "id": "closer",
+          "line": "Good night, aur apni EMI check kar lijiye. Aaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "reema",
+      "format": "Short",
+      "storyId": "army-itbp-buy-from-border-farmers",
+      "topic": "Farm To Fort: Idea Achha, Hisaab Dikhaiye",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Jawan ki thaali mein Guwahati ki sabzi nahi, padosi gaon ki. Accha idea. Ab bill dekhte hain."
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: ANI, IANS, PTI] 22 Nov, Itanagar: Shah bole, ITBP aur Army Tezpur-Guwahati se nahi, gaon aur cooperatives se kharidein. Daava: 40 border gaon mein migration ruka. 199 projects, Rs 110.95 crore."
+        },
+        {
+          "id": "take",
+          "line": "Main seedha kahungi: yeh achhi policy hai. Jawan ko taaza khaana, gaon ko pakka market, beech mein middleman nahi.\n\nAb chart.\n\n[GRAPHIC: Uttarakhand–ITBP: ~Rs 17.5 crore, 2 saal | Ladakh–ITBP MoU: Rs 21 lakh, initial]\n\nUttarakhand: do saal mein lagbhag 17.5 crore. Ladakh: shuruaat mein 21 lakh, jise LG ne khud 'good beginning' kaha. Aur 2025 ki ek report ke mutabik Arunachal mein 2022 tak forces ki daily demand ka sirf 8–10 percent local producers se aata tha.\n\nToh do sawaal. 40 gaon mein 'migration has stopped', iska data kahan hai? Aur farmers ko payment kitne din mein milta hai? Kyunki fauj ki sabse badi taaqat discipline hai. Bas payment cycle bhi utna hi disciplined ho."
+        },
+        {
+          "id": "jab",
+          "line": "SIDDHARTH: Reema ji, aaj aapne sarkar ki tareef ki? Mausam check kar loon?\nREEMA: Tareef policy ki thi. Data milte hi baaki bhi karungi."
+        },
+        {
+          "id": "closer",
+          "line": "Good night, aur apni EMI check kar lijiye. Aaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Episode",
+      "storyId": "siang-dam-shah-dialogue",
+      "topic": "Siang Ka Nal: Kiske Haath Mein, Kiski Marzi Se?",
+      "segments": [
+        {
+          "id": "cold-open",
+          "line": "[COLD OPEN: Siddharth ki desk par ek purana peetal ka nal, jaise daadi ke aangan mein hota tha]\n\nAadab, namaskar. Main Siddharth, aur yeh hai The Late Edit. Yeh nal dekh rahe hain? Meri daadi kehti thi, 'Jiske haath mein nal, uske haath mein kal.' Aaj ki poori kahani isi nal ki hai. Sawaal yeh hai ki Brahmaputra ka nal Beijing ke haath mein ho, ya Siang ke haath mein, aur Siang ke logon ki marzi se."
+        },
+        {
+          "id": "fact-box",
+          "line": "Pehle tathya, phir tark.\n\n[GRAPHIC: FACT BOX — Sources: The Hindu, PTI, The Arunachal Times, Xinhua]\n\nPehla: 21 November ko Banderdewa mein Amit Shah ne 11,200 MW ke Siang Upper Multipurpose Project ko 'national project' kaha, Arunachal ke vikas, desh ki urja suraksha aur rananeeti ke liye ahem, aur kaha ki chintayein 'positive dialogue' se suljhayi jaayengi.\n\nDoosra: Unhone desh ke sabse acche punarvaas package ka vaada kiya. Udhar Adi Bane Kebang United aur Siang Indigenous Farmers' Forum ne memorandum mein project wapas lene ki maang ki: baat barabari par hogi, 'gunpoint' par nahi.\n\nTeesra: Centre SUMP ko China ke lagbhag 60,000 MW ke Yarlung Tsangpo project ka jawaab maanta hai, jiska nirmaan 19 July 2025 ko shuru hua. SUMP abhi pre-feasibility stage par hai."
+        },
+        {
+          "id": "chronology",
+          "line": "[GRAPHIC: Puraane naqshe par timeline]\n\nZara peechhe chalte hain. Hamare zamaane mein log kehte the, nadi ka itihaas samjhe bina uspar pul mat banao.\n\n1980s: The New Indian Express ke mutabik, Brahmaputra Board ne Siang par pehla bada hydropower proposal rakha, aur sthaniya samudayon ne tab bhi virodh kiya. Yaani yeh sawaal naya nahi, chaar dashak purana hai.\n\n2017: NITI Aayog ne SUMP propose kiya. Tab tak yeh nal sirf file mein tha. [Siddharth nal ko halka sa ghumata hai. SFX: ek boond tapakti hai]\n\nDecember 2024: Do baatein. 9 December ko, The Arunachal Times ke mutabik, rajya ke home department ne Siang ke teen zilon mein CAPF ki tainaati ke liye intezaam ka aadesh diya. Aur usi mahine China ne lower Yarlung Tsangpo par apne vishaal hydropower project ko manzoori de di. Yarlung Tsangpo hi Arunachal mein Siang ban kar aati hai, aur TNIE ke mutabik Brahmaputra ke kul pravaah ka lagbhag 32 pratishat Siang se aata hai. Ab samajhiye nal ka matlab.\n\nMay 2025: Pre-feasibility survey ke liye Beging mein drilling machine aur central forces pahunche. 23 May ko gaonwalon ne anishchitkaalin dharna diya, ek hanging bridge ko aanshik roop se jalaya. SIFF ne maang rakhi: free, prior aur informed consent ke bina koi survey nahi. Usi din, Down To Earth ke mutabik, rajya sarkar ne Pangkang gaon ke do nivasiyon ke saath MoU kiya aur gaon ke liye 5 crore ke vikas package ki baat hui; activists aur kuch gaonwalon ka daava tha ki MoU ke peechhe gaon ke gine-chune log hi the. Main maanta hoon, yahan sarkar ne ghoda gaadi ke aage nahi, peechhe baandh diya tha.\n\n19 July 2025: Chinese Premier Li Qiang ne Nyingchi mein bhoomi-poojan, maaf kijiye, groundbreaking ki. Paanch cascade stations, lagbhag 1.2 trillion yuan. Aur dilchasp baat: China Daily ke mutabik Li ne khud kaha ki logon ka relocation aur resettlement 'meticulous' ho aur paryavaran ko nuksaan na pahunche. Jab Beijing tak punarvaas ki baat kar raha ho, toh duniya ke sabse bade loktantra ka paimaana toh usse kahin ooncha hona chahiye.\n\n[GRAPHIC: Do nal — ek par likha 'Beijing', doosre par '?']\n\nToh 2025 ke beech tak tasveer yeh thi: upar wale nal par China ka haath pakka, neeche wale nal par abhi tak bahas. Aur jo nal bina saahmati ke lagaya jaaye, daadi kehti thi, woh tapakta zaroor hai."
+        },
+        {
+          "id": "now",
+          "line": "Ab vartmaan.\n\n[GRAPHIC: Chart — China ka project ~60,000 MW | SUMP 11,200 MW]\n\nSarkar ka daava saaf hai. Kal Shah sahab ne kaha ki yeh project vikas, bijli, rajya ki aamdani aur rananeeti ke liye zaroori hai. TNIE ke mutabik iska maqsad monsoon ka atirikt paani rok kar zaroorat par chhodna hai, aur yeh Assam ki saalana baadh sambhalne mein bhi madad kar sakta hai. Mukhyamantri Pema Khandu China ke dam ko 'water bomb' keh chuke hain, kyunki China kisi antarrashtriya jal sandhi ka hissa nahi.\n\nAb doosra palda. October mein halaat bigde. 9 October ko chaar pradarshankari APUAPA mein detain hue. 23 October ke bandh ke baad Pasighat mein raat ko hinsa hui, NHPC ka daftar aur police station mein gaadiyan jalayi gayi. Kisi bhi maang ke liye aag jaayaz nahi. 7 November ko sarkar ne woh chaar log 'goodwill gesture' mein chhode, aur nilambit gaon burha aur gaon burhi ki bahaali bhi manzoor ki. Lekin SIFF abhi bhi kehta hai: pehle baaki detainees aur forces ka faisla, phir mez.\n\nKaun prabhavit? Adi aur Galo samuday, jinke gaon, kheti aur pushtaini zameen doob kshetra mein aa sakti hai. Unke liye Siang sirf nadi nahi, Aane Siang, yaani Maa hai. Aur ABKU-SIFF ne kaha hai ki woh vikas ke virodhi nahi; sahaayak nadiyon par chhote baandh unhe manzoor hain.\n\nMera maanna hai, rananeeti ki daleel majboot hai. Lekin zameen par itihaas yeh hai ki forces pehle pahunchi aur baat-cheet baad mein. Kal Shah sahab ne pehli baar Delhi se seedha kaha, 'aapko chinta karne ki zaroorat nahi', aur punarvaas ka vaada kiya. Achhi shuruaat. Ab us vaade ko kaagaz chahiye."
+        },
+        {
+          "id": "cross-talk",
+          "line": "[CAMEO: Reema split-screen par, haath mein chart]\n\nREEMA: Siddharth, ek number. TNIE ke mutabik Arunachal ki peak demand lagbhag 180 MW hai. Dam 11,200 MW ka. Toh qurbaani local, fayda national?\n\nSIDDHARTH: Reema ji, Bhakra bhi sirf Bilaspur ke liye nahi bana tha. Rashtriya pariyojana ka swabhaav hi yahi hai. Aur China intezaar nahi karega.\n\nREEMA: Bilkul. Isliye toh Bhakra ke visthapiton ki kahaniyan aaj bhi padhayi jaati hain. Sabak wahi hai.\n\nSIDDHARTH: Tauba, aapne mera hi udaharan mujh par chala diya. Theek hai, maanta hoon, forces bhej kar survey karwana hamare paksh ki galti thi.\n\nREEMA: Aur main maanti hoon ki China ka khatra kalpana nahi hai.\n\nSIDDHARTH: Toh sehmati ho gayi: pehle bharosa, phir boring. Ulta karoge toh dono ruk jaate hain.\n\nREEMA: Aur bharose ki rasid likhit mein."
+        },
+        {
+          "id": "forward",
+          "line": "Toh aage ka raasta kya ho?\n\nPehla: Shah sahab ka 'dialogue' ka vaada ek sanstha bane, bhashan nahi. Ek likhit dhaancha, jismein SIFF, ABKU, gaon burha aur gaon burhi, aur rajya sarkar barabar ki kursi par baithein. Arunachal Congress ne likhit aashvaasan maanga hai; mera maanna hai sarkar ko yeh maang khud aage badh kar poori karni chahiye. Majboot sarkar woh hai jo likh kar vaada kare.\n\nDoosra: Bharosa banane wale kadam. Chaar logon ki rihaai sahi disha thi. Baaki cases ka nyaayik prakriya se jaldi niptara ho, aur forces ki bhoomika par khulkar baat ho.\n\nTeesra: Vigyan ko mez par laayiye. Seismic adhyayan, Assam par downstream asar, aur doob kshetra ka naksha, sab survey ke saath public ho. Gaurav Gogoi ne Jal Shakti Mantri ko Assam ki chinta par likha hai; Assam ko bhi is baatcheet mein jagah milni chahiye.\n\nAap kya kar sakte hain? Is kahani ko 'vikas banaam virodh' ke chashme se mat dekhiye. Adi samuday ki apni awaaz padhiye, The Arunachal Times jaise sthaniya akhbaar padhiye, aur apne pratinidhi se poochiye ki punarvaas package ka draft kab aayega.\n\nKya dekhein: kya SIFF aur ABKU baatcheet ki mez par aate hain, kya PFR sahmati se dobara shuru hota hai, punarvaas package ka khaaka kab saamne aata hai, aur China ka Medog project kis raftaar se badhta hai. Kyunki nadi kisi ka intezaar nahi karti."
+        },
+        {
+          "id": "big-finish",
+          "line": "[Siddharth nal ki taraf mudta hai]\n\nShuru mein maine kaha tha, 'Jiske haath mein nal, uske haath mein kal.' Aaj poori kahani ke baad main daadi ki baat mein ek line jodna chahta hoon.\n\n[Siddharth nal ke neeche ek mitti ka matka rakhta hai, jis par likha hai 'Siang']\n\nNal par haath hamara hona chahiye, isme mujhe koi shak nahi. Lekin matka unka hai jo is nadi ke kinare sadiyon se rehte hain. Unki marzi ke bina nal khologe, toh paani bhi bahega, aur bharosa bhi.\n\nDaadi aaj hoti toh kehti, 'Beta, kuan khodne se pehle gaon se poochh lena.'\n\nShubh ratri.\n\nAaj kaun jeeta? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "brahmos-made-in-up",
+      "topic": "Lucknow: Pehle Aap Se Supersonic Tak",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Jo shehar 'pehle aap' ke liye mashhoor tha, ab wahan se missile pehle nikalti hai."
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: ANI, PIB, DD News] 21 Nov: PM bole, Sindoor wali BrahMos ab UP mein banti hai. Lucknow unit: 18 Oct 2025 pehla batch. 200 acre, Rs 380 crore, ~100 missile systems saalana."
+        },
+        {
+          "id": "take",
+          "line": "Pehle tathya, phir tark. Lucknow ki pehchaan thi tehzeeb, kebab aur 'pehle aap'. Ab Sarojini Nagar mein ek unit hai jahan BrahMos ki assembly, integration aur testing ek hi chhat ke neeche hoti hai. Defence corridor ki pehli aisi unit. Iske peechhe India-Russia ki saajhedari aur DRDO ki dashakon ki mehnat hai; yeh kisi ek bhashan ki kamaai nahi.\n\nHaan, ek baat apne khemey ke liye. 'Sleepless nights' wali line September mein Amit Shah ji bhi Greater Noida mein bol chuke hain. Dushman ki neend toh pata nahi, hamare speechwriters ki neend zaroor puri ho rahi hai. Ek hi line baar baar."
+        },
+        {
+          "id": "jab",
+          "line": "REEMA: Siddharth, missile ban gayi, plumber nahi mil rahe.\nSIDDHARTH: Reema ji, isiliye toh PM skill convocation mein the. Pehle aap plumber dhoondhiye."
+        },
+        {
+          "id": "closer",
+          "line": "Shubh ratri. Aaj kaun jeeta, Lucknow ki tehzeeb ya Lucknow ki missile? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "india-nepal-airspace-denial",
+      "topic": "Padosi Ka Aasmaan, Lena-Dena Ka Hisaab",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Padosi se aasmaan maanga? Delhi kehti hai: sirf hawai jahaz ke liye, fauji ke liye nahi."
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: WION, ANI, Kathmandu Post] 22 Nov: sources ne military flights wali reports khaarij ki. Asal charcha: civilian Bagdogra flights ke liye Nepali airspace, badle mein Bhairahawa route. Nepal PM 22–23 Nov Delhi mein."
+        },
+        {
+          "id": "take",
+          "line": "Pehle tathya, phir tark. Kathmandu Post aur Onlinekhabar padhiye, toh yeh lena-dena ka seedha sauda hai. Nepal das saal se zyada se Bhairahawa aur Pokhara ke liye Indian airspace maang raha hai. Reports ke mutabik Bharat ka jawaab: ho sakta hai, par package mein Bagdogra ki flights ke liye aapka thoda sa poorvi aasmaan. Ise kehte hain padosi dharm.\n\nDaadi kehti thi, 'Padosi se cheeni maango, toh katori mein namak bhi bhej do.'\n\nAur haan, apne khemey par ek baat. Itne bade daure ke din khandan 'sources' ke zariye aaye, yeh hamari purani aadat hai. Spokesperson on record keh dete toh afwaah wahin khatam ho jaati."
+        },
+        {
+          "id": "jab",
+          "line": "REEMA: Siddharth, aaj aap bhi sources par sawaal utha rahe hain?\nSIDDHARTH: Reema ji, umr ke saath aankhein kamzor hoti hain, nazar nahi."
+        },
+        {
+          "id": "closer",
+          "line": "Shubh ratri. Aaj kaun jeeta, padosi dharm ya sources ka dharm? App mein vote kariye."
+        }
+      ]
+    },
+    {
+      "anchor": "siddharth",
+      "format": "Short",
+      "storyId": "army-itbp-buy-from-border-farmers",
+      "topic": "Fauj Ki Thaali, Gaon Ki Kheti",
+      "segments": [
+        {
+          "id": "hook",
+          "line": "Kehte hain fauj pet ke bal chalti hai. Ab woh pet seema ke gaon bharenge."
+        },
+        {
+          "id": "facts",
+          "line": "[GRAPHIC: Sources: ANI, IANS, PTI] 22 Nov, Itanagar: Shah bole, MHA ka nirdesh hai, ITBP aur Army Tezpur-Guwahati se nahi, gaon-cooperatives se khareedein. 40 seema gaon mein aabaadi badhne ka daava."
+        },
+        {
+          "id": "take",
+          "line": "Pehle tathya, phir tark. Shah sahab ke mutabik Arunachal ki mahilayein cooperatives ke zariye doodh, ande, sabzi, millets aur aata fauj ko pahuncha rahi hain. Uttarakhand kehta hai do saal mein uske kisaanon ne ITBP ke saath lagbhag 17.5 crore ka kaarobaar kiya, seedha DBT se.\n\nHamare zamaane mein seema ka gaon 'aakhri gaon' kehlata tha. Ab sarkar use 'pehla gaon' kehti hai. Aur sach yeh hai ki pehla gaon tabhi basega jab wahan kamaai ho.\n\nLekin ek imaandaar baat. '40 gaon mein migration ruk gaya' ek bada daava hai. Ise aankdon se saabit kijiye. Daadi kehti thi, 'Khet ki fasal mandi mein dikhti hai, bhashan mein nahi.'"
+        },
+        {
+          "id": "jab",
+          "line": "REEMA: Siddharth, Ladakh mein ITBP ne shuruaat mein sirf 21 lakh rakhe.\nSIDDHARTH: Reema ji, beej chhota hi hota hai. Fasal ka intezaar kijiye."
+        },
+        {
+          "id": "closer",
+          "line": "Shubh ratri. Aaj kaun jeeta, kisaan ki mandi ya fauj ki thaali? App mein vote kariye."
+        }
+      ]
+    }
+  ],
+  "notes": "DATES: Shah's Siang remarks were made on Saturday 21 Nov 2026 (Banderdewa), not 22 Nov; scripts say 'kal'. Modi's BrahMos remark was also on Saturday 21 Nov (ET piece is dated 22 Nov). The Army/ITBP procurement remark was on Sunday 22 Nov at a cooperative conference in Itanagar. NEPAL: the brief said Balendra Shah visits 'next week', but MEA/PTI/IANS confirm the state visit is 22–23 Nov 2026 (arriving today, talks with Modi 23 Nov); scripts reflect this. Start date of his term is reported as 26 March (Kathmandu Post) or 27 March (PTI/IANS), so we only say 'March 2026'. The military-flights denial comes only from unnamed 'government sources' (WION, ANI); there's no on-record MEA statement, and the scripts point this out. We couldn't identify which outlet first ran the 'military flights' version; Nepali outlets (Onlinekhabar, IANS, Kathmandu Post) reported civilian Bagdogra flights. Bagdogra being a civil enclave inside an IAF station is from IANS. FARMERS: the X lead couldn't be fetched; we used ANI (via The News Mill), IANS and Mathrubhumi/PTI instead. Scope as reported: Shah said the MHA mandated ITBP and the Army in Arunachal to buy from villages and cooperatives instead of Tezpur/Guwahati. Earlier reports (Ladakh admin, May 2026) describe a broader Shah directive to the Army and CAPFs for border regions. The '8–10% of forces' demand met locally until 2022' figure comes from a single AgroSpectrum report on Mission Arun Himveer and is attributed as such. The '40 villages, migration stopped' claim is Shah's own; we found no independent data, and the scripts say so. SIANG: SUMP capacity is reported variously as 11,000, 11,200 or 11,500 MW; the fact box uses 11,200 MW, as in Shah's coverage. China's project: approval in Dec 2024 (Xinhua, 25 Dec, cited by Made in China Journal; China Daily says 'December last year') and construction start on 19 July 2025 (Xinhua). The '~60,000 MW' figure is from The Hindu and Made in China Journal ('up to 60 GW'); China hasn't officially confirmed capacity. The 9 Dec 2024 CAPF deployment order is as reported by The Arunachal Times. The Rs 5 crore Pangkang package is from Down To Earth. The '300-metre dam' is from The Hindu (May 2025). Arunachal's ~180 MW peak demand and the Siang's ~32% share of Brahmaputra discharge are from the TNIE explainer. The 69 arrests after 23 Oct are from DY365, citing police. The 1950 Assam-Tibet earthquake reference relies on well-established history and is mentioned without a magnitude. 'Bhakra' in Siddharth's cross-talk is a general historical analogy with no specific figures. Op Sindoor (May 2025) predating Lucknow's first BrahMos batch (Oct 2025) is an inference from dated sources; Modi's wording ('now also being manufactured') is accurate. The 'Mach 2.8' figure is from a FirstIndia/ANI report of Rajnath Singh's Oct 2025 event. Amit Shah's earlier 'sleepless nights' line (25 Sep 2026, Greater Noida) is from TNIE."
+}
