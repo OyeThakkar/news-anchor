@@ -1,6 +1,6 @@
 import { ReviewTable } from "@/components/review-table";
 import { PageHeader } from "@/components/ui";
-import { anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
+import { accent, anchors, publishingTargets as t, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { mediaStatus } from "@/lib/pipeline";
 import { AUTO_APPROVE_MINUTES, isRendering } from "@/lib/review";
 import { list } from "@/lib/store";
@@ -12,6 +12,7 @@ export default async function ShortsPage({ params }: PageProps<"/[anchor]/shorts
     <>
       <PageHeader
         eyebrow={anchors[id].name}
+        tone={accent[id].tone}
         title="Shorts"
         description={`Vertical shorts for Instagram Reels and YouTube Shorts: ${t.shorts.minPerDay} a day minimum, up to ${t.shorts.maxPerDay}. Each short is generated automatically once its script is approved, and posted to Instagram and YouTube once the short is approved. Shorts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved.`}
       />

@@ -3,13 +3,14 @@
 import { useMemo, useState, useTransition } from "react";
 import { Badge } from "@/components/ui";
 import { setSourceActive } from "@/lib/actions";
+import { monitorChip, tierChip } from "@/lib/colors";
 import { accent, anchors, type AnchorId } from "@/lib/anchors";
 import { frequencies, monitors, outputFormats, type CheckFrequency, type Monitor, type OutputFormat } from "@/lib/sources";
 import type { SourceRecord } from "@/lib/store";
 import { AddSourceForm } from "./add-source-form";
 
 const selectClass =
-  "rounded-md border border-zinc-700 bg-zinc-900 px-2.5 py-1.5 text-sm text-zinc-200 focus:border-zinc-500 focus:outline-none";
+  "rounded-md border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-sm text-slate-200 focus:border-slate-500 focus:outline-none";
 
 function ToggleButton({ anchor, source }: { anchor: AnchorId; source: SourceRecord }) {
   const [pending, startTransition] = useTransition();
@@ -35,7 +36,7 @@ function ToggleButton({ anchor, source }: { anchor: AnchorId; source: SourceReco
         disabled={pending}
         className={`rounded-md border px-2.5 py-1 text-xs font-medium transition-colors disabled:opacity-50 ${
           source.active
-            ? "border-zinc-700 text-zinc-300 hover:border-red-600/60 hover:text-red-300"
+            ? "border-slate-700 text-slate-300 hover:border-red-600/60 hover:text-red-300"
             : "border-emerald-600/60 text-emerald-300 hover:bg-emerald-500/10"
         }`}
       >
@@ -70,8 +71,8 @@ export function MonitoringSheet({ anchor, rows, groups }: { anchor: AnchorId; ro
     <>
       <AddSourceForm anchor={anchor} groups={groups} />
 
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/60">
-        <div className="flex flex-wrap items-center gap-2 border-b border-zinc-800 p-4">
+      <div className="rounded-xl border border-slate-800 bg-slate-900/60">
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-800 p-4">
           <input
             type="search"
             value={query}
@@ -113,12 +114,12 @@ export function MonitoringSheet({ anchor, rows, groups }: { anchor: AnchorId; ro
               <option key={m}>{m}</option>
             ))}
           </select>
-          <span className="ml-auto text-xs text-zinc-500">{filtered.length} sources</span>
+          <span className="ml-auto text-xs text-slate-500">{filtered.length} sources</span>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="text-xs text-zinc-500">
+            <thead className="bg-white/5 text-xs text-slate-300">
               <tr>
                 <th className="px-4 py-2.5 font-medium">Source</th>
                 <th className="px-4 py-2.5 font-medium">Anchor</th>
@@ -130,23 +131,23 @@ export function MonitoringSheet({ anchor, rows, groups }: { anchor: AnchorId; ro
                 <th className="px-4 py-2.5 font-medium">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800">
+            <tbody className="divide-y divide-white/5">
               {filtered.map((s) => (
-                <tr key={s.id} className={`hover:bg-zinc-800/40 ${s.active ? "" : "opacity-50"}`}>
+                <tr key={s.id} className={`hover:bg-slate-800/40 ${s.active ? "" : "opacity-50"}`}>
                   <td className="px-4 py-2.5">
-                    <a href={s.url} target="_blank" rel="noreferrer" className="text-zinc-100 hover:underline">
+                    <a href={s.url} target="_blank" rel="noreferrer" className="text-slate-100 hover:underline">
                       {s.name}
                     </a>
-                    <span className="block text-xs text-zinc-500">{s.note ?? s.group}</span>
+                    <span className="block text-xs text-slate-500">{s.note ?? s.group}</span>
                   </td>
                   <td className="px-4 py-2.5">
                     {s.owner === "shared" ? (
-                      <span className="text-zinc-400">Shared</span>
+                      <span className="text-slate-400">Shared</span>
                     ) : (
                       <span className={accent[s.owner].text}>{anchors[s.owner].name}</span>
                     )}
                   </td>
-                  <td className="px-4 py-2.5 text-zinc-300">{s.beat}</td>
+                  <td className="px-4 py-2.5 text-slate-300">{s.beat}</td>
                   <td className="px-4 py-2.5">
                     <div className="flex flex-wrap gap-1">
                       {s.formats.map((f) => (
@@ -154,9 +155,13 @@ export function MonitoringSheet({ anchor, rows, groups }: { anchor: AnchorId; ro
                       ))}
                     </div>
                   </td>
-                  <td className="px-4 py-2.5 text-zinc-300">{s.frequency}</td>
-                  <td className="px-4 py-2.5 text-zinc-300">{s.monitor}</td>
-                  <td className="px-4 py-2.5 text-zinc-400">{s.tier}</td>
+                  <td className="px-4 py-2.5 text-slate-300">{s.frequency}</td>
+                  <td className="px-4 py-2.5">
+                    <Badge className={monitorChip(s.monitor)}>{s.monitor}</Badge>
+                  </td>
+                  <td className="px-4 py-2.5">
+                    <Badge className={tierChip(s.tier)}>{s.tier}</Badge>
+                  </td>
                   <td className="px-4 py-2.5">
                     <ToggleButton anchor={anchor} source={s} />
                   </td>
@@ -164,7 +169,7 @@ export function MonitoringSheet({ anchor, rows, groups }: { anchor: AnchorId; ro
               ))}
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={8} className="px-4 py-8 text-center text-zinc-500">
+                  <td colSpan={8} className="px-4 py-8 text-center text-slate-500">
                     No sources match these filters.
                   </td>
                 </tr>

@@ -102,28 +102,28 @@ export function VideoPreview({
   return (
     <div className={portrait ? "mx-auto w-full max-w-[380px]" : "w-full max-w-4xl"}>
       <div
-        className={`relative overflow-hidden rounded-xl border border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black ${
+        className={`relative overflow-hidden rounded-xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-black ${
           portrait ? "aspect-[9/16]" : "aspect-video"
         }`}
       >
         <div className="absolute left-4 top-4 flex items-center gap-2">
           <span className={`h-2 w-2 rounded-full ${accentBg}`} />
-          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-300">The Late Edit</span>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">The Late Edit</span>
         </div>
-        <span className="absolute right-4 top-4 rounded bg-zinc-800/80 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400">
+        <span className="absolute right-4 top-4 rounded bg-slate-800/80 px-2 py-0.5 text-[10px] uppercase tracking-wider text-slate-400">
           Preview render
         </span>
 
         {lastDirection && !isFacts && (
-          <div className="absolute inset-x-6 top-14 rounded-md border border-zinc-700/60 bg-zinc-900/80 px-3 py-2 text-xs text-zinc-300">
+          <div className="absolute inset-x-6 top-14 rounded-md border border-slate-700/60 bg-slate-900/80 px-3 py-2 text-xs text-slate-300">
             {lastDirection.text}
           </div>
         )}
 
         {isFacts && (
-          <div className="absolute inset-x-6 top-14 rounded-lg border border-zinc-700 bg-zinc-900/90 p-4">
+          <div className="absolute inset-x-6 top-14 rounded-lg border border-slate-700 bg-slate-900/90 p-4">
             <p className={`mb-2 text-xs font-semibold uppercase tracking-wider ${accentText}`}>Fact box</p>
-            <ol className={`list-decimal space-y-1.5 pl-5 text-zinc-100 ${portrait ? "text-xs" : "text-sm"}`}>
+            <ol className={`list-decimal space-y-1.5 pl-5 text-slate-100 ${portrait ? "text-xs" : "text-sm"}`}>
               {factBox.map((fact) => (
                 <li key={fact}>{fact}</li>
               ))}
@@ -135,7 +135,7 @@ export function VideoPreview({
           <p className={`text-[11px] font-semibold uppercase tracking-wider ${accentText}`}>
             {anchorName} · {current?.title}
           </p>
-          <p className="mt-0.5 text-xs text-zinc-400">{topic}</p>
+          <p className="mt-0.5 text-xs text-slate-400">{topic}</p>
           <p className={`mt-3 min-h-[3.5rem] font-medium text-white ${portrait ? "text-base" : "text-lg"}`}>
             {cue?.kind === "speech" ? cue.text : ""}
           </p>
@@ -160,11 +160,11 @@ export function VideoPreview({
             if (time >= total) setTime(0);
             setPlaying((p) => !p);
           }}
-          className="w-20 rounded-md border border-zinc-700 px-3 py-1 text-sm text-zinc-200 hover:bg-zinc-800"
+          className="w-20 rounded-md border border-slate-700 px-3 py-1 text-sm text-slate-200 hover:bg-slate-800"
         >
           {playing ? "Pause" : time >= total ? "Replay" : "Play"}
         </button>
-        <span className="font-mono text-xs text-zinc-400">
+        <span className="font-mono text-xs text-slate-400">
           {clock(time)} / {clock(total)}
         </span>
       </div>
@@ -180,14 +180,14 @@ export function VideoPreview({
               aria-label={`Jump to ${s.title}`}
               onClick={() => setTime(s.start)}
               style={{ flexGrow: s.durationSec }}
-              className="relative overflow-hidden rounded-sm bg-zinc-800"
+              className="relative overflow-hidden rounded-sm bg-slate-800"
             >
               <span className={`absolute inset-y-0 left-0 ${accentBg}`} style={{ width: `${filled * 100}%` }} />
             </button>
           );
         })}
       </div>
-      <div className="mt-1 flex gap-0.5 text-[10px] text-zinc-500">
+      <div className="mt-1 flex gap-0.5 text-[10px] text-slate-500">
         {timeline.map((s) => (
           <span key={s.id} style={{ flexGrow: s.durationSec, flexBasis: 0 }} className="truncate">
             {s.title}

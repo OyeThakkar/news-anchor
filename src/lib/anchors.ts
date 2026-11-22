@@ -51,20 +51,29 @@ export async function resolveAnchor(params: Promise<{ anchor: string }>): Promis
 }
 
 // Tailwind needs literal class names, so per-anchor accents live here.
-export const accent: Record<AnchorId, { text: string; bg: string; soft: string; border: string; dot: string }> = {
+export const accent: Record<
+  AnchorId,
+  { tone: "sky" | "amber"; text: string; bg: string; soft: string; border: string; dot: string; active: string; avatar: string }
+> = {
   reema: {
+    tone: "sky",
     text: "text-sky-400",
     bg: "bg-sky-500",
     soft: "bg-sky-500/10",
     border: "border-sky-500/40",
     dot: "bg-sky-400",
+    active: "bg-sky-500/15 text-sky-100 ring-1 ring-inset ring-sky-400/30",
+    avatar: "from-sky-400 to-cyan-600",
   },
   siddharth: {
+    tone: "amber",
     text: "text-amber-400",
     bg: "bg-amber-500",
     soft: "bg-amber-500/10",
     border: "border-amber-500/40",
     dot: "bg-amber-400",
+    active: "bg-amber-500/15 text-amber-100 ring-1 ring-inset ring-amber-400/30",
+    avatar: "from-amber-400 to-orange-600",
   },
 };
 

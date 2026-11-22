@@ -18,18 +18,20 @@ export function statusClass(status: string) {
   switch (status) {
     case "Published":
     case "Posted":
-      return "border-sky-600/50 text-sky-300";
+      return "border-sky-500/50 bg-sky-500/10 text-sky-200";
+    case "Awaiting approval":
+      return "border-indigo-400/50 bg-indigo-500/10 text-indigo-200";
     case "Generating":
     case "Generating video":
-      return "border-violet-600/50 text-violet-300";
+      return "border-violet-500/50 bg-violet-500/10 text-violet-200";
     case "Video awaiting approval":
-      return "border-zinc-500 text-zinc-200";
+      return "border-fuchsia-500/50 bg-fuchsia-500/10 text-fuchsia-200";
     case "On hold for rework":
     case "Video on hold for rework":
-      return "border-amber-600/50 text-amber-300";
+      return "border-amber-500/50 bg-amber-500/10 text-amber-200";
     case "Cancelled":
     case "Video cancelled":
-      return "border-red-600/50 text-red-300";
+      return "border-red-500/50 bg-red-500/10 text-red-200";
     default:
       return "";
   }

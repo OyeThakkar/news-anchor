@@ -38,9 +38,9 @@ export function ReviewTable({
   const headers = ["Date", "Serial", "Topic", "Duration", "View", ...statusHeaders, "Review"];
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/60">
+    <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
       <table className="w-full text-left text-sm">
-        <thead className="text-xs text-zinc-500">
+        <thead className="bg-white/5 text-xs text-slate-300">
           <tr>
             {headers.map((h) => (
               <th key={h} className="px-4 py-2.5 font-medium">
@@ -49,25 +49,25 @@ export function ReviewTable({
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-zinc-800">
+        <tbody className="divide-y divide-white/5">
           {rows.map((row) => {
             const approval = approvalOf(row);
             return (
               <tr key={row.id} className="align-top">
-                <td className="whitespace-nowrap px-4 py-3 text-zinc-300">{formatDate(row.date)}</td>
-                <td className="whitespace-nowrap px-4 py-3 font-mono text-zinc-300">{serialLabel(kind, row)}</td>
+                <td className="whitespace-nowrap px-4 py-3 text-slate-300">{formatDate(row.date)}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-slate-300">{serialLabel(kind, row)}</td>
                 <td className="px-4 py-3">
-                  <span className="text-zinc-100">{row.topic}</span>
-                  {row.subtitle && <span className="block text-xs text-zinc-500">{row.subtitle}</span>}
+                  <span className="text-slate-100">{row.topic}</span>
+                  {row.subtitle && <span className="block text-xs text-slate-500">{row.subtitle}</span>}
                 </td>
-                <td className="whitespace-nowrap px-4 py-3 font-mono text-zinc-300">{formatTime(row.durationSec)}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-slate-300">{formatTime(row.durationSec)}</td>
                 <td className="whitespace-nowrap px-4 py-3">
                   {row.view ? (
                     <Link href={row.view.href} className="text-sky-400 hover:underline">
                       {row.view.label}
                     </Link>
                   ) : (
-                    <span className="text-zinc-500">Not ready</span>
+                    <span className="text-slate-500">Not ready</span>
                   )}
                 </td>
                 {row.statuses.map((status, i) => (
@@ -92,7 +92,7 @@ export function ReviewTable({
           })}
           {rows.length === 0 && (
             <tr>
-              <td colSpan={headers.length} className="px-4 py-8 text-center text-zinc-500">
+              <td colSpan={headers.length} className="px-4 py-8 text-center text-slate-500">
                 {empty}
               </td>
             </tr>

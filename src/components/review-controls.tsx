@@ -13,7 +13,7 @@ const styles = {
   approved: `${button} border-emerald-600/60 text-emerald-300 hover:bg-emerald-500/10`,
   rejected: `${button} border-red-600/60 text-red-300 hover:bg-red-500/10`,
   rework: `${button} border-amber-600/60 text-amber-300 hover:bg-amber-500/10`,
-  neutral: `${button} border-zinc-700 text-zinc-300 hover:bg-zinc-800`,
+  neutral: `${button} border-slate-700 text-slate-300 hover:bg-slate-800`,
 };
 
 const stateLabels: Record<Exclude<ApprovalState, "pending">, { label: string; className: string }> = {
@@ -39,7 +39,7 @@ function Countdown({ deadline }: { deadline: string }) {
 
   const minutes = Math.max(0, Math.ceil(remaining / 60_000));
   return (
-    <span className="text-xs text-zinc-500" suppressHydrationWarning>
+    <span className="text-xs text-slate-500" suppressHydrationWarning>
       Auto-approves in {minutes} min
     </span>
   );
@@ -111,9 +111,9 @@ export function ReviewControls({
       <div className="flex flex-col items-start gap-1">
         <span className={`text-xs font-medium ${className}`}>
           {label}
-          {decidedAt && <span className="font-normal text-zinc-500"> · {decidedAt}</span>}
+          {decidedAt && <span className="font-normal text-slate-500"> · {decidedAt}</span>}
         </span>
-        {note && <span className="max-w-56 text-xs text-zinc-400">&ldquo;{note}&rdquo;</span>}
+        {note && <span className="max-w-56 text-xs text-slate-400">&ldquo;{note}&rdquo;</span>}
         {state === "rework" && (
           <button
             type="button"
@@ -138,7 +138,7 @@ export function ReviewControls({
           onChange={(e) => setDraftNote(e.target.value)}
           placeholder={confirming === "rework" ? "What needs to change?" : "Reason (optional)"}
           aria-label="Review note"
-          className="w-56 rounded-md border border-zinc-700 bg-zinc-900 px-2 py-1 text-xs text-zinc-200 focus:border-zinc-500 focus:outline-none"
+          className="w-56 rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 focus:border-slate-500 focus:outline-none"
         />
         <div className="flex gap-1.5">
           <button

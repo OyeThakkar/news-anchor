@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/ui";
 import { ReviewTable } from "@/components/review-table";
-import { anchors, resolveAnchor, type AnchorId } from "@/lib/anchors";
+import { accent, anchors, resolveAnchor, type AnchorId } from "@/lib/anchors";
 import { scriptVideoStatus } from "@/lib/pipeline";
 import { AUTO_APPROVE_MINUTES } from "@/lib/review";
 import { list } from "@/lib/store";
@@ -12,6 +12,7 @@ export default async function ScriptsPage({ params }: PageProps<"/[anchor]/scrip
     <>
       <PageHeader
         eyebrow={anchors[id].name}
+        tone={accent[id].tone}
         title="Scripts"
         description={`Review each script before it goes to video. Approved scripts are turned into videos and shorts automatically. Scripts not reviewed within ${AUTO_APPROVE_MINUTES} minutes are auto-approved.`}
       />

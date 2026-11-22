@@ -28,33 +28,33 @@ async function ScriptView({ params }: { params: Params }) {
 
   return (
     <>
-      <Link href={`/${anchor}/scripts`} className="mb-4 inline-block text-sm text-zinc-400 hover:text-zinc-100">
+      <Link href={`/${anchor}/scripts`} className="mb-4 inline-block text-sm text-slate-400 hover:text-slate-100">
         ← {anchors[anchor].name} scripts
       </Link>
 
       <header className="mb-6">
-        <p className="mb-1 font-mono text-xs text-zinc-500">
+        <p className="mb-1 font-mono text-xs text-slate-500">
           {serialLabel("scripts", script)} · {formatDate(script.date)}
         </p>
-        <h1 className="text-2xl font-semibold text-zinc-100">{script.topic}</h1>
+        <h1 className="text-2xl font-semibold text-slate-100">{script.topic}</h1>
       </header>
 
       <Card className="mb-6">
         <div className="flex flex-wrap items-start gap-x-8 gap-y-4 text-sm">
           <div>
-            <p className="text-xs text-zinc-500">Format</p>
-            <p className="text-zinc-100">{script.format}</p>
+            <p className="text-xs text-slate-500">Format</p>
+            <p className="text-slate-100">{script.format}</p>
           </div>
           <div>
-            <p className="text-xs text-zinc-500">Duration</p>
-            <p className="font-mono text-zinc-100">{formatTime(script.durationSec)}</p>
+            <p className="text-xs text-slate-500">Duration</p>
+            <p className="font-mono text-slate-100">{formatTime(script.durationSec)}</p>
           </div>
           <div>
-            <p className="text-xs text-zinc-500">Submitted</p>
-            <p className="text-zinc-100">{formatTimeOfDay(new Date(script.submittedAt))}</p>
+            <p className="text-xs text-slate-500">Submitted</p>
+            <p className="text-slate-100">{formatTimeOfDay(new Date(script.submittedAt))}</p>
           </div>
           <div>
-            <p className="mb-0.5 text-xs text-zinc-500">Video status</p>
+            <p className="mb-0.5 text-xs text-slate-500">Video status</p>
             <Badge className={statusClass(status)}>{status}</Badge>
             {media && !isRendering(media) && (
               <Link
@@ -66,7 +66,7 @@ async function ScriptView({ params }: { params: Params }) {
             )}
           </div>
           <div className="ml-auto">
-            <p className="mb-1 text-xs text-zinc-500">Review</p>
+            <p className="mb-1 text-xs text-slate-500">Review</p>
             <ReviewControls
               kind="scripts"
               anchor={anchor}
@@ -78,7 +78,7 @@ async function ScriptView({ params }: { params: Params }) {
             />
           </div>
         </div>
-        <p className="mt-4 text-xs text-zinc-500">
+        <p className="mt-4 text-xs text-slate-500">
           {script.factBox
             ? `The fact box is shared with ${other.name}'s ${script.format === "Short" ? "short" : "episode"} on the same story.`
             : `Placeholders in {BRACES} are filled from the monitoring sheet. The fact box matches ${other.name}'s episode.`}
@@ -89,8 +89,8 @@ async function ScriptView({ params }: { params: Params }) {
       {script.factBox && (
         <div className="mb-6 grid gap-4 lg:grid-cols-2">
           <Card title="Fact box">
-            {script.storyTitle && <p className="mb-3 text-sm text-zinc-400">{script.storyTitle}</p>}
-            <ol className="list-decimal space-y-2 pl-5 text-sm text-zinc-200">
+            {script.storyTitle && <p className="mb-3 text-sm text-slate-400">{script.storyTitle}</p>}
+            <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-200">
               {script.factBox.map((fact) => (
                 <li key={fact}>{fact}</li>
               ))}
@@ -115,23 +115,23 @@ async function ScriptView({ params }: { params: Params }) {
           <li key={s.id}>
             <Card>
               <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-                <h2 className="text-base font-semibold text-zinc-100">
-                  <span className="mr-2 text-zinc-500">{i + 1}.</span>
+                <h2 className="text-base font-semibold text-slate-100">
+                  <span className="mr-2 text-slate-500">{i + 1}.</span>
                   {s.title}
                 </h2>
-                <p className="font-mono text-xs text-zinc-500">
+                <p className="font-mono text-xs text-slate-500">
                   {formatTime(s.start)}-{formatTime(s.start + s.durationSec)} · {formatTime(s.durationSec)}
                 </p>
               </div>
-              <p className="mb-3 text-sm text-zinc-400">{s.purpose}</p>
+              <p className="mb-3 text-sm text-slate-400">{s.purpose}</p>
 
               <blockquote
-                className={`whitespace-pre-line border-l-2 ${accent[anchor].border} pl-4 text-[15px] leading-relaxed text-zinc-100`}
+                className={`whitespace-pre-line border-l-2 ${accent[anchor].border} pl-4 text-[15px] leading-relaxed text-slate-100`}
               >
                 {s.line}
               </blockquote>
 
-              <p className="mt-4 text-xs text-zinc-500">
+              <p className="mt-4 text-xs text-slate-500">
                 <span className="uppercase tracking-wider">Beats:</span> {s.beats.join(" · ")}
               </p>
 

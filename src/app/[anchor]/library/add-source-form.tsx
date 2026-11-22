@@ -6,8 +6,8 @@ import { anchors, type AnchorId } from "@/lib/anchors";
 import { frequencies, monitors, outputFormats, tiers } from "@/lib/sources";
 
 const input =
-  "rounded-md border border-zinc-700 bg-zinc-900 px-2.5 py-1.5 text-sm text-zinc-200 focus:border-zinc-500 focus:outline-none";
-const label = "flex flex-col gap-1 text-xs text-zinc-500";
+  "rounded-md border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-sm text-slate-200 focus:border-slate-500 focus:outline-none";
+const label = "flex flex-col gap-1 text-xs text-slate-500";
 
 export function AddSourceForm({ anchor, groups }: { anchor: AnchorId; groups: string[] }) {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ export function AddSourceForm({ anchor, groups }: { anchor: AnchorId; groups: st
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="mb-4 rounded-md border border-zinc-700 px-3 py-1.5 text-sm text-zinc-200 hover:bg-zinc-800"
+        className="mb-4 rounded-md bg-gradient-to-r from-fuchsia-500 to-orange-400 px-3.5 py-1.5 text-sm font-medium text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
       >
         + Add source
       </button>
@@ -31,7 +31,7 @@ export function AddSourceForm({ anchor, groups }: { anchor: AnchorId; groups: st
   }
 
   return (
-    <form ref={formRef} action={formAction} className="mb-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+    <form ref={formRef} action={formAction} className="mb-4 rounded-xl border border-slate-800 bg-slate-900/60 p-4">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <label className={label}>
           Source name
@@ -85,12 +85,12 @@ export function AddSourceForm({ anchor, groups }: { anchor: AnchorId; groups: st
             ))}
           </select>
         </label>
-        <fieldset className="flex flex-col gap-1 text-xs text-zinc-500">
+        <fieldset className="flex flex-col gap-1 text-xs text-slate-500">
           <legend className="mb-1">Feeds into</legend>
-          <div className="flex gap-3 text-sm text-zinc-200">
+          <div className="flex gap-3 text-sm text-slate-200">
             {outputFormats.map((f) => (
               <label key={f} className="flex items-center gap-1.5">
-                <input type="checkbox" name="formats" value={f} defaultChecked className="accent-zinc-300" />
+                <input type="checkbox" name="formats" value={f} defaultChecked className="accent-slate-300" />
                 {f}
               </label>
             ))}
@@ -106,11 +106,11 @@ export function AddSourceForm({ anchor, groups }: { anchor: AnchorId; groups: st
         <button
           type="submit"
           disabled={pending}
-          className="rounded-md bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-900 hover:bg-white disabled:opacity-50"
+          className="rounded-md bg-gradient-to-r from-fuchsia-500 to-orange-400 px-3.5 py-1.5 text-sm font-medium text-white hover:brightness-110 disabled:opacity-50"
         >
           Add source
         </button>
-        <button type="button" onClick={() => setOpen(false)} className="px-2 py-1.5 text-sm text-zinc-400 hover:text-zinc-200">
+        <button type="button" onClick={() => setOpen(false)} className="px-2 py-1.5 text-sm text-slate-400 hover:text-slate-200">
           Close
         </button>
         {state.error && <p className="text-xs text-red-400">{state.error}</p>}

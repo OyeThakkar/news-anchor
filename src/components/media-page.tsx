@@ -32,18 +32,18 @@ export async function MediaPage({
 
   return (
     <>
-      <Link href={`/${anchor}/${kind}`} className="mb-4 inline-block text-sm text-zinc-400 hover:text-zinc-100">
+      <Link href={`/${anchor}/${kind}`} className="mb-4 inline-block text-sm text-slate-400 hover:text-slate-100">
         ← {anchors[anchor].name} {isShort ? "shorts" : "videos"}
       </Link>
 
       <header className="mb-6">
-        <p className="mb-1 font-mono text-xs text-zinc-500">
+        <p className="mb-1 font-mono text-xs text-slate-500">
           {serialLabel(kind, media)} · {formatDate(media.date)} · from script{" "}
           <Link href={`/${anchor}/scripts/${script.id}`} className="text-sky-400 hover:underline">
             {serialLabel("scripts", script)}
           </Link>
         </p>
-        <h1 className="text-2xl font-semibold text-zinc-100">{media.topic}</h1>
+        <h1 className="text-2xl font-semibold text-slate-100">{media.topic}</h1>
       </header>
 
       <div className={`grid gap-6 ${isShort ? "lg:grid-cols-[380px_1fr]" : ""}`}>
@@ -68,19 +68,19 @@ export async function MediaPage({
         <Card className="self-start">
           <div className="flex flex-wrap items-start gap-x-8 gap-y-4 text-sm">
             <div>
-              <p className="text-xs text-zinc-500">Duration</p>
-              <p className="font-mono text-zinc-100">{formatTime(media.durationSec)}</p>
+              <p className="text-xs text-slate-500">Duration</p>
+              <p className="font-mono text-slate-100">{formatTime(media.durationSec)}</p>
             </div>
             <div>
-              <p className="text-xs text-zinc-500">Generated</p>
-              <p className="text-zinc-100">{rendering ? "In progress" : formatTimeOfDay(new Date(media.submittedAt))}</p>
+              <p className="text-xs text-slate-500">Generated</p>
+              <p className="text-slate-100">{rendering ? "In progress" : formatTimeOfDay(new Date(media.submittedAt))}</p>
             </div>
             <div>
-              <p className="mb-0.5 text-xs text-zinc-500">Status</p>
+              <p className="mb-0.5 text-xs text-slate-500">Status</p>
               <Badge className={statusClass(status)}>{status}</Badge>
             </div>
             <div>
-              <p className="mb-1 text-xs text-zinc-500">Review</p>
+              <p className="mb-1 text-xs text-slate-500">Review</p>
               <ReviewControls
                 kind={kind}
                 anchor={anchor}
@@ -94,13 +94,13 @@ export async function MediaPage({
             </div>
           </div>
 
-          <div className="mt-5 border-t border-zinc-800 pt-4">
-            <p className="mb-2 text-xs text-zinc-500">Publishing</p>
+          <div className="mt-5 border-t border-slate-800 pt-4">
+            <p className="mb-2 text-xs text-slate-500">Publishing</p>
             <ul className="space-y-1.5 text-sm">
               {platforms.map((p) => (
                 <li key={p} className="flex items-center justify-between gap-4">
-                  <span className="text-zinc-300">{p}</span>
-                  <span className="text-xs text-zinc-400">
+                  <span className="text-slate-300">{p}</span>
+                  <span className="text-xs text-slate-400">
                     {isApproved(approval.state) && approval.at
                       ? `${isShort ? "Posted" : "Published"} · ${formatTimeOfDay(approval.at)}`
                       : "Publishes automatically on approval"}
@@ -111,8 +111,8 @@ export async function MediaPage({
           </div>
 
           {script.sources && script.sources.length > 0 && (
-            <div className="mt-5 border-t border-zinc-800 pt-4">
-              <p className="mb-2 text-xs text-zinc-500">Sources shown on screen</p>
+            <div className="mt-5 border-t border-slate-800 pt-4">
+              <p className="mb-2 text-xs text-slate-500">Sources shown on screen</p>
               <ul className="space-y-1 text-sm">
                 {script.sources.slice(0, 5).map((s) => (
                   <li key={s.url}>
