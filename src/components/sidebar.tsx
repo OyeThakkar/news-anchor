@@ -7,6 +7,7 @@ import { accent, anchorIds, anchors } from "@/lib/anchors";
 const anchorLinks = [
   { label: "Dashboard", path: "" },
   { label: "Videos", path: "/videos" },
+  { label: "Shorts", path: "/shorts" },
   { label: "Scripts", path: "/scripts" },
   { label: "Library & Data Sources", path: "/library" },
 ];
@@ -26,8 +27,11 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
 }
 
 export function Sidebar() {
-  const pathname = usePathname();
+  return <SidebarView pathname={usePathname()} />;
+}
 
+// Rendered without an active link while the pathname is unknown during prerendering.
+export function SidebarView({ pathname }: { pathname: string | null }) {
   return (
     <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950 px-3 py-5">
       <Link href="/" className="mb-6 px-3">

@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchors, publishingTargets as t, resolveAnchor } from "@/lib/anchors";
-import { firstEpisode, formatTime, totalSeconds } from "@/lib/scripts";
+import { AUTO_APPROVE_MINUTES } from "@/lib/review";
+import { episodeSegments, formatTime, totalSeconds } from "@/lib/scripts";
 import { sourcesFor } from "@/lib/sources";
 
 export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">) {
   const id = await resolveAnchor(params);
   const a = anchors[id];
   const library = sourcesFor(id);
-  const shortsFromEpisode = firstEpisode.segments.filter((s) => s.shortsCut).length;
+  const shortsFromEpisode = episodeSegments.filter((s) => s.shortsCut).length;
 
   return (
     <>
@@ -59,10 +60,10 @@ export default async function AnchorDashboard({ params }: PageProps<"/[anchor]">
           <ul className="space-y-3 text-sm">
             <li>
               <Link href={`/${id}/scripts`} className="block hover:text-zinc-100">
-                <span className="text-zinc-200">{firstEpisode.title} script</span>
+                <span className="text-zinc-200">Review scripts</span>
                 <span className="block text-xs text-zinc-500">
-                  {firstEpisode.status} · {firstEpisode.segments.length} segments ·{" "}
-                  {formatTime(totalSeconds(firstEpisode.segments))}
+                  Auto-approved after {AUTO_APPROVE_MINUTES} min · episode runs{" "}
+                  {formatTime(totalSeconds(episodeSegments))}
                 </span>
               </Link>
             </li>

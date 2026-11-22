@@ -12,15 +12,6 @@ export type Segment = {
   lines: Record<AnchorId, string>;
 };
 
-export type ScriptDraft = {
-  id: string;
-  title: string;
-  topic: string;
-  status: "Structure drafted" | "Writing" | "Fact-check" | "Legal" | "Locked";
-  language: string;
-  segments: Segment[];
-};
-
 // Placeholders in {BRACES} are filled once the story is picked from the monitoring sheet.
 export const episodeSegments: Segment[] = [
   {
@@ -131,20 +122,11 @@ export const episodeSegments: Segment[] = [
   },
 ];
 
-export const firstEpisode: ScriptDraft = {
-  id: "ep-001",
-  title: "Episode 1",
-  topic: "Pick from the monitoring sheet",
-  status: "Structure drafted",
-  language: "Hinglish",
-  segments: episodeSegments,
-};
-
-export function totalSeconds(segments: Segment[]) {
+export function totalSeconds(segments: { durationSec: number }[]) {
   return segments.reduce((sum, s) => sum + s.durationSec, 0);
 }
 
-export function withStartTimes(segments: Segment[]) {
+export function withStartTimes<T extends { durationSec: number }>(segments: T[]) {
   return segments.map((segment, i) => ({
     ...segment,
     start: totalSeconds(segments.slice(0, i)),

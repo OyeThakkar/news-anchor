@@ -16,12 +16,21 @@ Open http://localhost:3000.
 - **Dashboard**: output targets and coverage across both anchors
 - **Reema / Siddharth**
   - **Dashboard**: persona, daily targets, next steps
-  - **Videos**: publishing slots (1 episode of 7-10 min/day, 3-15 shorts/day, 1 long-form of 20-24 min/week)
-  - **Scripts**: John Oliver-style structure for the daily episode
+  - **Videos**: long-form YouTube videos (daily 7-10 min episode, weekly 20-24 min)
+  - **Shorts**: vertical shorts (3-15/day) with separate Instagram and YouTube status
+  - **Scripts**: scripts for review, each with a John Oliver-style segment breakdown
   - **Library & Data Sources**: feed-monitoring sheet (source, anchor, beat, format, check frequency, monitored by)
+
+## Review flow
+
+Scripts, videos and shorts each have Approve / Reject / Rework buttons. Anything not reviewed within
+60 minutes of submission is auto-approved for publication. Rework requires a note; resubmitting restarts
+the 60-minute window. Rejected items are cancelled.
 
 ## Where the content lives
 
 - `src/lib/anchors.ts`: personas and publishing targets
 - `src/lib/sources.ts`: the source library and monitoring settings
 - `src/lib/scripts.ts`: episode segments and draft lines
+- `src/lib/review.ts`: approval rules, including the 60-minute auto-approval
+- `data/*.json`: saved scripts, videos and shorts (created on first run, not committed)

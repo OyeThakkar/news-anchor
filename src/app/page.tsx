@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge, Card, PageHeader, Stat } from "@/components/ui";
 import { accent, anchorIds, anchors, publishingTargets as t } from "@/lib/anchors";
-import { formatTime, totalSeconds, firstEpisode } from "@/lib/scripts";
+import { AUTO_APPROVE_MINUTES } from "@/lib/review";
 import { sources, sourcesFor } from "@/lib/sources";
 
 export default function Home() {
@@ -66,10 +66,8 @@ export default function Home() {
                   <dd className="text-zinc-200">{own} + shared</dd>
                 </div>
                 <div>
-                  <dt className="text-xs text-zinc-500">Episode 1</dt>
-                  <dd className="text-zinc-200">
-                    {firstEpisode.status} · {formatTime(totalSeconds(firstEpisode.segments))}
-                  </dd>
+                  <dt className="text-xs text-zinc-500">Script review</dt>
+                  <dd className="text-zinc-200">Auto-approve after {AUTO_APPROVE_MINUTES} min</dd>
                 </div>
               </dl>
             </Card>
