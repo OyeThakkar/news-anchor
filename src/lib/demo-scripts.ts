@@ -54,12 +54,15 @@ function buildSegments(templates: SegmentTemplate[], lines: { id: string; line: 
   });
 }
 
-// Past days are already through review; today's scripts start pending so the review flow can be demoed.
-export function demoScripts(now: Date, today: string): DemoScript[] {
+// Earlier days are already through review; the latest day starts pending (whatever today's date is),
+// so the review flow can always be demoed after `npm run reset-demo`.
+export function demoScripts(now: Date): DemoScript[] {
   const serials: Record<AnchorId, number> = { reema: 0, siddharth: 0 };
   const records: DemoScript[] = [];
+  const days = readDays();
+  const latest = days.at(-1)?.date;
 
-  for (const day of readDays()) {
+  for (const day of days) {
     for (const anchor of anchorIds) {
       const scripts = day.scripts
         .filter((s) => s.anchor === anchor)
@@ -70,7 +73,7 @@ export function demoScripts(now: Date, today: string): DemoScript[] {
         if (!story) throw new Error(`Demo script for ${day.date} references unknown story "${s.storyId}"`);
         const templates = s.format === "Episode" ? episodeSegments : shortSegments;
         const segments = buildSegments(templates, s.segments, `${day.date}/${anchor}/${s.storyId}`);
-        const isPast = day.date < today;
+        const isPast = day.date !== latest;
 
         records.push({
           id: `${anchor}-${day.date}-${s.storyId}`,

@@ -105,7 +105,7 @@ export function istDate(date: Date) {
 const seeds: { [K in Collection]: (now: Date) => RecordOf[K][] } = {
   sources: () => defaultSources.map((s) => ({ ...s, id: sourceId(s), active: true })),
   scripts: (now) => {
-    const demo = demoScripts(now, istDate(now));
+    const demo = demoScripts(now);
     if (demo.length > 0) return demo;
     return anchorIds.map((anchor) => ({
       id: `${anchor}-1`,
